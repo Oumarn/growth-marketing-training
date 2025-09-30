@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Support du cours (PDF)",
+    "path": "/assets/course.pdf",
+    "type": "pdf",
+    "description": "Document complet du cours Growth Marketing (2 jours, 14h)"
+  },
+  {
+    "label": "Pack Templates (ZIP)",
+    "path": "/assets/all-resources.zip",
+    "type": "zip",
+    "description": "Tous les modèles et ressources en un seul fichier"
+  },
+  {
+    "label": "Buyer Persona Canvas",
+    "path": "/assets/templates/buyer-persona.pdf",
+    "type": "pdf",
+    "description": "Modèle pour créer vos personas cibles"
+  },
+  {
+    "label": "Funnel Canvas AAARRR",
+    "path": "/assets/templates/funnel-canvas.pdf",
+    "type": "pdf",
+    "description": "Framework pour cartographier votre funnel"
+  },
+  {
+    "label": "Experiment Card",
+    "path": "/assets/templates/experiment-card.pdf",
+    "type": "pdf",
+    "description": "Template pour structurer vos expérimentations Growth"
+  },
+  {
+    "label": "n8n Workflow Starter",
+    "path": "/assets/templates/n8n-starter.json",
+    "type": "json",
+    "description": "Workflows n8n prêts à l'emploi (collector, analyse, génération)"
+  },
+  {
+    "label": "Modèles Canva (Social Media)",
+    "path": "https://www.canva.com/design/template-growth-marketing",
+    "type": "external",
+    "description": "Templates visuels pour vos campagnes social media"
+  }
+]

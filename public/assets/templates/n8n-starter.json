@@ -1,0 +1,153 @@
+{
+  "workflows": [
+    {
+      "name": "Top Posts Collector",
+      "description": "Workflow quotidien pour détecter les posts avec les meilleures performances",
+      "trigger": {
+        "type": "cron",
+        "schedule": "0 8 * * *"
+      },
+      "nodes": [
+        {
+          "name": "HTTP Request - Social Media API",
+          "type": "n8n-nodes-base.httpRequest",
+          "parameters": {
+            "url": "https://api.platform.com/posts",
+            "method": "GET"
+          }
+        },
+        {
+          "name": "Function - Calculate Metrics",
+          "type": "n8n-nodes-base.function",
+          "parameters": {
+            "functionCode": "// Calculate engagement rate and z-score\nconst posts = items.map(item => {\n  const er = (item.json.likes + item.json.comments + item.json.shares) / item.json.reach;\n  return { ...item.json, engagement_rate: er };\n});\nreturn posts;"
+          }
+        },
+        {
+          "name": "Filter - Top Performers",
+          "type": "n8n-nodes-base.filter",
+          "parameters": {
+            "conditions": {
+              "number": [
+                {
+                  "value1": "={{ $json.engagement_rate }}",
+                  "operation": "larger",
+                  "value2": 0.05
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Airtable - Store Results",
+          "type": "n8n-nodes-base.airtable",
+          "parameters": {
+            "operation": "create",
+            "base": "your-base-id",
+            "table": "posts_top"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Explain Why Posts Work",
+      "description": "Analyse IA pour comprendre pourquoi certains posts performent",
+      "trigger": {
+        "type": "webhook",
+        "path": "analyze-post"
+      },
+      "nodes": [
+        {
+          "name": "OpenAI - Analyze Content",
+          "type": "@n8n/n8n-nodes-langchain.openAi",
+          "parameters": {
+            "prompt": "Analyse ce post social media et explique pourquoi il performe bien. Extrait: hook, structure, ton, preuve, CTA. Génère un template reproductible.",
+            "model": "gpt-4"
+          }
+        },
+        {
+          "name": "Function - Parse Analysis", 
+          "type": "n8n-nodes-base.function",
+          "parameters": {
+            "functionCode": "// Parse AI analysis and extract key features\nconst analysis = items[0].json.response;\nreturn [{ analysis, extracted_features: JSON.parse(analysis) }];"
+          }
+        },
+        {
+          "name": "Airtable - Update Post Analysis",
+          "type": "n8n-nodes-base.airtable",
+          "parameters": {
+            "operation": "update"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Plan & Test Content",
+      "description": "Génération et test A/B automatisé de nouveaux contenus",
+      "trigger": {
+        "type": "manual"
+      },
+      "nodes": [
+        {
+          "name": "OpenAI - Generate Variants",
+          "type": "@n8n/n8n-nodes-langchain.openAi", 
+          "parameters": {
+            "prompt": "Génère 3 variantes de ce post en conservant la structure gagnante mais avec différents angles.",
+            "model": "gpt-4"
+          }
+        },
+        {
+          "name": "Schedule Posts",
+          "type": "n8n-nodes-base.schedule",
+          "parameters": {
+            "intervals": ["2h", "4h", "6h"]
+          }
+        },
+        {
+          "name": "Post to Social Media",
+          "type": "n8n-nodes-base.httpRequest",
+          "parameters": {
+            "method": "POST"
+          }
+        },
+        {
+          "name": "Wait 24h",
+          "type": "n8n-nodes-base.wait",
+          "parameters": {
+            "amount": 24,
+            "unit": "hours"
+          }
+        },
+        {
+          "name": "Collect Performance",
+          "type": "n8n-nodes-base.httpRequest",
+          "parameters": {
+            "url": "https://api.platform.com/posts/{{ $json.post_id }}/insights"
+          }
+        },
+        {
+          "name": "Determine Winner",
+          "type": "n8n-nodes-base.function",
+          "parameters": {
+            "functionCode": "// Simple bandit algorithm to pick winner\nconst winner = items.reduce((best, current) => \n  current.json.engagement_rate > best.engagement_rate ? current.json : best\n);\nreturn [winner];"
+          }
+        }
+      ]
+    }
+  ],
+  "setup_instructions": {
+    "1": "Créer un compte n8n (cloud ou self-hosted)",
+    "2": "Configurer les credentials pour les APIs sociales",
+    "3": "Importer les workflows JSON",
+    "4": "Adapter les URLs et paramètres à vos comptes",
+    "5": "Tester les workflows en mode manuel d'abord",
+    "6": "Activer les triggers automatiques"
+  },
+  "required_credentials": [
+    "Instagram Basic Display API",
+    "LinkedIn API", 
+    "Twitter API v2",
+    "OpenAI API Key",
+    "Airtable API Key"
+  ]
+}

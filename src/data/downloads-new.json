@@ -1,0 +1,224 @@
+{
+  "categories": [
+    {
+      "id": "slides",
+      "name": "📊 Présentations",
+      "description": "Slides de cours complets avec animations et exemples"
+    },
+    {
+      "id": "templates",
+      "name": "📋 Templates",
+      "description": "Modèles Excel/Sheets prêts à l'emploi"
+    },
+    {
+      "id": "outils",
+      "name": "🛠️ Outils",
+      "description": "Calculatrices et frameworks interactifs"
+    },
+    {
+      "id": "workflows",
+      "name": "🔄 Workflows",
+      "description": "Automatisations Zapier/Make clés en main"
+    },
+    {
+      "id": "bonus",
+      "name": "🎁 Ressources Bonus",
+      "description": "Contenu exclusif et ressources avancées"
+    }
+  ],
+  "downloads": [
+    {
+      "id": "pack-complet",
+      "title": "🎁 Pack Complet Formation Growth Marketing",
+      "category": "bonus",
+      "description": "TOUT le contenu de la formation : slides, templates, outils, workflows, bonus (valeur €497)",
+      "format": "ZIP",
+      "size": "127 MB",
+      "modules": ["1", "2", "3", "4", "5", "6", "7"],
+      "url": "/assets/all-resources.zip",
+      "featured": true,
+      "downloads": 1247,
+      "rating": 4.9
+    },
+    {
+      "id": "slides-complet",
+      "title": "📊 Pack Slides Complet (7 Modules)",
+      "category": "slides", 
+      "description": "Toutes les présentations PowerPoint de la formation (280+ slides avec animations)",
+      "format": "PDF + PPTX",
+      "size": "67 MB",
+      "modules": ["1", "2", "3", "4", "5", "6", "7"],
+      "url": "/assets/slides/growth-marketing-slides-complet.zip",
+      "downloads": 892,
+      "rating": 4.8
+    },
+    {
+      "id": "diagnostic-aaarrr",
+      "title": "📋 Template Diagnostic Funnel AAARRR",
+      "category": "templates",
+      "description": "Modèle Excel pour analyser votre funnel de conversion avec calculs automatiques",
+      "format": "XLSX + Google Sheets",
+      "size": "3.2 MB",
+      "modules": ["2"],
+      "url": "/assets/templates/diagnostic-funnel-aaarrr.xlsx",
+      "downloads": 1156,
+      "rating": 4.9
+    },
+    {
+      "id": "experiment-canvas",
+      "title": "🧪 Experiment Canvas & A/B Test Planner",
+      "category": "templates",
+      "description": "Framework complet pour planifier et suivre vos expérimentations Growth",
+      "format": "PDF + XLSX + Figma",
+      "size": "4.1 MB",
+      "modules": ["5"],
+      "url": "/assets/templates/experiment-canvas-complete.zip",
+      "downloads": 743,
+      "rating": 4.7
+    },
+    {
+      "id": "roi-calculator",
+      "title": "🛠️ Calculatrice ROI Growth Marketing",
+      "category": "outils",
+      "description": "Outil Excel avancé : CAC, LTV, ROI, projections par canal avec graphiques automatiques",
+      "format": "XLSX + Tutorial Video",
+      "size": "5.8 MB",
+      "modules": ["4"],
+      "url": "/assets/tools/roi-calculator-advanced.zip",
+      "downloads": 924,
+      "rating": 4.8
+    },
+    {
+      "id": "workflows-zapier-pack",
+      "title": "🔄 Pack 15 Workflows Zapier/Make",
+      "category": "workflows",
+      "description": "Automatisations Growth prêtes à importer : lead nurturing, reporting, customer success",
+      "format": "JSON + PDF Setup Guide",
+      "size": "8.3 MB",
+      "modules": ["6"],
+      "url": "/assets/workflows/zapier-make-workflows.zip",
+      "downloads": 567,
+      "rating": 4.6
+    },
+    {
+      "id": "n8n-starter",
+      "title": "🔄 n8n Growth Automation Starter Pack",
+      "category": "workflows",
+      "description": "Workflows n8n open-source pour automatiser acquisition, activation, rétention",
+      "format": "JSON + Docker Setup",
+      "size": "12 MB",
+      "modules": ["6"],
+      "url": "/assets/workflows/n8n-growth-starter.zip",
+      "downloads": 234,
+      "rating": 4.5
+    },
+    {
+      "id": "prompts-ia-ultimate",
+      "title": "🤖 Ultimate IA Marketing Prompts Library",
+      "category": "bonus",
+      "description": "200+ prompts ChatGPT/Claude pour content, ads, email, social media, SEO",
+      "format": "PDF + Notion Template",
+      "size": "15 MB",
+      "modules": ["7"],
+      "url": "/assets/bonus/prompts-ia-marketing-ultimate.zip",
+      "downloads": 1034,
+      "rating": 4.9
+    },
+    {
+      "id": "dashboard-data-studio",
+      "title": "📊 Dashboard Google Data Studio Template",
+      "category": "templates",
+      "description": "Dashboard Growth Marketing complet avec 25+ métriques AAARRR prêt à connecter",
+      "format": "Lien Template + Setup Guide",
+      "size": "N/A",
+      "modules": ["4"],
+      "url": "/assets/templates/dashboard-growth-marketing.pdf",
+      "downloads": 687,
+      "rating": 4.7
+    },
+    {
+      "id": "case-studies-premium",
+      "title": "🏆 Études de Cas Premium (12 Entreprises)",
+      "category": "bonus",
+      "description": "Analyses détaillées : Dropbox, HubSpot, Airbnb, Slack, Stripe, Notion, Figma, etc.",
+      "format": "PDF + Video Analysis",
+      "size": "34 MB",
+      "modules": ["3"],
+      "url": "/assets/bonus/case-studies-premium.zip",
+      "downloads": 456,
+      "rating": 4.8
+    },
+    {
+      "id": "buyer-persona-canvas",
+      "title": "👥 Buyer Persona Canvas + Interview Kit",
+      "category": "templates",
+      "description": "Template Figma + Guide d'interview + Analyse comportementale pour créer vos personas",
+      "format": "Figma + PDF + XLSX",
+      "size": "6.4 MB",
+      "modules": ["1", "2"],
+      "url": "/assets/templates/buyer-persona-complete.zip",
+      "downloads": 789,
+      "rating": 4.6
+    },
+    {
+      "id": "growth-tools-stack",
+      "title": "🛠️ Growth Marketing Tools Stack 2024",
+      "category": "bonus",
+      "description": "Base Airtable avec 150+ outils catégorisés : pricing, features, alternatives",
+      "format": "Airtable + PDF Guide",
+      "size": "7.2 MB",
+      "modules": ["6"],
+      "url": "/assets/bonus/tools-stack-2024-complete.zip",
+      "downloads": 623,
+      "rating": 4.7
+    },
+    {
+      "id": "email-sequences",
+      "title": "📧 Pack 10 Email Sequences Growth",
+      "category": "templates",
+      "description": "Séquences prêtes : onboarding, nurturing, upsell, win-back, referral",
+      "format": "HTML + Plain Text + Mailchimp/ConvertKit",
+      "size": "4.9 MB",
+      "modules": ["4", "6"],
+      "url": "/assets/templates/email-sequences-growth.zip",
+      "downloads": 834,
+      "rating": 4.8
+    },
+    {
+      "id": "ab-test-results-analyzer",
+      "title": "📈 A/B Test Results Analyzer",
+      "category": "outils",
+      "description": "Calculateur de significance statistique avec graphiques et recommandations automatiques",
+      "format": "XLSX + Google Sheets",
+      "size": "2.1 MB",
+      "modules": ["5"],
+      "url": "/assets/tools/ab-test-analyzer.xlsx",
+      "downloads": 445,
+      "rating": 4.5
+    },
+    {
+      "id": "content-calendar-airtable",
+      "title": "📅 Content Calendar Airtable Template",
+      "category": "templates",
+      "description": "Base Airtable avec automatisations : planning, production, publication, performance",
+      "format": "Airtable Template + Setup Video",
+      "size": "N/A", 
+      "modules": ["6"],
+      "url": "/assets/templates/content-calendar-airtable.pdf",
+      "downloads": 567,
+      "rating": 4.6
+    },
+    {
+      "id": "growth-checklist-90j",
+      "title": "✅ Growth Marketing Checklist 90 Jours",
+      "category": "bonus",
+      "description": "Plan d'action détaillé semaine par semaine pour lancer votre machine Growth",
+      "format": "PDF + Notion Template",
+      "size": "8.7 MB",
+      "modules": ["1", "2", "3", "4", "5", "6", "7"],
+      "url": "/assets/bonus/growth-checklist-90j.zip",  
+      "downloads": 712,
+      "rating": 4.9
+    }
+  ]
+}

@@ -1,5 +1,16 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Link href="/agenda">
+                <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg">
+                  🚀 Commencer la formation
+                </Button>
+              </Link>
+              <Link href="/download">
+                <Button size="lg" className="bg-white/10 backdrop-blur text-white border-2 border-white/30 hover:bg-white hover:text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-4 text-lg">
+                  📥 Télécharger les supports
+                </Button>
+              </Link>
+            </div>ton } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, BookOpen, Award } from 'lucide-react';
 import ResumeBanner from '@/components/ResumeBanner';
@@ -29,14 +40,14 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/agenda">
+              <Link href="/modules/1-intro">
                 <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg">
                   🚀 Commencer la formation
                 </Button>
               </Link>
-              <Link href="/download">
+              <Link href="/modules">
                 <Button size="lg" className="bg-white/10 backdrop-blur text-white border-2 border-white/30 hover:bg-white hover:text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-4 text-lg">
-                  📥 Télécharger les supports
+                  � Voir tous les modules
                 </Button>
               </Link>
             </div>
@@ -54,14 +65,14 @@ export default function Home() {
                 <div className="text-xs text-gray-300">Intensive</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
-                <div className="text-4xl font-bold text-yellow-300">100%</div>
-                <div className="text-sm font-medium text-gray-200">Pratique</div>
-                <div className="text-xs text-gray-300">Actionnable</div>
+                <div className="text-4xl font-bold text-yellow-300">12+</div>
+                <div className="text-sm font-medium text-gray-200">Ateliers</div>
+                <div className="text-xs text-gray-300">Pratiques</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
-                <div className="text-4xl font-bold text-yellow-300">500+</div>
-                <div className="text-sm font-medium text-gray-200">Étudiants</div>
-                <div className="text-xs text-gray-300">Satisfaits</div>
+                <div className="text-4xl font-bold text-yellow-300">50+</div>
+                <div className="text-sm font-medium text-gray-200">Ressources</div>
+                <div className="text-xs text-gray-300">Exclusives</div>
               </div>
             </div>
           </div>

@@ -1,0 +1,372 @@
+---
+title: "Module 7 — IA & No-code par canal"
+duration: "3h30"
+status: "new"
+objectives:
+  - "Automatiser la génération/optimisation sur SEO, SEA, Social, Emailing"
+  - "Mettre en place un workflow n8n + LLM"
+  - "Créer un système de détection et reproduction de contenus performants"
+downloads:
+  - "/assets/templates/experiment-card.pdf"
+  - "/assets/templates/n8n-starter.json"
+---
+
+# IA & No-code par canal
+
+## 🎯 Objectifs du module
+
+À la fin de ce module, vous serez capable de :
+- Intégrer l'IA dans vos processus SEO, SEA, Social Media et Emailing
+- Créer des workflows n8n pour automatiser la génération de contenu
+- Mettre en place un système d'analyse et reproduction de posts performants
+- Optimiser vos campagnes avec l'intelligence artificielle
+
+## 🤖 Introduction à l'IA Marketing
+
+### Pourquoi l'IA révolutionne le Growth Marketing ?
+
+- **Personnalisation à grande échelle** : Contenu adapté à chaque segment
+- **Optimisation continue** : Apprentissage automatique des performances
+- **Gain de temps** : Automatisation des tâches répétitives
+- **Insights avancés** : Détection de patterns invisibles à l'œil humain
+
+### Outils IA essentiels
+
+- **LLM** : GPT-4, Claude, Gemini pour la génération de texte
+- **IA visuelle** : Midjourney, DALL-E, Canva AI
+- **Automatisation** : n8n, Zapier avec nodes IA
+- **Analytics IA** : Sentiment analysis, clustering, prédiction
+
+## 🔍 SEO + IA
+
+### 1. Recherche de mots-clés intelligente
+
+**Workflow n8n** :
+```
+Trigger → OpenAI (Generate keywords) → Ahrefs API → Filter → Airtable
+```
+
+**Prompt exemple** :
+```
+Génère 50 mots-clés longue traîne pour une entreprise de [secteur] 
+qui cible [audience]. Inclus des intentions commerciales, 
+informationnelles et navigationnelles.
+Format: mot-clé | intention | difficulté estimée
+```
+
+### 2. Génération de briefs de contenu
+
+**Process automatisé** :
+- Analyse des SERPs concurrents
+- Extraction des sujets abordés
+- Génération d'un brief structuré
+
+**Template de brief IA** :
+```
+Titre H1: [Titre optimisé]
+Meta description: [160 caractères max]
+Structure H2-H3: [Plan détaillé]
+Mots-clés à inclure: [Liste prioritaire]
+Angle unique: [Différenciation vs concurrence]
+CTA recommandé: [Appel à action]
+```
+
+### 3. Optimisation technique automatisée
+
+**Script n8n pour audit SEO** :
+- Vérification des méta-données
+- Analyse des temps de chargement
+- Détection des problèmes techniques
+- Suggestions d'amélioration automatiques
+
+## 💰 SEA + IA
+
+### 1. Génération d'annonces automatisée
+
+**Workflow de création d'annonces** :
+```
+Produit/Service → IA (Generate ads) → A/B Test → Performance tracking
+```
+
+**Prompt pour Google Ads** :
+```
+Crée 5 variantes d'annonces Google Ads pour [produit].
+Chaque annonce doit avoir :
+- Titre 1: max 30 caractères, bénéfice principal
+- Titre 2: max 30 caractères, preuve sociale/urgence  
+- Titre 3: max 30 caractères, CTA fort
+- Description: max 90 caractères, proposition de valeur
+
+Cible: [audience]
+Mots-clés: [liste]
+Ton: [professionnel/décontracté/expert]
+```
+
+### 2. Optimisation des mots-clés longue traîne
+
+**Process IA** :
+- Analyse des termes de recherche
+- Génération de variantes sémantiques
+- Prédiction de la performance
+- Ajustement automatique des enchères
+
+### 3. Scripts d'optimisation
+
+**Google Ads Scripts + IA** :
+```javascript
+// Pause des mots-clés sous-performants
+// Ajustement des enchères par device
+// Génération de rapports intelligents
+```
+
+## 📱 Social Media + IA (Focus détecté → analysé → reproduit)
+
+### 1. Système de détection des posts performants
+
+**Architecture complète** :
+
+#### Collecte automatisée (n8n)
+```
+Cron (quotidien) → API Social Media → Calcul métriques → Filtre top posts
+```
+
+**Métriques de détection** :
+- **Engagement Rate normalisé** = (likes + comments + shares + saves) / reach
+- **Z-score** pour identifier les outliers
+- **Time-to-peak** : vitesse d'engagement (2h premières heures)
+- **Save/Share rate** : indicateur de valeur perçue
+
+#### Workflow n8n "Top Posts Detector"
+```json
+{
+  "trigger": "Cron: 08:00 daily",
+  "nodes": [
+    "HTTP Request: Instagram/LinkedIn/X API",
+    "Function: Calculate ER, z-score, time buckets", 
+    "Filter: Keep top 10% z-score",
+    "Airtable: Insert posts_top"
+  ]
+}
+```
+
+### 2. Analyse du "pourquoi ça marche"
+
+**IA d'analyse de contenu** :
+
+**Prompt d'analyse complet** :
+```
+Analyse ce post social media qui a un taux d'engagement exceptionnel:
+
+[CONTENU DU POST]
+
+Métriques: [ER, likes, shares, saves, comments]
+
+Extrais et note sur 10 :
+1. HOOK (première phrase): efficacité, spécificité
+2. STRUCTURE: format (liste/story/how-to/témoignage)
+3. TON: directif/inspirant/polémique/pédagogique
+4. PREUVE: données chiffrées, cas concrets, social proof
+5. CTA: présence, clarté, friction
+6. TIMING: cohérence avec l'actualité
+7. VISUEL: qualité, lisibilité, cohérence brand
+
+Donne 3 hypothèses sur pourquoi ce post performe.
+Génère un TEMPLATE générique (avec variables) pour reproduire ce style.
+```
+
+**Features extraites automatiquement** :
+- **Hook pattern** : question/chiffre choc/erreur commune
+- **Structure** : listicle/storytelling/framework/avant-après
+- **Longueur optimale** : nombre de mots/caractères
+- **Hashtag strategy** : nombre, positionnement, thèmes
+- **Timing** : jour, heure, contexte événementiel
+
+### 3. Reproduction structurée
+
+**Système de templates dynamiques** :
+
+#### Template générique identifié
+```
+Hook: "{Erreur courante} → {Bénéfice rapide}"
+Corps: "{3-5 points actionnables} (numérotés, phrases courtes)"
+Preuve: "{chiffre/cas concret}"
+CTA: "{action simple}"
+```
+
+#### Génération par plateforme
+
+**LinkedIn** :
+```
+Génère 2 variantes LinkedIn (120-180 mots) basées sur ce template:
+[TEMPLATE GAGNANT]
+
+Variables:
+- Persona: {persona cible}
+- Douleur: {problème spécifique}  
+- Bénéfice: {résultat promis}
+- Preuve: {chiffre/cas}
+
+Contraintes:
+- Pas de hashtags dans le corps
+- 3 hashtags max à la fin
+- 1 CTA doux (pas de vente directe)
+- Ton pédagogique/expert
+```
+
+**Instagram** :
+```  
+Version Instagram du même template:
+- Ligne 1: hook ultra court (<60 caractères)
+- Phrases très courtes, sauts de ligne fréquents
+- 5-8 hashtags pertinents
+- Story format ou carrousel si applicable
+```
+
+### 4. A/B Testing et optimisation continue
+
+**Workflow de test** :
+```
+Template → Generate 2-3 variants → Schedule posts → Track performance → Update success patterns
+```
+
+**Système d'apprentissage** :
+- Tracking des performances par variant
+- Mise à jour des poids des features gagnantes
+- Amélioration continue des templates
+
+## 📧 Emailing + IA
+
+### 1. Personnalisation intelligente
+
+**Segmentation IA** :
+- Analyse comportementale automatique
+- Scoring prédictif d'engagement
+- Personnalisation du contenu par segment
+
+**Workflow de personnalisation** :
+```
+Contact → IA Analysis (behavior, preferences) → Dynamic content → Send
+```
+
+### 2. Optimisation des objets d'email
+
+**Process de génération** :
+```
+Sujet du mail → IA (10 variants) → Predictive scoring → A/B test → Winner
+```
+
+**Prompt pour objets** :
+```
+Génère 10 objets d'email différents pour [contenu].
+Variantes à inclure :
+- Question intriguante
+- Chiffre/stat choc
+- Bénéfice direct
+- Urgence/exclusivité
+- Personnalisé [Prénom]
+- Curiosity gap
+- Social proof
+- Problème/solution
+
+Max 50 caractères, éviter spam words.
+```
+
+### 3. Séquences automatisées intelligentes
+
+**Email nurturing IA** :
+- Analyse du comportement d'engagement
+- Adaptation du timing et fréquence
+- Contenu dynamique selon les interactions
+
+## 🛠️ Atelier pratique cross-canal
+
+**Durée** : 90 minutes
+
+### Mise en situation
+Vous êtes Growth Marketer pour une startup SaaS B2B. Mission : créer une mini-campagne cross-canal avec IA.
+
+### Objectif
+Générer des leads qualifiés avec un système automatisé qui :
+1. Détecte les contenus performants de votre secteur
+2. Génère du contenu optimisé pour chaque canal
+3. Lance des campagnes A/B automatisées
+4. Reporte les résultats en temps réel
+
+### Workflow n8n à construire
+
+#### 1. Content Intelligence System
+```
+Daily cron → Scrape competitor posts → Analyze performance → Extract winning patterns → Update content bank
+```
+
+#### 2. Multi-channel Content Generator  
+```
+Template + Variables → Generate LinkedIn post → Generate Google Ad → Generate Email subject → Schedule across channels
+```
+
+#### 3. Performance Dashboard
+```
+Channel APIs → Collect metrics → Calculate ROI → Slack notification → Update optimization weights
+```
+
+### Livrables de l'atelier
+1. **n8n Workflow** fonctionnel (3 flows minimum)
+2. **Content Bank** avec 10 templates gagnants identifiés
+3. **Dashboard** de performance automatisé
+4. **Playbook** de reproduction pour votre équipe
+
+### Templates fournis
+- [Experiment Card](/assets/templates/experiment-card.pdf) pour structurer vos tests
+- [n8n Starter](/assets/templates/n8n-starter.json) avec les workflows de base
+- Prompts optimisés pour chaque canal
+
+## 🚀 Bonnes pratiques & garde-fous
+
+### Compliance et éthique
+- **RGPD** : Consentement pour l'automatisation
+- **Brand voice** : Cohérence avec l'identité de marque  
+- **Human review** : Validation systématique avant publication
+- **Rate limiting** : Éviter le spam et la sur-sollicitation
+
+### Optimisation continue
+- **Documentation** : Journal d'expériences avec résultats
+- **A/B Testing** : Jamais d'automatisation sans test
+- **Monitoring** : Alertes sur les performances anormales
+- **Learning loop** : Capitalisation sur les échecs et succès
+
+## 📊 Métriques de succès
+
+### KPIs par canal
+- **SEO** : Trafic organique, positions mots-clés, temps sur page
+- **SEA** : CPC, Quality Score, taux de conversion
+- **Social** : Engagement rate, reach, saves/shares
+- **Email** : Taux d'ouverture, clic, désabonnement
+
+### ROI de l'automatisation
+- **Temps économisé** : Heures vs création manuelle
+- **Performance** : Amélioration des métriques
+- **Scalabilité** : Capacité à gérer plus de volume
+- **Qualité** : Cohérence vs production humaine
+
+## 🔑 Points clés à retenir
+
+- L'**IA amplifie** la créativité, ne la remplace pas
+- La **data** guide l'IA, garbage in = garbage out
+- L'**automatisation** doit garder une supervision humaine
+- **Tester** avant de scaler massivement
+- **Itérer** en continu sur les prompts et workflows
+
+## 🎯 Projet final
+
+Créez votre "IA Growth Stack" personnalisé :
+1. Identifiez vos 3 canaux prioritaires
+2. Construisez les workflows n8n correspondants  
+3. Implémentez le système de détection/reproduction
+4. Mesurez l'impact sur 30 jours
+5. Partagez vos résultats avec la promotion
+
+**Deadline** : Présentation en fin de formation (16h00)
+
+---
+
+**🎉 Félicitations !** Vous maîtrisez maintenant l'intégration de l'IA dans vos processus Growth Marketing. L'avenir appartient aux marketers qui sauront allier créativité humaine et puissance de l'automatisation intelligente.

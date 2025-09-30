@@ -1,0 +1,95 @@
+[
+  {
+    "order": 1,
+    "slug": "1-intro",
+    "title": "Module 1 — Introduction au Growth Marketing",
+    "day": 1,
+    "status": "unchanged",
+    "duration": "90min",
+    "description": "Fondements, métriques et structures d'équipe"
+  },
+  {
+    "order": 2,
+    "slug": "2-aaarr",
+    "title": "Module 2 — Framework AAARRR",
+    "day": 1,
+    "status": "updated",
+    "duration": "120min",
+    "description": "Méthode complète d'optimisation du funnel",
+    "ateliers": [
+      {
+        "slug": "buyer-persona",
+        "title": "Buyer Persona Workshop",
+        "duration": "45min",
+        "description": "Créer des personas détaillés pour votre audience"
+      },
+      {
+        "slug": "funnel-canvas",
+        "title": "Funnel Canvas",
+        "duration": "45min",
+        "description": "Mapper votre funnel de conversion complet"
+      }
+    ]
+  },
+  {
+    "order": 3,
+    "slug": "3-cas-pratique",
+    "title": "Module 3 — Cas Pratiques & Mini-Campagne",
+    "day": 1,
+    "status": "unchanged",
+    "duration": "120min",
+    "description": "Analyses détaillées : Dropbox, HubSpot, Airbnb, Slack"
+  },
+  {
+    "order": 4,
+    "slug": "4-kpis-automation",
+    "title": "Module 4 — KPIs & Dashboard",
+    "day": 1,
+    "status": "unchanged",
+    "duration": "90min",
+    "description": "Métriques avancées et tableaux de bord"
+  },
+  {
+    "order": 5,
+    "slug": "5-experimentation",
+    "title": "Module 5 — A/B Testing & Expérimentation",
+    "day": 2,
+    "status": "unchanged",
+    "duration": "120min",
+    "description": "Méthodologie complète d'expérimentation",
+    "ateliers": [
+      {
+        "slug": "experiment-card",
+        "title": "Experiment Card",
+        "duration": "30min",
+        "description": "Créer vos premières cartes d'expérimentation"
+      }
+    ]
+  },
+  {
+    "order": 6,
+    "slug": "6-no-code",
+    "title": "Module 6 — Outils No-Code & Automation",
+    "day": 2,
+    "status": "updated",
+    "duration": "150min",
+    "description": "Stack technologique sans développement",
+    "ateliers": [
+      {
+        "slug": "no-code-starter",
+        "title": "No-Code Automation Setup",
+        "duration": "60-90min",
+        "description": "Construire vos premiers workflows automatisés"
+      }
+    ]
+  },
+  {
+    "order": 7,
+    "slug": "7-ai-par-canal",
+    "title": "Module 7 — IA par Canal Marketing",
+    "day": 2,
+    "status": "new",
+    "duration": "120min",
+    "description": "Applications IA : SEO, SEA, Social, Email"
+  }
+]

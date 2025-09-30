@@ -1,0 +1,69 @@
+{
+  "jour1": [
+    {
+      "start": "09:00",
+      "end": "10:00",
+      "title": "Introduction au Growth Marketing",
+      "type": "theory",
+      "module": "1-intro",
+      "description": "Origines & différences avec marketing traditionnel, Framework AAARRR"
+    },
+    {
+      "start": "10:00",
+      "end": "12:30",
+      "title": "Funnel AAARRR (méthodologie)",
+      "type": "theory",
+      "module": "2-aaarr",
+      "description": "Buyer Persona, ICP, Buyer Journey, diagnostic funnel"
+    },
+    {
+      "start": "13:30",
+      "end": "15:30",
+      "title": "Cas pratiques emblématiques",
+      "type": "workshop",
+      "module": "3-cas-pratique",
+      "description": "HubSpot, Dropbox, Airbnb, PayPal + atelier mini-campagne"
+    },
+    {
+      "start": "15:30",
+      "end": "17:00",
+      "title": "KPIs & Analyse",
+      "type": "theory",
+      "module": "4-kpis-automation",
+      "description": "CAC, LTV, MRR, ARPU, Churn, NPS, tableau de bord"
+    }
+  ],
+  "jour2": [
+    {
+      "start": "09:00",
+      "end": "10:00",
+      "title": "Culture de l'expérimentation",
+      "type": "theory",
+      "module": "5-experimentation",
+      "description": "GROWS Process & hacks viraux (Hotmail, Gmail, Spotify)"
+    },
+    {
+      "start": "10:00",
+      "end": "12:30",
+      "title": "Automatisation No-Code",
+      "type": "workshop",
+      "module": "6-no-code",
+      "description": "Zapier, Make, Airtable, HubSpot, n8n + ateliers pratiques"
+    },
+    {
+      "start": "13:30",
+      "end": "16:00",
+      "title": "IA par canal (SEO/SEA/Social/Emailing)",
+      "type": "workshop",
+      "module": "7-ai-par-canal",
+      "description": "Atelier cross-canal avec IA + n8n"
+    },
+    {
+      "start": "16:00",
+      "end": "17:00",
+      "title": "Restitution & débrief",
+      "type": "wrapup",
+      "description": "Présentation des projets et synthèse"
+    }
+  ]
+}
