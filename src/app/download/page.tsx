@@ -39,14 +39,14 @@ export default function DownloadPage() {
                     <span>{featuredDownload.downloads} téléchargements</span>
                   </div>
                   <div className="flex items-center">
-                    <Star className="w-5 h-5 mr-2 text-yellow-300" />
+                    <Star className="w-5 h-5 mr-2 text-orange-400" />
                     <span>{featuredDownload.rating}/5</span>
                   </div>
                   <div className="text-sm">
                     {featuredDownload.size}
                   </div>
                 </div>
-                <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <Download className="w-5 h-5 mr-2" />
                   Télécharger le Pack Complet
                 </Button>

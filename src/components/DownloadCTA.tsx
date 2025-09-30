@@ -26,9 +26,8 @@ export default function DownloadCTA({ showOnModules = ['3', '6', '7'] }: Downloa
               </Button>
             </Link>
             <Link href="/download">
-              <Button className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
-                <Download className="w-4 h-4 mr-2" />
-                Tout télécharger
+                            <Button className="bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
+                📥 Télécharger les ressources
               </Button>
             </Link>
           </div>

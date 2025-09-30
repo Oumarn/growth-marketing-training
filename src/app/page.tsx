@@ -14,13 +14,13 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold mb-4">
                 📈 Formation Growth Marketing
               </span>
             </div>
             <h1 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl">
               Maîtrisez le Growth Marketing
-              <span className="block text-yellow-300">en 2 jours intensifs</span>
+              <span className="block text-orange-300">en 2 jours intensifs</span>
             </h1>
             <p className="text-xl mb-8 max-w-4xl mx-auto leading-relaxed text-gray-100">
               <strong>14h de formation pratique</strong> pour transformer votre approche marketing : 
@@ -30,7 +30,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link href="/agenda">
-                <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg">
+                <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg">
                   🚀 Commencer la formation
                 </Button>
               </Link>
@@ -44,22 +44,22 @@ export default function Home() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
               <div className="text-center bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
-                <div className="text-4xl font-bold text-yellow-300">7</div>
+                <div className="text-4xl font-bold text-orange-300">7</div>
                 <div className="text-sm font-medium text-gray-200">Modules</div>
                 <div className="text-xs text-gray-300">Complets</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
-                <div className="text-4xl font-bold text-yellow-300">14h</div>
+                <div className="text-4xl font-bold text-orange-300">14h</div>
                 <div className="text-sm font-medium text-gray-200">Formation</div>
                 <div className="text-xs text-gray-300">Intensive</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
-                <div className="text-4xl font-bold text-yellow-300">100%</div>
+                <div className="text-4xl font-bold text-orange-300">100%</div>
                 <div className="text-sm font-medium text-gray-200">Pratique</div>
                 <div className="text-xs text-gray-300">Actionnable</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20">
-                <div className="text-4xl font-bold text-yellow-300">500+</div>
+                <div className="text-4xl font-bold text-orange-300">500+</div>
                 <div className="text-sm font-medium text-gray-200">Étudiants</div>
                 <div className="text-xs text-gray-300">Satisfaits</div>
               </div>
@@ -256,13 +256,13 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <Link href="/agenda">
-              <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 font-bold text-lg px-8 py-4">
+              <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 font-bold text-lg px-8 py-4">
                 🚀 Commencer la formation
                 <span className="block text-sm font-normal opacity-80">Voir le programme et planning</span>
               </Button>
             </Link>
             <Link href="/download">
-              <Button size="lg" variant="outline" className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold text-lg px-8 py-4">
+              <Button size="lg" variant="outline" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 font-semibold text-lg px-8 py-4">
                 📥 Télécharger les supports
                 <span className="block text-sm font-normal opacity-80">Templates et ressources inclus</span>
               </Button>
