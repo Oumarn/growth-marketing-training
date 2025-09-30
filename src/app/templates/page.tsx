@@ -37,6 +37,136 @@ export default function TemplatesPage() {
         {/* Templates grid */}
         <ResourceList resources={templates} />
         
+        {/* Pack de données SaaS */}
+        <div className="mt-16 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 border border-indigo-200">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-indigo-900 mb-4">🎒 Pack de Données SaaS</h2>
+            <p className="text-lg text-indigo-700 max-w-3xl mx-auto">
+              Dataset synthétique complet pour l'atelier <strong>Buyer Persona Workshop</strong>. 
+              Cas pratique : MeetingFlow (startup SaaS de scheduling).
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-indigo-100">
+              <div className="text-center mb-3">
+                <div className="text-2xl mb-2">📊</div>
+                <h3 className="font-semibold text-gray-800">Données CSV</h3>
+              </div>
+              <div className="space-y-2">
+                <a 
+                  href="/downloads/saas_case_pack/product_funnel.csv" 
+                  download
+                  className="block text-xs bg-blue-100 text-blue-800 py-1 px-2 rounded hover:bg-blue-200 transition-colors"
+                >
+                  📈 Product Funnel
+                </a>
+                <a 
+                  href="/downloads/saas_case_pack/analytics_traffic.csv" 
+                  download
+                  className="block text-xs bg-green-100 text-green-800 py-1 px-2 rounded hover:bg-green-200 transition-colors"
+                >
+                  🌐 Analytics Traffic  
+                </a>
+                <a 
+                  href="/downloads/saas_case_pack/crm_accounts.csv" 
+                  download
+                  className="block text-xs bg-purple-100 text-purple-800 py-1 px-2 rounded hover:bg-purple-200 transition-colors"
+                >
+                  💼 CRM Accounts
+                </a>
+                <a 
+                  href="/downloads/saas_case_pack/support_tickets.csv" 
+                  download
+                  className="block text-xs bg-orange-100 text-orange-800 py-1 px-2 rounded hover:bg-orange-200 transition-colors"
+                >
+                  🎧 Support Tickets
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-indigo-100">
+              <div className="text-center mb-3">
+                <div className="text-2xl mb-2">📝</div>
+                <h3 className="font-semibold text-gray-800">Templates</h3>
+              </div>
+              <div className="space-y-2">
+                <a 
+                  href="/downloads/saas_case_pack/interview_guide.md" 
+                  download
+                  className="block text-xs bg-indigo-100 text-indigo-800 py-1 px-2 rounded hover:bg-indigo-200 transition-colors"
+                >
+                  📋 Interview Guide
+                </a>
+                <a 
+                  href="/downloads/saas_case_pack/inapp_survey.md" 
+                  download
+                  className="block text-xs bg-pink-100 text-pink-800 py-1 px-2 rounded hover:bg-pink-200 transition-colors"
+                >
+                  📊 Survey Template
+                </a>
+                <a 
+                  href="/downloads/saas_case_pack/buyer_persona_template.md" 
+                  download
+                  className="block text-xs bg-teal-100 text-teal-800 py-1 px-2 rounded hover:bg-teal-200 transition-colors"
+                >
+                  📋 Persona Canvas
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-indigo-100">
+              <div className="text-center mb-3">
+                <div className="text-2xl mb-2">📖</div>
+                <h3 className="font-semibold text-gray-800">Documentation</h3>
+              </div>
+              <div className="space-y-2">
+                <a 
+                  href="/downloads/saas_case_pack/README.txt" 
+                  download
+                  className="block text-xs bg-gray-100 text-gray-800 py-1 px-2 rounded hover:bg-gray-200 transition-colors"
+                >
+                  📚 Guide complet
+                </a>
+                <Link
+                  href="/workshop/buyer-persona"
+                  className="block text-xs bg-yellow-100 text-yellow-800 py-1 px-2 rounded hover:bg-yellow-200 transition-colors"
+                >
+                  🛠️ Faire l'atelier
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-indigo-100">
+              <div className="text-center mb-3">
+                <div className="text-2xl mb-2">🎯</div>
+                <h3 className="font-semibold text-gray-800">Objectif</h3>
+              </div>
+              <div className="text-xs text-gray-600 space-y-1">
+                <p>• 3 personas détaillés</p>
+                <p>• Messaging matrix</p>
+                <p>• Plan de validation</p>
+                <p>• 45 min d'atelier</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-indigo-100 rounded-lg p-4">
+            <div className="flex items-start space-x-3">
+              <div className="text-2xl">💡</div>
+              <div>
+                <h4 className="font-semibold text-indigo-900 mb-1">Comment utiliser ce pack ?</h4>
+                <p className="text-sm text-indigo-800 leading-relaxed">
+                  <strong>1.</strong> Téléchargez tous les fichiers CSV • 
+                  <strong>2.</strong> Ouvrez-les dans Excel/Google Sheets • 
+                  <strong>3.</strong> Suivez l'atelier Buyer Persona Workshop • 
+                  <strong>4.</strong> Utilisez les templates d'interview et de survey pour valider vos personas
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         {/* Utilisation par module */}
         <div className="mt-16 bg-white rounded-lg shadow-sm p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">📚 Utilisation par module</h2>

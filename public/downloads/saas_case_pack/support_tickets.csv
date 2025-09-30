@@ -1,0 +1,16 @@
+ticket_id,persona,tag,priority,status,description_summary,resolution_time_hours
+TK_001,AE_Sales,outlook_sync,high,resolved,Meetings not syncing with Outlook calendar,4
+TK_002,RH_Recruiter,multi_interviewers,medium,resolved,How to add multiple interviewers to one slot,2
+TK_003,Independant_Coach,stripe_integration,high,open,Payment not processing through Stripe integration,
+TK_004,AE_Sales,no_shows,low,resolved,Client wants to reduce no-show rate,1
+TK_005,RH_Recruiter,timezone_issues,medium,resolved,Candidate confused about timezone in email,6
+TK_006,Independant_Coach,branding,low,resolved,Want to customize booking page with logo,3
+TK_007,PME_Manager,team_access,medium,open,How to give access to team members,
+TK_008,Enterprise_Admin,sso_setup,high,resolved,Single Sign-On configuration with Azure AD,24
+TK_009,AE_Sales,mobile_app,low,resolved,When will mobile app be available,1
+TK_010,RH_Recruiter,bulk_scheduling,medium,resolved,Need to schedule 50+ interviews at once,8
+TK_011,Independant_Coach,no_shows,high,resolved,Too many clients not showing up for paid sessions,2
+TK_012,AE_Sales,crm_integration,medium,open,Sync meeting data with Salesforce,
+TK_013,RH_Recruiter,gdpr_compliance,high,resolved,Data protection compliance for EU candidates,12
+TK_014,PME_Manager,pricing,low,resolved,Confused about plan differences,0.5
+TK_015,Enterprise_Admin,analytics,medium,resolved,Need detailed usage reports for team,16

@@ -1,0 +1,7 @@
+source,sessions,users,bounce_rate,avg_session_duration,top_landing_pages
+Organic,15420,12680,42%,3m24s,"/features/scheduling (28%), /pricing (22%), /integrations/outlook (18%)"
+Paid_Search,8940,7250,38%,2m56s,"/landing/sales-teams (45%), /pricing (31%), /free-trial (24%)"
+Direct,6730,5890,35%,4m12s,"/login (52%), /dashboard (31%), /help (17%)"
+Social,3210,2940,55%,2m18s,"/features/team-scheduling (34%), /templates (26%), /blog (40%)"
+Email,2180,1970,28%,5m33s,"/dashboard (68%), /settings (19%), /billing (13%)"
+Referral,1850,1690,31%,3m48s,"/signup (71%), /features (18%), /pricing (11%)"

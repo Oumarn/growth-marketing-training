@@ -1,0 +1,11 @@
+account_id,persona,plan,company_size,industry,country,monthly_bookings,support_tickets_monthly
+ACC_001,AE_Sales,Professional,50-200,SaaS,US,89,2
+ACC_002,RH_Recruiter,Teams,200-1000,FinTech,UK,156,4
+ACC_003,Independant_Coach,Premium,1-10,Consulting,FR,23,1
+ACC_004,AE_Sales,Professional,20-50,E-commerce,CA,67,3
+ACC_005,RH_Recruiter,Teams,500-2000,Healthcare,DE,203,6
+ACC_006,Independant_Coach,Premium,1-5,Coaching,US,31,0
+ACC_007,PME_Manager,Basic,10-50,Marketing,UK,12,2
+ACC_008,Enterprise_Admin,Enterprise,2000+,Banking,US,445,8
+ACC_009,AE_Sales,Professional,100-500,PropTech,AU,78,1
+ACC_010,RH_Recruiter,Teams,300-1000,EdTech,CA,134,5

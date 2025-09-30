@@ -240,6 +240,157 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ateliers Pratiques */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              🛠️ Ateliers Pratiques
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Appliquez immédiatement vos connaissances avec des cas concrets et des données réelles
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Buyer Persona Workshop */}
+            <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-t-indigo-500">
+              <CardContent className="p-8">
+                <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <Users className="w-8 h-8 text-indigo-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Buyer Persona Workshop</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Créez des personas détaillés avec un <strong>cas SaaS réel</strong> : MeetingFlow. 
+                  Dataset synthétique inclus pour un apprentissage pratique.
+                </p>
+                <div className="mb-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <span className="mr-2">⏱️</span>
+                    <span>45 minutes</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <span className="mr-2">👥</span>
+                    <span>Équipes 3-4 personnes</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="mr-2">📊</span>
+                    <span>Données synthétiques fournies</span>
+                  </div>
+                </div>
+                <div className="mt-4 text-sm text-indigo-600 font-semibold mb-6">
+                  ✓ 3 Personas types • ✓ Templates • ✓ Plan de validation
+                </div>
+                <Link href="/workshop/buyer-persona">
+                  <Button className="w-full bg-indigo-500 hover:bg-indigo-600 text-white">
+                    🚀 Commencer l'atelier
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* AAARRR Quiz */}
+            <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-t-green-500">
+              <CardContent className="p-8">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <BookOpen className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Quiz AAARRR Interactifs</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Testez vos connaissances avec des <strong>quiz interactifs</strong> intégrés aux modules. 
+                  Format questions/réponses progressif.
+                </p>
+                <div className="mb-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <span className="mr-2">🧠</span>
+                    <span>Quiz adaptatifs</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <span className="mr-2">⚡</span>
+                    <span>Feedback immédiat</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="mr-2">📈</span>
+                    <span>Suivi des progrès</span>
+                  </div>
+                </div>
+                <div className="mt-4 text-sm text-green-600 font-semibold mb-6">
+                  ✓ Module 1 & 2 • ✓ Questions/Réponses • ✓ Explications
+                </div>
+                <Link href="/modules/1-intro">
+                  <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                    🧠 Faire les quiz
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* NSM Workshop */}
+            <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-t-purple-500">
+              <CardContent className="p-8">
+                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <Award className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">North Star Metric</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Atelier éclair pour définir votre <strong>métrique étoile du nord</strong>. 
+                  Cas SaaS, E-commerce, App Mobile inclus.
+                </p>
+                <div className="mb-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <span className="mr-2">⏱️</span>
+                    <span>10 minutes</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <span className="mr-2">👥</span>
+                    <span>En binôme</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="mr-2">🎯</span>
+                    <span>3 modèles business</span>
+                  </div>
+                </div>
+                <div className="mt-4 text-sm text-purple-600 font-semibold mb-6">
+                  ✓ Métrique choisie • ✓ 2 justifications • ✓ Partage
+                </div>
+                <Link href="/modules/1-intro">
+                  <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white">
+                    ⭐ Définir sa NSM
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">💡 Pédagogie Active</h3>
+              <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Tous nos ateliers suivent une approche <strong>hands-on</strong> : données réelles, 
+                cas concrets, templates prêts à l'emploi. Pas de théorie pure, que du pratique !
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div className="text-center">
+                  <div className="text-3xl mb-2">📊</div>
+                  <h4 className="font-semibold text-gray-800">Data-Driven</h4>
+                  <p className="text-sm text-gray-600">Datasets synthétiques réalistes</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🛠️</div>
+                  <h4 className="font-semibold text-gray-800">Templates</h4>
+                  <p className="text-sm text-gray-600">Outils prêts à personnaliser</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🎯</div>
+                  <h4 className="font-semibold text-gray-800">Actionnable</h4>
+                  <p className="text-sm text-gray-600">Livrables utilisables immédiatement</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Final Section */}
       <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>

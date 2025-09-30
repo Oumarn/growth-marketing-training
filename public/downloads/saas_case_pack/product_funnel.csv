@@ -1,0 +1,6 @@
+persona,visitors_monthly,signups,signups_rate,link_published,link_published_rate,first_booking,activation_rate,ttfv_mean_minutes,retention_d7,retention_d30,paid_conversions,paid_conversion_rate,arpu_monthly
+AE_Sales,12500,875,7.0%,612,69.9%,428,70.0%,45,85%,65%,156,36.4%,49
+RH_Recruiter,8200,574,7.0%,316,55.1%,221,70.0%,180,78%,58%,89,40.3%,79
+Independant_Coach,4800,336,7.0%,235,69.9%,165,70.0%,25,92%,78%,87,52.7%,129
+PME_Manager,3200,224,7.0%,112,50.0%,78,69.6%,120,70%,45%,23,29.5%,35
+Enterprise_Admin,2100,147,7.0%,59,40.1%,35,59.3%,240,88%,72%,21,60.0%,199
