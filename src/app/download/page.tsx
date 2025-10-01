@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Download, Info, Star, Users } from 'lucide-react';
 import { Resource } from '@/types';
 import downloadsData from '@/data/downloads-new.json';
+import PDFDownloadButton from '@/components/PDFDownloadButton';
 
 export default function DownloadPage() {
   const featuredDownload = downloadsData.downloads.find(item => item.featured);
@@ -22,6 +23,48 @@ export default function DownloadPage() {
             Téléchargez tous les supports du cours : slides, templates Excel, workflows d'automatisation, 
             prompts IA et ressources bonus pour maîtriser le Growth Marketing.
           </p>
+
+          {/* PDF Download Section */}
+          <div className="mb-8">
+            <Card className="bg-gradient-to-r from-red-500 to-orange-500 text-white border-0 max-w-2xl mx-auto">
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-2xl mb-2 flex items-center justify-center gap-3">
+                  📄 Guide Complet PDF
+                </CardTitle>
+                <p className="text-red-100 text-lg">
+                  Téléchargez l'intégralité de la formation en un seul document PDF
+                </p>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="flex justify-center items-center gap-6 mb-6 text-sm">
+                  <div className="flex items-center">
+                    <span className="font-semibold">7 Modules</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="font-semibold">100+ Pages</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="font-semibold">50+ Templates</span>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <PDFDownloadButton className="bg-white text-red-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg" />
+                  <span className="text-red-100 text-sm">ou</span>
+                  <a 
+                    href="/print" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-red-100 hover:text-white underline text-sm"
+                  >
+                    🖨️ Version imprimable
+                  </a>
+                </div>
+                <p className="text-red-100 text-xs mt-3">
+                  Génération automatique - Mise à jour en temps réel
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Featured Download */}

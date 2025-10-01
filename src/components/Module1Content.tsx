@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import React, { useState } from 'react';
 
 // Composant Quiz interactif
@@ -79,24 +77,24 @@ function QuizFlash() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-purple-500 to-pink-500 text-white p-8 rounded-3xl flex items-center">
+    <section className="min-h-screen bg-gradient-to-br from-purple-500 to-pink-500 text-white p-4 sm:p-8 rounded-3xl flex items-center">
       <div className="max-w-5xl mx-auto w-full">
-        <div className="text-center mb-16">
-          <div className="text-6xl mb-6">🧠</div>
-          <h2 className="text-5xl font-bold mb-4">Quiz flash</h2>
-          <div className="w-32 h-1 bg-white mx-auto"></div>
+        <div className="text-center mb-8 sm:mb-16">
+          <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🧠</div>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 px-4">Quiz flash</h2>
+          <div className="w-20 sm:w-32 h-1 bg-white mx-auto"></div>
         </div>
 
         {!showAllQuestions ? (
           // Écran d'accueil du quiz
           <div className="text-center">
-            <div className="bg-white/20 backdrop-blur rounded-2xl p-12 mb-8">
-              <div className="text-4xl mb-6">🎯</div>
-              <h3 className="text-3xl font-bold mb-6">Prêt pour le quiz ?</h3>
-              <p className="text-xl mb-8 leading-relaxed">
+            <div className="bg-white/20 backdrop-blur rounded-2xl p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
+              <div className="text-3xl sm:text-4xl mb-4 sm:mb-6">🎯</div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 px-4">Prêt pour le quiz ?</h3>
+              <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 leading-relaxed px-4">
                 5 questions pour tester vos connaissances sur le Growth Marketing
               </p>
-              <div className="grid md:grid-cols-3 gap-4 mb-8 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 sm:mb-8 text-sm">
                 <div className="bg-white/10 rounded-lg p-4">
                   <div className="text-2xl mb-2">📋</div>
                   <p className="font-semibold">5 questions</p>
@@ -115,7 +113,7 @@ function QuizFlash() {
               </div>
               <button
                 onClick={handleShowAllQuestions}
-                className="bg-white text-purple-600 font-bold text-xl px-8 py-4 rounded-full hover:bg-purple-50 transition-all transform hover:scale-105 shadow-lg"
+                className="bg-white text-purple-600 font-bold text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-purple-50 transition-all transform hover:scale-105 shadow-lg"
               >
                 🚀 Commencer le quiz
               </button>
@@ -146,23 +144,23 @@ function QuizFlash() {
             </div>
 
             {/* Question courante */}
-            <div className="bg-white/20 backdrop-blur rounded-2xl p-8">
-              <div className="text-center mb-8">
-                <div className="text-3xl mb-4">
+            <div className="bg-white/20 backdrop-blur rounded-2xl p-4 sm:p-6 lg:p-8">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="text-2xl sm:text-3xl mb-3 sm:mb-4">
                   {questions[currentQuestion].isCorrect ? "🤔" : "🧐"}
                 </div>
-                <h3 className="text-2xl font-bold mb-6">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-4 sm:mb-6 px-4">
                   {questions[currentQuestion].question}
                 </h3>
                 
                 {!showAnswer ? (
                   <div className="space-y-4">
-                    <p className="text-lg text-purple-200 mb-6">
+                    <p className="text-sm sm:text-base lg:text-lg text-purple-200 mb-4 sm:mb-6 px-4">
                       Prenez le temps de réfléchir... 🤔
                     </p>
                     <button
                       onClick={handleShowAnswer}
-                      className="bg-white text-purple-600 font-bold text-lg px-6 py-3 rounded-full hover:bg-purple-50 transition-all transform hover:scale-105 shadow-lg"
+                      className="bg-white text-purple-600 font-bold text-sm sm:text-base lg:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-purple-50 transition-all transform hover:scale-105 shadow-lg"
                     >
                       💡 Voir la réponse
                     </button>
@@ -239,116 +237,118 @@ function QuizFlash() {
 
 export default function Module1Content() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 overflow-x-hidden">
       {/* SLIDE 1: TITRE ET OBJECTIFS */}
-      <section className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 text-white flex items-center justify-center p-8 rounded-3xl">
+      <section className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 text-white flex items-center justify-center p-4 sm:p-8 rounded-3xl overflow-hidden">
         <div className="text-center max-w-4xl">
-          <div className="text-8xl mb-8">🚀</div>
-          <h1 className="text-6xl font-bold mb-8 leading-tight">Module 1</h1>
-          <h2 className="text-4xl font-light mb-12 text-blue-100">Introduction au Growth Marketing</h2>
-          <div className="text-xl text-blue-200 mb-8">Durée : 1 heure • 4 objectifs • 1 atelier</div>
+          <div className="text-4xl sm:text-6xl lg:text-8xl mb-6 sm:mb-8">🚀</div>
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">Module 1</h1>
+          <h2 className="text-xl sm:text-2xl lg:text-4xl font-light mb-8 sm:mb-12 text-blue-100 px-4">Introduction au Growth Marketing</h2>
+          <div className="text-base sm:text-lg lg:text-xl text-blue-200 mb-8">Durée : 1 heure • 4 objectifs • 1 atelier</div>
         </div>
       </section>
 
       {/* SLIDE 2: OBJECTIFS D'APPRENTISSAGE */}
-      <section className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">🎯</div>
-            <h2 className="text-5xl font-bold text-gray-800 mb-4">Objectifs d'apprentissage</h2>
-            <div className="w-32 h-1 bg-emerald-500 mx-auto"></div>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🎯</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-800 mb-4 px-4">Objectifs d'apprentissage</h2>
+            <div className="w-20 sm:w-32 h-1 bg-emerald-500 mx-auto"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xl font-bold">1</div>
-                <div className="ml-4 text-2xl font-semibold text-gray-800">Distinguer</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold flex-shrink-0">1</div>
+                <div className="ml-3 sm:ml-4 text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Distinguer</div>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">Growth Marketing vs marketing traditionnel</p>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">Growth Marketing vs marketing traditionnel</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold">2</div>
-                <div className="ml-4 text-2xl font-semibold text-gray-800">Comprendre</div>
+            <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold flex-shrink-0">2</div>
+                <div className="ml-3 sm:ml-4 text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Comprendre</div>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">La logique AAARRR (vue d'ensemble)</p>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">La logique AAARRR (vue d'ensemble)</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center text-xl font-bold">3</div>
-                <div className="ml-4 text-2xl font-semibold text-gray-800">Adopter</div>
+            <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold flex-shrink-0">3</div>
+                <div className="ml-3 sm:ml-4 text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Adopter</div>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">Les principes clés: NSM, boucles, expérimentation</p>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">Les principes clés: NSM, boucles, expérimentation</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold">4</div>
-                <div className="ml-4 text-2xl font-semibold text-gray-800">Proposer</div>
+            <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl transform hover:scale-105 transition-transform text-left">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold flex-shrink-0">4</div>
+                <div className="ml-3 sm:ml-4 text-lg sm:text-xl lg:text-2xl font-semibold text-gray-800">Proposer</div>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">Une North Star Metric simple</p>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">Une North Star Metric simple</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* SLIDE 3: POURQUOI LE GROWTH */}
-      <section className="min-h-screen bg-gradient-to-br from-red-50 to-orange-100 p-8 rounded-3xl flex items-center">
-        <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">🤔</div>
-            <h2 className="text-5xl font-bold text-gray-800 mb-4">Pourquoi le Growth ?</h2>
-            <div className="w-32 h-1 bg-orange-500 mx-auto"></div>
+      <section className="min-h-screen bg-gradient-to-br from-red-50 to-orange-100 p-4 sm:p-8 rounded-3xl flex items-center overflow-hidden">
+        <div className="max-w-6xl mx-auto w-full grid-contained">
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🤔</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-800 mb-4">Pourquoi le Growth ?</h2>
+            <div className="w-16 sm:w-32 h-1 bg-orange-500 mx-auto"></div>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Problèmes */}
-            <div className="bg-red-100 rounded-2xl p-8 border-l-8 border-red-500 text-left">
-              <div className="flex items-center mb-6">
-                <div className="text-4xl mr-4">❌</div>
-                <h3 className="text-2xl font-bold text-red-800">Limites du marketing traditionnel</h3>
+          <div className="w-full overflow-hidden grid-contained">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-full">
+              {/* Problèmes */}
+              <div className="bg-red-100 rounded-2xl p-3 sm:p-4 lg:p-6 border-l-4 sm:border-l-6 border-red-500 text-left max-w-full overflow-hidden">
+                <div className="flex items-start mb-3 sm:mb-4 max-w-full">
+                  <div className="text-xl sm:text-2xl lg:text-3xl mr-2 sm:mr-3 flex-shrink-0">❌</div>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-red-800 flex-1 min-w-0 break-words">Limites du marketing traditionnel</h3>
+                </div>
+                <ul className="space-y-2 sm:space-y-3 text-red-700 max-w-full">
+                  <li className="flex items-start max-w-full">
+                    <span className="text-base sm:text-lg lg:text-xl mr-2 mt-1 flex-shrink-0">•</span>
+                    <span className="text-sm sm:text-base lg:text-lg leading-relaxed flex-1 min-w-0 break-words">Campagnes court-terme sans activation ni rétention</span>
+                  </li>
+                  <li className="flex items-start max-w-full">
+                    <span className="text-base sm:text-lg lg:text-xl mr-2 mt-1 flex-shrink-0">•</span>
+                    <span className="text-sm sm:text-base lg:text-lg leading-relaxed flex-1 min-w-0 break-words">Dépenses médias ↗️ → rendement décroissant</span>
+                  </li>
+                  <li className="flex items-start max-w-full">
+                    <span className="text-base sm:text-lg lg:text-xl mr-2 mt-1 flex-shrink-0">•</span>
+                    <span className="text-sm sm:text-base lg:text-lg leading-relaxed flex-1 min-w-0 break-words">Décisions au feeling → vanity metrics</span>
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-4 text-red-700">
-                <li className="flex items-start">
-                  <span className="text-2xl mr-3 mt-1">•</span>
-                  <span className="text-lg leading-relaxed">Campagnes court-terme sans activation ni rétention</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-2xl mr-3 mt-1">•</span>
-                  <span className="text-lg leading-relaxed">Dépenses médias ↗️ → rendement décroissant</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-2xl mr-3 mt-1">•</span>
-                  <span className="text-lg leading-relaxed">Décisions au feeling → vanity metrics</span>
-                </li>
-              </ul>
-            </div>
             
-            {/* Solutions */}
-            <div className="bg-green-100 rounded-2xl p-8 border-l-8 border-green-500 text-left">
-              <div className="flex items-center mb-6">
-                <div className="text-4xl mr-4">✅</div>
-                <h3 className="text-2xl font-bold text-green-800">Growth = parcours complet</h3>
-              </div>
-              <div className="text-lg text-green-700 mb-6 leading-relaxed">
-                Du premier contact à la recommandation, optimiser <strong>chaque étape</strong> pour une croissance durable.
-              </div>
-              <div className="bg-white rounded-xl p-4">
-                <div className="flex justify-between items-center text-sm font-semibold text-center">
-                  <span>Notoriété</span>
-                  <span>→</span>
-                  <span>Acquisition</span>
-                  <span>→</span>
-                  <span>Activation</span>
-                  <span>→</span>
-                  <span>Rétention</span>
-                  <span>→</span>
-                  <span>Revenus</span>
-                  <span>→</span>
-                  <span>Referral</span>
+              {/* Solutions */}
+              <div className="bg-green-100 rounded-2xl p-3 sm:p-4 lg:p-6 border-l-4 sm:border-l-6 border-green-500 text-left max-w-full overflow-hidden">
+                <div className="flex items-start mb-3 sm:mb-4 max-w-full">
+                  <div className="text-xl sm:text-2xl lg:text-3xl mr-2 sm:mr-3 flex-shrink-0">✅</div>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-green-800 flex-1 min-w-0 break-words">Growth = parcours complet</h3>
+                </div>
+                <div className="text-sm sm:text-base lg:text-lg text-green-700 mb-3 sm:mb-4 leading-relaxed break-words">
+                  Du premier contact à la recommandation, optimiser <strong>chaque étape</strong> pour une croissance durable.
+                </div>
+                <div className="bg-white rounded-xl p-2 sm:p-3 overflow-x-auto max-w-full">
+                  <div className="flex items-center text-xs sm:text-sm font-semibold text-center whitespace-nowrap">
+                    <span className="px-1">Notoriété</span>
+                    <span className="px-1">→</span>
+                    <span className="px-1">Acquisition</span>
+                    <span className="px-1">→</span>
+                    <span className="px-1">Activation</span>
+                    <span className="px-1">→</span>
+                    <span className="px-1">Rétention</span>
+                    <span className="px-1">→</span>
+                    <span className="px-1">Revenus</span>
+                    <span className="px-1">→</span>
+                    <span className="px-1">Referral</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -406,20 +406,20 @@ export default function Module1Content() {
       </section>
 
       {/* SLIDE 5: COMPARAISON GROWTH VS TRADITIONNEL */}
-      <section className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">🆚</div>
-            <h2 className="text-5xl font-bold text-gray-800 mb-4">Growth vs Marketing Traditionnel</h2>
-            <div className="w-32 h-1 bg-slate-500 mx-auto"></div>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🆚</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-800 mb-4">Growth vs Marketing Traditionnel</h2>
+            <div className="w-16 sm:w-32 h-1 bg-slate-500 mx-auto"></div>
           </div>
 
           {/* Illustration visuelle des funnels */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 mb-8 sm:mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center">
               {/* Marketing Traditionnel - Funnel uniforme */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-800 mb-8">Traditional Marketing</h3>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-4 sm:mb-8">Traditional Marketing</h3>
                 <div className="relative">
                   {/* Funnel traditionnel - largeurs uniformes */}
                   <div className="space-y-2">
@@ -449,7 +449,7 @@ export default function Module1Content() {
 
               {/* Growth Marketing - Funnel optimisé */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-800 mb-8">Growth Marketing</h3>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-4 sm:mb-8">Growth Marketing</h3>
                 <div className="relative">
                   {/* Funnel Growth - largeurs décroissantes */}
                   <div className="space-y-2 flex flex-col items-center">
@@ -473,9 +473,9 @@ export default function Module1Content() {
               </div>
             </div>
             
-            <div className="mt-8 text-center">
-              <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-xl p-6">
-                <div className="grid md:grid-cols-2 gap-8 text-sm">
+            <div className="mt-6 sm:mt-8 text-center">
+              <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-xl p-4 sm:p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 text-xs sm:text-sm">
                   <div className="text-red-700">
                     <p className="font-semibold mb-2">❌ Marketing Traditionnel</p>
                     <p>Focus uniquement sur l'acquisition, abandon des autres étapes</p>
@@ -490,39 +490,39 @@ export default function Module1Content() {
           </div>
           
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-            <div className="bg-gradient-to-r from-slate-600 to-gray-700 text-white p-6">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div className="text-xl font-semibold">Critère</div>
-                <div className="text-xl font-semibold">❌ Marketing Traditionnel</div>
-                <div className="text-xl font-semibold">✅ Growth Marketing</div>
+            <div className="bg-gradient-to-r from-slate-600 to-gray-700 text-white p-3 sm:p-6">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                <div className="text-sm sm:text-lg lg:text-xl font-semibold">Critère</div>
+                <div className="text-sm sm:text-lg lg:text-xl font-semibold">❌ Traditionnel</div>
+                <div className="text-sm sm:text-lg lg:text-xl font-semibold">✅ Growth</div>
               </div>
             </div>
             
             <div className="divide-y divide-gray-100">
-              <div className="grid grid-cols-3 gap-4 p-6 hover:bg-gray-50">
-                <div className="font-semibold text-gray-800 flex items-center"><span className="text-2xl mr-2">🎯</span> Objectif</div>
-                <div className="text-gray-600">Campagnes ponctuelles</div>
-                <div className="text-green-700 font-semibold">Croissance durable</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-6 hover:bg-gray-50">
+                <div className="font-semibold text-gray-800 flex items-center text-xs sm:text-base"><span className="text-lg sm:text-2xl mr-1 sm:mr-2">🎯</span> Objectif</div>
+                <div className="text-gray-600 text-xs sm:text-base">Campagnes ponctuelles</div>
+                <div className="text-green-700 font-semibold text-xs sm:text-base">Croissance durable</div>
               </div>
-              <div className="grid grid-cols-3 gap-4 p-6 hover:bg-gray-50">
-                <div className="font-semibold text-gray-800 flex items-center"><span className="text-2xl mr-2">⏰</span> Horizon</div>
-                <div className="text-gray-600">Planning annuel figé</div>
-                <div className="text-green-700 font-semibold">Itératif court → long terme</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-6 hover:bg-gray-50">
+                <div className="font-semibold text-gray-800 flex items-center text-xs sm:text-base"><span className="text-lg sm:text-2xl mr-1 sm:mr-2">⏰</span> Horizon</div>
+                <div className="text-gray-600 text-xs sm:text-base">Planning annuel figé</div>
+                <div className="text-green-700 font-semibold text-xs sm:text-base">Itératif court → long terme</div>
               </div>
-              <div className="grid grid-cols-3 gap-4 p-6 hover:bg-gray-50">
-                <div className="font-semibold text-gray-800 flex items-center"><span className="text-2xl mr-2">🔄</span> Processus</div>
-                <div className="text-gray-600">Exécution de plans</div>
-                <div className="text-green-700 font-semibold">Tests A/B & expérimentation</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-6 hover:bg-gray-50">
+                <div className="font-semibold text-gray-800 flex items-center text-xs sm:text-base"><span className="text-lg sm:text-2xl mr-1 sm:mr-2">🔄</span> Processus</div>
+                <div className="text-gray-600 text-xs sm:text-base">Exécution de plans</div>
+                <div className="text-green-700 font-semibold text-xs sm:text-base">Tests A/B & expérimentation</div>
               </div>
-              <div className="grid grid-cols-3 gap-4 p-6 hover:bg-gray-50">
-                <div className="font-semibold text-gray-800 flex items-center"><span className="text-2xl mr-2">📊</span> Mesure</div>
-                <div className="text-gray-600">Impressions, reach</div>
-                <div className="text-green-700 font-semibold">AAARRR, LTV:CAC, rétention</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-6 hover:bg-gray-50">
+                <div className="font-semibold text-gray-800 flex items-center text-xs sm:text-base"><span className="text-lg sm:text-2xl mr-1 sm:mr-2">📊</span> Mesure</div>
+                <div className="text-gray-600 text-xs sm:text-base">Impressions, reach</div>
+                <div className="text-green-700 font-semibold text-xs sm:text-base">AAARRR, LTV:CAC, rétention</div>
               </div>
-              <div className="grid grid-cols-3 gap-4 p-6 hover:bg-gray-50">
-                <div className="font-semibold text-gray-800 flex items-center"><span className="text-2xl mr-2">👥</span> Organisation</div>
-                <div className="text-gray-600">Silos par spécialité</div>
-                <div className="text-green-700 font-semibold">Escouade pluridisciplinaire</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-6 hover:bg-gray-50">
+                <div className="font-semibold text-gray-800 flex items-center text-xs sm:text-base"><span className="text-lg sm:text-2xl mr-1 sm:mr-2">👥</span> Organisation</div>
+                <div className="text-gray-600 text-xs sm:text-base">Silos par spécialité</div>
+                <div className="text-green-700 font-semibold text-xs sm:text-base">Escouade pluridisciplinaire</div>
               </div>
             </div>
           </div>
@@ -530,113 +530,113 @@ export default function Module1Content() {
       </section>
 
       {/* SLIDE 6: FUNNEL AAARRR */}
-      <section className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">🏴‍☠️</div>
-            <h2 className="text-5xl font-bold mb-4">Le Pirate Funnel</h2>
-            <h3 className="text-3xl font-light text-indigo-200">AAARRR Framework</h3>
-            <div className="w-32 h-1 bg-white mx-auto mt-4"></div>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🏴‍☠️</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4">Le Pirate Funnel</h2>
+            <h3 className="text-lg sm:text-2xl lg:text-3xl font-light text-indigo-200">AAARRR Framework</h3>
+            <div className="w-16 sm:w-32 h-1 bg-white mx-auto mt-4"></div>
           </div>
           
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-3 text-center hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 shadow-lg">
-              <div className="text-2xl mb-2">👁️</div>
-              <h3 className="text-sm font-bold mb-2 text-white leading-tight">Awareness</h3>
+              <div className="text-xl sm:text-2xl mb-2">👁️</div>
+              <h3 className="text-xs sm:text-sm font-bold mb-2 text-white leading-tight">Awareness</h3>
               <p className="text-xs text-blue-100 leading-tight">Combien de personnes atteignez-vous ?</p>
             </div>
             <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-3 text-center hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg">
-              <div className="text-2xl mb-2">🌐</div>
-              <h3 className="text-sm font-bold mb-2 text-white leading-tight">Acquisition</h3>
+              <div className="text-xl sm:text-2xl mb-2">🌐</div>
+              <h3 className="text-xs sm:text-sm font-bold mb-2 text-white leading-tight">Acquisition</h3>
               <p className="text-xs text-green-100 leading-tight">Combien visitent votre site/app ?</p>
             </div>
             <div className="bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl p-3 text-center hover:from-yellow-600 hover:to-orange-600 transition-all transform hover:scale-105 shadow-lg">
-              <div className="text-2xl mb-2">⚡</div>
-              <h3 className="text-sm font-bold mb-2 text-white leading-tight">Activation</h3>
+              <div className="text-xl sm:text-2xl mb-2">⚡</div>
+              <h3 className="text-xs sm:text-sm font-bold mb-2 text-white leading-tight">Activation</h3>
               <p className="text-xs text-yellow-100 leading-tight">Combien franchissent la 1ère étape clé ?</p>
             </div>
             <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-3 text-center hover:from-purple-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg">
-              <div className="text-2xl mb-2">🔄</div>
-              <h3 className="text-sm font-bold mb-2 text-white leading-tight">Rétention</h3>
+              <div className="text-xl sm:text-2xl mb-2">🔄</div>
+              <h3 className="text-xs sm:text-sm font-bold mb-2 text-white leading-tight">Rétention</h3>
               <p className="text-xs text-purple-100 leading-tight">Combien reviennent ?</p>
             </div>
             <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-3 text-center hover:from-emerald-600 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg">
-              <div className="text-2xl mb-2">💳</div>
-              <h3 className="text-sm font-bold mb-2 text-white leading-tight">Revenus</h3>
+              <div className="text-xl sm:text-2xl mb-2">💳</div>
+              <h3 className="text-xs sm:text-sm font-bold mb-2 text-white leading-tight">Revenus</h3>
               <p className="text-xs text-emerald-100 leading-tight">Combien payent ?</p>
             </div>
             <div className="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-3 text-center hover:from-pink-600 hover:to-rose-700 transition-all transform hover:scale-105 shadow-lg">
-              <div className="text-2xl mb-2">📢</div>
-              <h3 className="text-sm font-bold mb-2 text-white leading-tight">Recommandations</h3>
+              <div className="text-xl sm:text-2xl mb-2">📢</div>
+              <h3 className="text-xs sm:text-sm font-bold mb-2 text-white leading-tight">Recommandations</h3>
               <p className="text-xs text-pink-100 leading-tight">Combien recommandent ?</p>
             </div>
           </div>
           
-          <div className="mt-12 bg-white/10 backdrop-blur rounded-xl p-6">
-            <p className="text-xl text-center"><strong>💡 Objectif :</strong> Repérer le maillon faible à prioriser</p>
+          <div className="mt-8 sm:mt-12 bg-white/10 backdrop-blur rounded-xl p-4 sm:p-6">
+            <p className="text-lg sm:text-xl text-center"><strong>💡 Objectif :</strong> Repérer le maillon faible à prioriser</p>
             <p className="text-center text-indigo-200 mt-2">→ Module 2 : diagnostic AAARRR</p>
           </div>
         </div>
       </section>
 
       {/* SLIDE 7: NORTH STAR METRIC */}
-      <section className="min-h-screen bg-gradient-to-br from-yellow-50 to-amber-100 p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-yellow-50 to-amber-100 p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">⭐</div>
-            <h2 className="text-5xl font-bold text-gray-800 mb-4">North Star Metric</h2>
-            <div className="w-32 h-1 bg-yellow-500 mx-auto"></div>
-            <p className="text-2xl text-gray-600 mt-6">La métrique centrale corrélée à la <strong>valeur long terme</strong></p>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">⭐</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-800 mb-4">North Star Metric</h2>
+            <div className="w-16 sm:w-32 h-1 bg-yellow-500 mx-auto"></div>
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mt-4 sm:mt-6">La métrique centrale corrélée à la <strong>valeur long terme</strong></p>
           </div>
           
           {/* Règles NSM */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-2xl p-8 shadow-xl text-center">
-              <div className="text-5xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold text-yellow-800 mb-3">Orientée Usage</h3>
-              <p className="text-gray-600 leading-relaxed">Reflète l'utilisation clé, pas la vanité</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center">
+              <div className="text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4">🎯</div>
+              <h3 className="text-lg sm:text-xl font-bold text-yellow-800 mb-3">Orientée Usage</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Reflète l'utilisation clé, pas la vanité</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl text-center">
-              <div className="text-5xl mb-4">📊</div>
-              <h3 className="text-xl font-bold text-blue-800 mb-3">Mesurable</h3>
-              <p className="text-gray-600 leading-relaxed">Fréquence hebdo/mensuelle</p>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center">
+              <div className="text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4">📊</div>
+              <h3 className="text-lg sm:text-xl font-bold text-blue-800 mb-3">Mesurable</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Fréquence hebdo/mensuelle</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl text-center">
-              <div className="text-5xl mb-4">👥</div>
-              <h3 className="text-xl font-bold text-purple-800 mb-3">Alignement</h3>
-              <p className="text-gray-600 leading-relaxed">Objectif commun pour l'équipe</p>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center">
+              <div className="text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4">👥</div>
+              <h3 className="text-lg sm:text-xl font-bold text-purple-800 mb-3">Alignement</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Objectif commun pour l'équipe</p>
             </div>
           </div>
           
           {/* Exemples par modèle */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="bg-blue-500 text-white rounded-2xl p-6 text-left h-full flex flex-col">
-              <div className="text-3xl mb-3 text-center">💼</div>
-              <h4 className="text-lg font-bold mb-4 text-center">SaaS B2B</h4>
-              <ul className="text-sm space-y-2 flex-grow">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <div className="bg-blue-500 text-white rounded-2xl p-4 sm:p-6 text-left h-full flex flex-col">
+              <div className="text-2xl sm:text-3xl mb-3 text-center">💼</div>
+              <h4 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-center">SaaS B2B</h4>
+              <ul className="text-xs sm:text-sm space-y-2 flex-grow">
                 <li className="leading-relaxed">• Utilisateurs activés/semaine</li>
               </ul>
             </div>
-            <div className="bg-green-500 text-white rounded-2xl p-6 text-left h-full flex flex-col">
-              <div className="text-3xl mb-3 text-center">🛒</div>
-              <h4 className="text-lg font-bold mb-4 text-center">E-commerce</h4>
-              <ul className="text-sm space-y-2 flex-grow">
+            <div className="bg-green-500 text-white rounded-2xl p-4 sm:p-6 text-left h-full flex flex-col">
+              <div className="text-2xl sm:text-3xl mb-3 text-center">🛒</div>
+              <h4 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-center">E-commerce</h4>
+              <ul className="text-xs sm:text-sm space-y-2 flex-grow">
                 <li className="leading-relaxed">• Clients ≥1 commande/semaine</li>
                 <li className="leading-relaxed">• Taux première commande</li>
               </ul>
             </div>
-            <div className="bg-purple-500 text-white rounded-2xl p-6 text-left h-full flex flex-col">
-              <div className="text-3xl mb-3 text-center">🏪</div>
-              <h4 className="text-lg font-bold mb-4 text-center">Marketplace</h4>
-              <ul className="text-sm space-y-2 flex-grow">
+            <div className="bg-purple-500 text-white rounded-2xl p-4 sm:p-6 text-left h-full flex flex-col">
+              <div className="text-2xl sm:text-3xl mb-3 text-center">🏪</div>
+              <h4 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-center">Marketplace</h4>
+              <ul className="text-xs sm:text-sm space-y-2 flex-grow">
                 <li className="leading-relaxed">• Transactions réglées/semaine</li>
                 <li className="leading-relaxed">• GMV/acheteur actif</li>
               </ul>
             </div>
-            <div className="bg-orange-500 text-white rounded-2xl p-6 text-left h-full flex flex-col">
-              <div className="text-3xl mb-3 text-center">📱</div>
-              <h4 className="text-lg font-bold mb-4 text-center">App Mobile</h4>
-              <ul className="text-sm space-y-2 flex-grow">
+            <div className="bg-orange-500 text-white rounded-2xl p-4 sm:p-6 text-left h-full flex flex-col">
+              <div className="text-2xl sm:text-3xl mb-3 text-center">📱</div>
+              <h4 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-center">App Mobile</h4>
+              <ul className="text-xs sm:text-sm space-y-2 flex-grow">
                 <li className="leading-relaxed">• Rétention D7</li>
                 <li className="leading-relaxed">• Sessions action clé/MAU</li>
               </ul>
@@ -644,42 +644,42 @@ export default function Module1Content() {
           </div>
 
           {/* Cas pratiques célèbres */}
-          <div className="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">🌟 Cas pratiques célèbres</h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                <div className="text-4xl mb-4">👥</div>
-                <h4 className="text-xl font-bold text-blue-800 mb-3">Facebook</h4>
-                <div className="text-sm text-gray-700 leading-relaxed">
+          <div className="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl p-4 sm:p-8">
+            <h3 className="text-lg sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-gray-800">🌟 Cas pratiques célèbres</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">👥</div>
+                <h4 className="text-lg sm:text-xl font-bold text-blue-800 mb-3">Facebook</h4>
+                <div className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                   <p className="font-semibold mb-2">NSM aux débuts :</p>
-                  <p className="bg-blue-50 rounded-lg p-3">Utilisateurs ayant ajouté <strong>7 amis</strong> dans leurs <strong>10 premiers jours</strong></p>
+                  <p className="bg-blue-50 rounded-lg p-2 sm:p-3">Utilisateurs ayant ajouté <strong>7 amis</strong> dans leurs <strong>10 premiers jours</strong></p>
                   <p className="text-xs text-gray-500 mt-2">→ Corrélé à la rétention long terme</p>
                 </div>
               </div>
               
-              <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                <div className="text-4xl mb-4">🏠</div>
-                <h4 className="text-xl font-bold text-pink-800 mb-3">Airbnb</h4>
-                <div className="text-sm text-gray-700 leading-relaxed">
+              <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🏠</div>
+                <h4 className="text-lg sm:text-xl font-bold text-pink-800 mb-3">Airbnb</h4>
+                <div className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                   <p className="font-semibold mb-2">NSM actuelle :</p>
-                  <p className="bg-pink-50 rounded-lg p-3">Nombre de <strong>nuits réservées</strong></p>
+                  <p className="bg-pink-50 rounded-lg p-2 sm:p-3">Nombre de <strong>nuits réservées</strong></p>
                   <p className="text-xs text-gray-500 mt-2">→ Reflète l'usage réel de la plateforme</p>
                 </div>
               </div>
               
-              <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                <div className="text-4xl mb-4">🎵</div>
-                <h4 className="text-xl font-bold text-green-800 mb-3">Spotify</h4>
-                <div className="text-sm text-gray-700 leading-relaxed">
+              <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg text-center">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🎵</div>
+                <h4 className="text-lg sm:text-xl font-bold text-green-800 mb-3">Spotify</h4>
+                <div className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                   <p className="font-semibold mb-2">NSM principale :</p>
-                  <p className="bg-green-50 rounded-lg p-3"><strong>Temps d'écoute</strong> par utilisateur</p>
+                  <p className="bg-green-50 rounded-lg p-2 sm:p-3"><strong>Temps d'écoute</strong> par utilisateur</p>
                   <p className="text-xs text-gray-500 mt-2">→ Engagement et satisfaction utilisateur</p>
                 </div>
               </div>
             </div>
             
-            <div className="mt-6 bg-yellow-50 rounded-xl p-4 border-l-4 border-yellow-400">
-              <p className="text-yellow-800 text-sm font-medium">
+            <div className="mt-4 sm:mt-6 bg-yellow-50 rounded-xl p-3 sm:p-4 border-l-4 border-yellow-400">
+              <p className="text-yellow-800 text-xs sm:text-sm font-medium">
                 <strong>💡 Point clé :</strong> Chaque NSM capture le moment "Aha" où l'utilisateur comprend la valeur du produit
               </p>
             </div>
@@ -688,17 +688,17 @@ export default function Module1Content() {
       </section>
 
       {/* SLIDE 8: BOUCLES DE CROISSANCE */}
-      <section className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">🔄</div>
-            <h2 className="text-5xl font-bold text-gray-800 mb-4">Boucles de croissance</h2>
-            <div className="w-32 h-1 bg-green-500 mx-auto"></div>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🔄</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-800 mb-4">Boucles de croissance</h2>
+            <div className="w-16 sm:w-32 h-1 bg-green-500 mx-auto"></div>
           </div>
           
           {/* Schéma de boucle */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl mb-12">
-            <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">💫 Le principe des boucles</h3>
+          <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-xl mb-8 sm:mb-12">
+            <h3 className="text-lg sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-gray-800">💫 Le principe des boucles</h3>
             
             {/* Diagramme circulaire */}
             <div className="relative w-full max-w-lg mx-auto mb-8">
@@ -767,27 +767,27 @@ export default function Module1Content() {
           </div>
           
           {/* Cas emblématiques */}
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-blue-500 text-white rounded-2xl p-8 text-left">
-              <div className="text-4xl mb-4 text-center">📦</div>
-              <h4 className="text-xl font-bold mb-4 text-center">Dropbox</h4>
-              <div className="text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-blue-500 text-white rounded-2xl p-6 sm:p-8 text-left">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-center">📦</div>
+              <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center">Dropbox</h4>
+              <div className="text-xs sm:text-sm">
                 <p className="font-semibold mb-2 leading-relaxed">Boucle : Parrainage in-product</p>
                 <p className="leading-relaxed">→ Espace offert aux 2 parties → Referral alimente Awareness</p>
               </div>
             </div>
-            <div className="bg-purple-500 text-white rounded-2xl p-8 text-left">
-              <div className="text-4xl mb-4 text-center">📧</div>
-              <h4 className="text-xl font-bold mb-4 text-center">Hotmail</h4>
-              <div className="text-sm">
+            <div className="bg-purple-500 text-white rounded-2xl p-6 sm:p-8 text-left">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-center">📧</div>
+              <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center">Hotmail</h4>
+              <div className="text-xs sm:text-sm">
                 <p className="font-semibold mb-2 leading-relaxed">Boucle : Signature virale</p>
                 <p className="leading-relaxed">"PS: I love you..." → Diffusion à coût marginal nul</p>
               </div>
             </div>
-            <div className="bg-green-500 text-white rounded-2xl p-8 text-left">
-              <div className="text-4xl mb-4 text-center">🏠</div>
-              <h4 className="text-xl font-bold mb-4 text-center">Airbnb</h4>
-              <div className="text-sm">
+            <div className="bg-green-500 text-white rounded-2xl p-6 sm:p-8 text-left">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-center">🏠</div>
+              <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center">Airbnb</h4>
+              <div className="text-xs sm:text-sm">
                 <p className="font-semibold mb-2 leading-relaxed">Boucle : Photos pro</p>
                 <p className="leading-relaxed">→ Conversion ↗️ → Plus d'offres & demande</p>
               </div>
@@ -797,124 +797,124 @@ export default function Module1Content() {
       </section>
 
       {/* SLIDE 9: EXPÉRIMENTATION */}
-      <section className="min-h-screen bg-gradient-to-br from-gray-800 to-slate-900 text-white p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-gray-800 to-slate-900 text-white p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">🧪</div>
-            <h2 className="text-5xl font-bold mb-4">Expérimentation continue</h2>
-            <div className="w-32 h-1 bg-white mx-auto"></div>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🧪</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4">Expérimentation continue</h2>
+            <div className="w-16 sm:w-32 h-1 bg-white mx-auto"></div>
           </div>
           
           {/* Cadre GROWS */}
-          <div className="bg-white/10 backdrop-blur rounded-2xl p-8 mb-12">
-            <h3 className="text-2xl font-bold text-center mb-8">📋 Cadre GROWS</h3>
-            <div className="grid md:grid-cols-5 gap-4">
-              <div className="text-center p-6 bg-blue-500 rounded-xl">
-                <div className="text-3xl mb-3">🔍</div>
-                <h4 className="font-bold text-lg mb-2">Gather</h4>
-                <p className="text-sm">Collecter données</p>
+          <div className="bg-white/10 backdrop-blur rounded-2xl p-4 sm:p-8 mb-8 sm:mb-12">
+            <h3 className="text-lg sm:text-2xl font-bold text-center mb-6 sm:mb-8">📋 Cadre GROWS</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
+              <div className="text-center p-4 sm:p-6 bg-blue-500 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">🔍</div>
+                <h4 className="font-bold text-sm sm:text-lg mb-1 sm:mb-2">Gather</h4>
+                <p className="text-xs sm:text-sm">Collecter données</p>
               </div>
-              <div className="text-center p-6 bg-purple-500 rounded-xl">
-                <div className="text-3xl mb-3">📊</div>
-                <h4 className="font-bold text-lg mb-2">Rank</h4>
-                <p className="text-sm">Prioriser (ICE)</p>
+              <div className="text-center p-4 sm:p-6 bg-purple-500 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">📊</div>
+                <h4 className="font-bold text-sm sm:text-lg mb-1 sm:mb-2">Rank</h4>
+                <p className="text-xs sm:text-sm">Prioriser (ICE)</p>
               </div>
-              <div className="text-center p-6 bg-green-500 rounded-xl">
-                <div className="text-3xl mb-3">📝</div>
-                <h4 className="font-bold text-lg mb-2">Outline</h4>
+              <div className="text-center p-4 sm:p-6 bg-green-500 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">📝</div>
+                <h4 className="font-bold text-sm sm:text-lg mb-1 sm:mb-2">Outline</h4>
                 <p className="text-xs leading-tight">Hypothèse/test</p>
               </div>
-              <div className="text-center p-6 bg-orange-500 rounded-xl">
-                <div className="text-3xl mb-3">⚡</div>
-                <h4 className="font-bold text-lg mb-2">Work</h4>
-                <p className="text-sm">Exécuter</p>
+              <div className="text-center p-4 sm:p-6 bg-orange-500 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">⚡</div>
+                <h4 className="font-bold text-sm sm:text-lg mb-1 sm:mb-2">Work</h4>
+                <p className="text-xs sm:text-sm">Exécuter</p>
               </div>
-              <div className="text-center p-6 bg-red-500 rounded-xl">
-                <div className="text-3xl mb-3">🔬</div>
-                <h4 className="font-bold text-lg mb-2">Study</h4>
-                <p className="text-sm">Analyser & décider</p>
+              <div className="text-center p-4 sm:p-6 bg-red-500 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">🔬</div>
+                <h4 className="font-bold text-sm sm:text-lg mb-1 sm:mb-2">Study</h4>
+                <p className="text-xs sm:text-sm">Analyser & décider</p>
               </div>
             </div>
           </div>
           
           {/* Score ICE */}
-          <div className="bg-white text-gray-800 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-center mb-8">🎯 Priorisation ICE</h3>
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="text-center p-6 bg-blue-50 rounded-xl">
-                <div className="text-3xl mb-3">📈</div>
-                <h4 className="font-bold text-blue-800 mb-2">Impact</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">Effet potentiel sur la NSM</p>
+          <div className="bg-white text-gray-800 rounded-2xl p-4 sm:p-8">
+            <h3 className="text-lg sm:text-2xl font-bold text-center mb-6 sm:mb-8">🎯 Priorisation ICE</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
+              <div className="text-center p-4 sm:p-6 bg-blue-50 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">📈</div>
+                <h4 className="font-bold text-blue-800 mb-2 text-sm sm:text-base">Impact</h4>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Effet potentiel sur la NSM</p>
                 <p className="text-xs text-gray-500 mt-2">Score : 1-5</p>
               </div>
-              <div className="text-center p-6 bg-green-50 rounded-xl">
-                <div className="text-3xl mb-3">🎯</div>
-                <h4 className="font-bold text-green-800 mb-2">Confiance</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">Certitude du résultat</p>
+              <div className="text-center p-4 sm:p-6 bg-green-50 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">🎯</div>
+                <h4 className="font-bold text-green-800 mb-2 text-sm sm:text-base">Confiance</h4>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Certitude du résultat</p>
                 <p className="text-xs text-gray-500 mt-2">Score : 1-5</p>
               </div>
-              <div className="text-center p-6 bg-orange-50 rounded-xl">
-                <div className="text-3xl mb-3">⚡</div>
-                <h4 className="font-bold text-orange-800 mb-2">Effort</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">Ressources nécessaires</p>
+              <div className="text-center p-4 sm:p-6 bg-orange-50 rounded-xl">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">⚡</div>
+                <h4 className="font-bold text-orange-800 mb-2 text-sm sm:text-base">Effort</h4>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Ressources nécessaires</p>
                 <p className="text-xs text-gray-500 mt-2">Score : 1-5 (inverse)</p>
               </div>
             </div>
-            <div className="bg-blue-100 rounded-xl p-4">
-              <p className="text-center text-blue-800 text-xl font-bold">(Impact × Confiance) ÷ Effort = Score ICE</p>
+            <div className="bg-blue-100 rounded-xl p-3 sm:p-4">
+              <p className="text-center text-blue-800 text-lg sm:text-xl font-bold">(Impact × Confiance) ÷ Effort = Score ICE</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* SLIDE 10: ATELIER */}
-      <section className="min-h-screen bg-gradient-to-br from-orange-400 to-red-500 text-white p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-orange-400 to-red-500 text-white p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-4xl mx-auto w-full text-center">
-          <div className="text-6xl mb-8">🛠️</div>
-          <h2 className="text-5xl font-bold mb-8">Atelier éclair</h2>
-          <h3 className="text-3xl font-light mb-12">Choisis ta NSM (10')</h3>
+          <div className="text-4xl sm:text-5xl lg:text-6xl mb-6 sm:mb-8">🛠️</div>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 sm:mb-8">Atelier éclair</h2>
+          <h3 className="text-lg sm:text-2xl lg:text-3xl font-light mb-8 sm:mb-12">Choisis ta NSM (10')</h3>
           
-          <div className="bg-white/20 backdrop-blur rounded-2xl p-8 mb-8">
-            <div className="grid md:grid-cols-2 gap-8 text-left">
+          <div className="bg-white/20 backdrop-blur rounded-2xl p-4 sm:p-8 mb-6 sm:mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-left">
               <div>
-                <h4 className="text-xl font-bold mb-4 flex items-center">
-                  <span className="text-2xl mr-3">⏱️</span> Durée
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center">
+                  <span className="text-xl sm:text-2xl mr-2 sm:mr-3">⏱️</span> Durée
                 </h4>
-                <p className="text-lg leading-relaxed">10 minutes en binôme</p>
+                <p className="text-base sm:text-lg leading-relaxed">10 minutes en binôme</p>
               </div>
               <div>
-                <h4 className="text-xl font-bold mb-4 flex items-center">
-                  <span className="text-2xl mr-3">📋</span> Mission
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center">
+                  <span className="text-xl sm:text-2xl mr-2 sm:mr-3">📋</span> Mission
                 </h4>
-                <p className="text-lg leading-relaxed">Choisir un contexte et proposer 1 NSM + 2 justifications</p>
+                <p className="text-base sm:text-lg leading-relaxed">Choisir un contexte et proposer 1 NSM + 2 justifications</p>
               </div>
               <div>
-                <h4 className="text-xl font-bold mb-4 flex items-center">
-                  <span className="text-2xl mr-3">📝</span> Format
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center">
+                  <span className="text-xl sm:text-2xl mr-2 sm:mr-3">📝</span> Format
                 </h4>
-                <p className="text-lg leading-relaxed">"NSM = ... ; on la mesure car ..."</p>
+                <p className="text-base sm:text-lg leading-relaxed">"NSM = ... ; on la mesure car ..."</p>
               </div>
               <div>
-                <h4 className="text-xl font-bold mb-4 flex items-center">
-                  <span className="text-2xl mr-3">🎤</span> Partage
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center">
+                  <span className="text-xl sm:text-2xl mr-2 sm:mr-3">🎤</span> Partage
                 </h4>
-                <p className="text-lg leading-relaxed">30 secondes par binôme</p>
+                <p className="text-base sm:text-lg leading-relaxed">30 secondes par binôme</p>
               </div>
             </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <div className="text-3xl mb-3">💼</div>
-              <h4 className="font-bold text-lg">SaaS</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="bg-white/10 backdrop-blur rounded-xl p-4 sm:p-6">
+              <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">💼</div>
+              <h4 className="font-bold text-base sm:text-lg">SaaS</h4>
             </div>
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <div className="text-3xl mb-3">🛒</div>
-              <h4 className="font-bold text-lg">E-commerce</h4>
+            <div className="bg-white/10 backdrop-blur rounded-xl p-4 sm:p-6">
+              <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">🛒</div>
+              <h4 className="font-bold text-base sm:text-lg">E-commerce</h4>
             </div>
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <div className="text-3xl mb-3">📱</div>
-              <h4 className="font-bold text-lg">App Mobile</h4>
+            <div className="bg-white/10 backdrop-blur rounded-xl p-4 sm:p-6">
+              <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">📱</div>
+              <h4 className="font-bold text-base sm:text-lg">App Mobile</h4>
             </div>
           </div>
         </div>
@@ -924,47 +924,47 @@ export default function Module1Content() {
       <QuizFlash />
 
       {/* SLIDE 12: RÉCAP ET TEASER */}
-      <section className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-700 text-white p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-700 text-white p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">🚀</div>
-            <h2 className="text-5xl font-bold mb-4">Récap & Suite</h2>
-            <div className="w-32 h-1 bg-white mx-auto"></div>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🚀</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4">Récap & Suite</h2>
+            <div className="w-16 sm:w-32 h-1 bg-white mx-auto"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
             {/* Points clés */}
-            <div className="bg-white/20 backdrop-blur rounded-2xl p-8 text-left">
-              <h3 className="text-2xl font-bold mb-6">📋 Points clés à retenir</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <span className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center font-bold">1</span>
-                  <span className="text-lg leading-relaxed">Growth = système AAARRR complet</span>
+            <div className="bg-white/20 backdrop-blur rounded-2xl p-6 sm:p-8 text-left">
+              <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">📋 Points clés à retenir</h3>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <span className="w-6 h-6 sm:w-8 sm:h-8 bg-white/30 rounded-full flex items-center justify-center font-bold text-sm sm:text-base">1</span>
+                  <span className="text-sm sm:text-lg leading-relaxed">Growth = système AAARRR complet</span>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <span className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center font-bold">2</span>
-                  <span className="text-lg leading-relaxed">NSM = métrique corrélée à la valeur</span>
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <span className="w-6 h-6 sm:w-8 sm:h-8 bg-white/30 rounded-full flex items-center justify-center font-bold text-sm sm:text-base">2</span>
+                  <span className="text-sm sm:text-lg leading-relaxed">NSM = métrique corrélée à la valeur</span>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <span className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center font-bold">3</span>
-                  <span className="text-lg leading-relaxed">Boucles de croissance auto-alimentées</span>
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <span className="w-6 h-6 sm:w-8 sm:h-8 bg-white/30 rounded-full flex items-center justify-center font-bold text-sm sm:text-base">3</span>
+                  <span className="text-sm sm:text-lg leading-relaxed">Boucles de croissance auto-alimentées</span>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <span className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center font-bold">4</span>
-                  <span className="text-lg leading-relaxed">Expérimentation continue (GROWS)</span>
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <span className="w-6 h-6 sm:w-8 sm:h-8 bg-white/30 rounded-full flex items-center justify-center font-bold text-sm sm:text-base">4</span>
+                  <span className="text-sm sm:text-lg leading-relaxed">Expérimentation continue (GROWS)</span>
                 </div>
               </div>
             </div>
             
             {/* Teaser Module 2 */}
-            <div className="bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl p-8 text-left">
-              <h3 className="text-2xl font-bold mb-6">🔜 Module 2 : Framework AAARRR</h3>
-              <div className="text-lg mb-6 leading-relaxed">
+            <div className="bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl p-6 sm:p-8 text-left">
+              <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">🔜 Module 2 : Framework AAARRR</h3>
+              <div className="text-sm sm:text-lg mb-4 sm:mb-6 leading-relaxed">
                 Utilisez AAARRR comme cadre de diagnostic pour identifier et cibler les goulots d'étranglement de votre funnel.
               </div>
-              <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                <h4 className="font-bold mb-2">Au programme :</h4>
-                <ul className="text-sm space-y-1">
+              <div className="bg-white/20 backdrop-blur rounded-xl p-3 sm:p-4">
+                <h4 className="font-bold mb-2 text-sm sm:text-base">Au programme :</h4>
+                <ul className="text-xs sm:text-sm space-y-1">
                   <li className="leading-relaxed">• Diagnostic complet de votre funnel</li>
                   <li className="leading-relaxed">• Identification des points faibles</li>
                   <li className="leading-relaxed">• Priorisation des actions</li>
@@ -974,10 +974,10 @@ export default function Module1Content() {
             </div>
           </div>
           
-          <div className="text-center mt-12">
-            <div className="text-4xl mb-4">🎉</div>
-            <h3 className="text-3xl font-bold">Bravo ! Module 1 terminé</h3>
-            <p className="text-xl text-blue-200 mt-2">Passons à la pratique avec le diagnostic AAARRR</p>
+          <div className="text-center mt-8 sm:mt-12">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🎉</div>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold">Bravo ! Module 1 terminé</h3>
+            <p className="text-base sm:text-lg lg:text-xl text-blue-200 mt-2">Passons à la pratique avec le diagnostic AAARRR</p>
           </div>
         </div>
       </section>

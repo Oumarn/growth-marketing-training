@@ -29,13 +29,13 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/agenda">
-                <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg">
+              <Link href="/agenda" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto bg-orange-500 text-white hover:bg-orange-600 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg">
                   🚀 Commencer la formation
                 </Button>
               </Link>
-              <Link href="/download">
-                <Button size="lg" className="bg-white/10 backdrop-blur text-white border-2 border-white/30 hover:bg-white hover:text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-4 text-lg">
+              <Link href="/download" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto bg-white/10 backdrop-blur text-white border-2 border-white/30 hover:bg-white hover:text-gray-900 shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-4 text-lg">
                   📥 Télécharger les supports
                 </Button>
               </Link>

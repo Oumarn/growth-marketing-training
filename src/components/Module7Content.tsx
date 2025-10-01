@@ -69,9 +69,9 @@ function CanalsAaarrrMapping() {
     <div className="mb-8">
       <h3 className="text-xl font-bold text-gray-900 mb-6">🎯 Cadre commun : Canaux × AAARRR</h3>
       
-      <div className="grid lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Navigation canaux */}
-        <div className="space-y-2">
+        <div className="space-y-2 lg:order-1 order-2">
           {channels.map((channel, index) => (
             <button
               key={index}
@@ -93,7 +93,7 @@ function CanalsAaarrrMapping() {
         </div>
 
         {/* Mapping AAARRR du canal sélectionné */}
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 lg:order-2 order-1">
           <div className={`rounded-lg p-6 border ${channels[selectedChannel].color}`}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border">
@@ -409,9 +409,9 @@ function SEAModule() {
     <div className="mb-8">
       <h3 className="text-xl font-bold text-gray-900 mb-6">🎯 SEA — Structure & Performance</h3>
       
-      <div className="grid lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Navigation concepts */}
-        <div className="space-y-2">
+        <div className="space-y-2 lg:order-1 order-2">
           {concepts.map((concept, index) => (
             <button
               key={index}
@@ -433,7 +433,7 @@ function SEAModule() {
         </div>
 
         {/* Contenu du concept sélectionné */}
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 lg:order-2 order-1">
           <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">

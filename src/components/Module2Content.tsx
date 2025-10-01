@@ -777,22 +777,30 @@ export default function Module2Content() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">🌳 Metric Tree</h3>
-            <div className="flex justify-center items-center space-x-4">
-              <div className="bg-yellow-100 rounded-lg p-4 text-center">
-                <div className="font-bold text-yellow-800">NSM</div>
-                <div className="text-sm text-gray-600">North Star Metric</div>
+          <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-xl">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-gray-800">🌳 Metric Tree</h3>
+            
+            {/* Version responsive avec une seule structure */}
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-2 lg:space-x-4">
+              <div className="bg-yellow-100 rounded-lg p-3 lg:p-4 text-center w-full sm:w-auto sm:min-w-0 sm:flex-1 sm:max-w-32 lg:max-w-none">
+                <div className="font-bold text-yellow-800 text-sm lg:text-base">NSM</div>
+                <div className="text-xs lg:text-sm text-gray-600">North Star Metric</div>
               </div>
-              <div className="text-2xl text-gray-400">→</div>
-              <div className="bg-blue-100 rounded-lg p-4 text-center">
-                <div className="font-bold text-blue-800">Métriques d'entrée</div>
-                <div className="text-sm text-gray-600">Par étape AAARRR</div>
+              <div className="text-xl lg:text-2xl text-gray-400 sm:flex-shrink-0">
+                <span className="sm:hidden">↓</span>
+                <span className="hidden sm:inline">→</span>
               </div>
-              <div className="text-2xl text-gray-400">→</div>
-              <div className="bg-green-100 rounded-lg p-4 text-center">
-                <div className="font-bold text-green-800">Leviers</div>
-                <div className="text-sm text-gray-600">Actions concrètes</div>
+              <div className="bg-blue-100 rounded-lg p-3 lg:p-4 text-center w-full sm:w-auto sm:min-w-0 sm:flex-1 sm:max-w-36 lg:max-w-none">
+                <div className="font-bold text-blue-800 text-sm lg:text-base">Métriques d'entrée</div>
+                <div className="text-xs lg:text-sm text-gray-600">Par étape AAARRR</div>
+              </div>
+              <div className="text-xl lg:text-2xl text-gray-400 sm:flex-shrink-0">
+                <span className="sm:hidden">↓</span>
+                <span className="hidden sm:inline">→</span>
+              </div>
+              <div className="bg-green-100 rounded-lg p-3 lg:p-4 text-center w-full sm:w-auto sm:min-w-0 sm:flex-1 sm:max-w-32 lg:max-w-none">
+                <div className="font-bold text-green-800 text-sm lg:text-base">Leviers</div>
+                <div className="text-xs lg:text-sm text-gray-600">Actions concrètes</div>
               </div>
             </div>
           </div>
@@ -954,16 +962,281 @@ export default function Module2Content() {
       </section>
 
       {/* SLIDE 13: TABLEAU RÉCAPITULATIF MÉTRIQUES AAARRR */}
-      <section className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-3xl flex items-center">
+      <section className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-4 sm:p-8 rounded-3xl flex items-center">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-6">📊</div>
-            <h2 className="text-5xl font-bold text-gray-800 mb-4">Tableau récapitulatif AAARRR</h2>
-            <div className="w-32 h-1 bg-blue-500 mx-auto"></div>
-            <p className="text-xl text-gray-600 mt-6">Toutes les métriques essentielles en un coup d'œil</p>
+          <div className="text-center mb-8 sm:mb-16">
+            <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">📊</div>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-800 mb-4">Tableau récapitulatif AAARRR</h2>
+            <div className="w-16 sm:w-32 h-1 bg-blue-500 mx-auto"></div>
+            <p className="text-lg sm:text-xl text-gray-600 mt-4 sm:mt-6">Toutes les métriques essentielles en un coup d'œil</p>
           </div>
           
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+          {/* Version Mobile : Cartes empilées */}
+          <div className="lg:hidden space-y-4">
+            {/* AWARENESS Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">👁️</div>
+                <div>
+                  <div className="font-bold text-blue-800 text-lg sm:text-xl">Awareness</div>
+                  <div className="text-sm text-gray-600">Notoriété • Être connu par la cible</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-blue-700 mb-2">Métriques Principales</h4>
+                  <ul className="space-y-1">
+                    <li>• Impressions</li>
+                    <li>• Reach</li>
+                    <li>• Brand search</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Secondaires</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Share of voice</li>
+                    <li>• Mentions sociales</li>
+                    <li>• Trafic direct</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Outils</h4>
+                  <ul className="space-y-1 text-gray-600 text-xs">
+                    <li>• Google Ads</li>
+                    <li>• Facebook Ads</li>
+                    <li>• Google Trends</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Benchmark</h4>
+                  <div className="text-xs text-gray-600">
+                    <div className="font-semibold">Reach: 1-5% du TAM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ACQUISITION Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-3">🌐</div>
+                <div>
+                  <div className="font-bold text-green-800 text-lg sm:text-xl">Acquisition</div>
+                  <div className="text-sm text-gray-600">Trafic • Visiter site/app</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-green-700 mb-2">Métriques Principales</h4>
+                  <ul className="space-y-1">
+                    <li>• Sessions</li>
+                    <li>• Unique visitors</li>
+                    <li>• CAC</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Secondaires</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Trafic par canal</li>
+                    <li>• CTR campagnes</li>
+                    <li>• CPC moyen</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Outils</h4>
+                  <ul className="space-y-1 text-gray-600 text-xs">
+                    <li>• Google Analytics</li>
+                    <li>• Mixpanel</li>
+                    <li>• Amplitude</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Benchmark</h4>
+                  <div className="text-xs text-gray-600">
+                    <div className="font-semibold">CAC: &lt; 1/3 LTV</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ACTIVATION Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-3">⚡</div>
+                <div>
+                  <div className="font-bold text-yellow-800 text-lg sm:text-xl">Activation</div>
+                  <div className="text-sm text-gray-600">Valeur • 1ère action de valeur</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-yellow-700 mb-2">Métriques Principales</h4>
+                  <ul className="space-y-1">
+                    <li>• Taux activation</li>
+                    <li>• Time to value</li>
+                    <li>• Taux onboarding</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Secondaires</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Features adoptées</li>
+                    <li>• Profil complété</li>
+                    <li>• Tutoriel fini</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Outils</h4>
+                  <ul className="space-y-1 text-gray-600 text-xs">
+                    <li>• Hotjar</li>
+                    <li>• FullStory</li>
+                    <li>• Pendo</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Benchmark</h4>
+                  <div className="text-xs text-gray-600">
+                    <div className="font-semibold">Activation: 25-40%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* RÉTENTION Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-3">🔄</div>
+                <div>
+                  <div className="font-bold text-purple-800 text-lg sm:text-xl">Rétention</div>
+                  <div className="text-sm text-gray-600">Retour • Revenir réutiliser</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-purple-700 mb-2">Métriques Principales</h4>
+                  <ul className="space-y-1">
+                    <li>• Rétention D1/D7/D30</li>
+                    <li>• MAU/DAU</li>
+                    <li>• Churn rate</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Secondaires</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Session length</li>
+                    <li>• Usage patterns</li>
+                    <li>• Stickiness</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Outils</h4>
+                  <ul className="space-y-1 text-gray-600 text-xs">
+                    <li>• Cohort analysis</li>
+                    <li>• Retention curves</li>
+                    <li>• User journeys</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Benchmark</h4>
+                  <div className="text-xs text-gray-600">
+                    <div className="font-semibold">D7: 20-25%</div>
+                    <div className="font-semibold">D30: 10-15%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* REVENUS Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold mr-3">💳</div>
+                <div>
+                  <div className="font-bold text-emerald-800 text-lg sm:text-xl">Revenus</div>
+                  <div className="text-sm text-gray-600">Monétisation • Payer générer €</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-emerald-700 mb-2">Métriques Principales</h4>
+                  <ul className="space-y-1">
+                    <li>• Conversion rate</li>
+                    <li>• ARPU</li>
+                    <li>• LTV</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Secondaires</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Panier moyen</li>
+                    <li>• Fréquence achat</li>
+                    <li>• MRR growth</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Outils</h4>
+                  <ul className="space-y-1 text-gray-600 text-xs">
+                    <li>• Stripe</li>
+                    <li>• ChartMogul</li>
+                    <li>• Baremetrics</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Benchmark</h4>
+                  <div className="text-xs text-gray-600">
+                    <div className="font-semibold">Conversion: 2-5%</div>
+                    <div className="font-semibold">LTV:CAC: 3:1 min</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* REFERRAL Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold mr-3">📢</div>
+                <div>
+                  <div className="font-bold text-pink-800 text-lg sm:text-xl">Referral</div>
+                  <div className="text-sm text-gray-600">Recommandation • Recommander partager</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-pink-700 mb-2">Métriques Principales</h4>
+                  <ul className="space-y-1">
+                    <li>• NPS</li>
+                    <li>• Referral rate</li>
+                    <li>• Viral coefficient</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Secondaires</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Partages sociaux</li>
+                    <li>• Reviews/ratings</li>
+                    <li>• Word-of-mouth</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Outils</h4>
+                  <ul className="space-y-1 text-gray-600 text-xs">
+                    <li>• Typeform</li>
+                    <li>• ReferralCandy</li>
+                    <li>• Viral loops</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2">Benchmark</h4>
+                  <div className="text-xs text-gray-600">
+                    <div className="font-semibold">NPS: 50+ bon</div>
+                    <div className="font-semibold">Referral: 5-15%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Version Desktop : Tableau traditionnel */}
+          <div className="hidden lg:block bg-white rounded-2xl shadow-2xl overflow-hidden">
             {/* Header du tableau */}
             <div className="bg-gradient-to-r from-slate-700 to-gray-800 text-white p-6">
               <div className="grid grid-cols-6 gap-4 text-center">
@@ -1191,11 +1464,11 @@ export default function Module2Content() {
           </div>
 
           {/* Note explicative */}
-          <div className="mt-8 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl p-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
-              <span className="text-2xl mr-2">💡</span> Comment utiliser ce tableau
+          <div className="mt-6 sm:mt-8 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl p-4 sm:p-6">
+            <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-3 sm:mb-4 flex items-center">
+              <span className="text-xl sm:text-2xl mr-2">💡</span> Comment utiliser ce tableau
             </h3>
-            <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-xs sm:text-sm text-gray-700">
               <div>
                 <h4 className="font-semibold text-blue-800 mb-2">1. Diagnostic</h4>
                 <p>Calculez vos métriques actuelles pour chaque étape AAARRR</p>
