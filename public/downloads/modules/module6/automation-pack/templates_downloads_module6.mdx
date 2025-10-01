@@ -1,0 +1,28 @@
+---
+title: "Templates & Downloads — Automatisation IA (Module 6)"
+---
+
+## Téléchargements
+- **Workflow n8n (starter)** — Top Post Radar (analyse → clones → logs)  
+  → `n8n_workflow_top_post_radar.json`
+- **Prompts IA (Social + SEA)** — `prompts_social_sea.md`
+- **Sheets templates** : `social_winners.csv`, `social_clones.csv`, `automation_logs.csv`
+
+> Astuce : Importez les CSV dans Google Sheets (Winners, Clones, Logs) et placez l’ID dans la variable **SHEET_ID** côté n8n.
+
+## Variables d’environnement (n8n)
+- `SOCIAL_ANALYTICS_URL` — endpoint analytics (7d)  
+- `OPENAI_API_KEY` — clé LLM (ou utilisez un autre LLM via `LLM_ENDPOINT`)  
+- `LLM_ENDPOINT` (optionnel) — endpoint chat completions compatible  
+- `LLM_MODEL` — ex. `gpt-4o-mini`  
+- `SHEET_ID` — ID du Google Sheet avec les onglets **Winners**, **Clones**, **Logs**  
+- `SLACK_CHANNEL` — ex. `#growth`  
+- `TARGET_PERSONA` — ex. `Recruteur RH`  
+- `TARGET_OBJECTIVE` — ex. `Activation`  
+- `TARGET_KPI` — ex. `CTR`
+
+## Étapes rapides
+1. Importez le **workflow** dans n8n.  
+2. Créez un Google Sheet avec trois onglets : *Winners*, *Clones*, *Logs*. Importez les CSV fournis.  
+3. Définissez les **env vars** ci-dessus (n8n).  
+4. Testez manuellement le workflow (Run Once), puis activez le **Cron**.

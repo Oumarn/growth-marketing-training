@@ -113,7 +113,7 @@ function QuizFlash() {
               </div>
               <button
                 onClick={handleShowAllQuestions}
-                className="bg-white text-purple-600 font-bold text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-purple-50 transition-all transform hover:scale-105 shadow-lg"
+                className="bg-white text-purple-600 font-bold text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-2.5 rounded-full hover:bg-purple-50 transition-all shadow-md hover:shadow-lg"
               >
                 🚀 Commencer le quiz
               </button>
@@ -160,7 +160,7 @@ function QuizFlash() {
                     </p>
                     <button
                       onClick={handleShowAnswer}
-                      className="bg-white text-purple-600 font-bold text-sm sm:text-base lg:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-purple-50 transition-all transform hover:scale-105 shadow-lg"
+                      className="bg-white text-purple-600 font-bold text-sm px-4 py-2 rounded-full hover:bg-purple-50 transition-all shadow-sm hover:shadow-md"
                     >
                       💡 Voir la réponse
                     </button>

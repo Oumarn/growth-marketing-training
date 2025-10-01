@@ -304,3 +304,119 @@
     margin-bottom: 40px;
   }
 }
+
+/* PDF Print Styles */
+@page {
+  size: A4;
+  margin: 20mm 15mm;
+}
+
+.print-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #1f2937;
+  background: white;
+}
+
+.print-page-break {
+  page-break-before: always;
+}
+
+.avoid-break {
+  page-break-inside: avoid;
+}
+
+.print-module-title {
+  font-size: 20pt;
+  font-weight: bold;
+  margin: 24pt 0 16pt 0;
+  color: #1f2937;
+  page-break-after: avoid;
+}
+
+.print-module-number {
+  font-size: 14pt;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 8pt;
+}
+
+.print-module-info {
+  background-color: #eff6ff;
+  border-left: 4pt solid #3b82f6;
+  padding: 8pt 12pt;
+  margin: 12pt 0;
+  page-break-inside: avoid;
+}
+
+.print-toc-title {
+  font-size: 24pt;
+  font-weight: bold;
+  margin-bottom: 20pt;
+  text-align: center;
+}
+
+.print-toc-item {
+  display: flex;
+  margin-bottom: 16pt;
+  page-break-inside: avoid;
+}
+
+.print-toc-number {
+  width: 80pt;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.print-toc-module-title {
+  font-size: 12pt;
+  font-weight: 600;
+  margin-bottom: 4pt;
+}
+
+.print-toc-description {
+  font-size: 10pt;
+  color: #6b7280;
+  margin-bottom: 4pt;
+}
+
+.print-toc-meta {
+  font-size: 9pt;
+  color: #9ca3af;
+}
+
+/* Hide interactive elements for print */
+@media print {
+  .print-container button,
+  .print-container .interactive,
+  .print-container .hover-effect,
+  .print-container .quiz-container,
+  .print-container .transition-all,
+  .print-container [role="button"],
+  .print-container .cursor-pointer {
+    display: none !important;
+  }
+  
+  .print-container .bg-gradient-to-r,
+  .print-container .bg-gradient-to-br,
+  .print-container .bg-gradient-to-l,
+  .print-container .bg-blue-600,
+  .print-container .bg-purple-600,
+  .print-container .bg-indigo-600 {
+    background: #f9fafb !important;
+    color: #1f2937 !important;
+  }
+  
+  .print-container .text-white {
+    color: #1f2937 !important;
+  }
+  
+  .print-container {
+    background: white !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

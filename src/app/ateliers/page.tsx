@@ -120,7 +120,7 @@ export default function AteliersPage() {
                   
                   <div className="space-y-3">
                     <Link href={`/ateliers/${getAtelierSlug(atelier.title)}`}>
-                      <Button className="w-full">
+                      <Button className="w-full text-xs sm:text-sm font-medium px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-sm hover:shadow-md transition-all duration-200">
                         Commencer l'atelier
                       </Button>
                     </Link>

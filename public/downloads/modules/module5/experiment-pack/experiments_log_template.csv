@@ -1,0 +1,2 @@
+id,owner,squad,stage,icp,start_date,end_date,traffic_per_variant,primary_kpi,baseline,result_uplift_points,uplift_rel_pct,p_value,decision,learnings,links
+LP_H1_Proof_2025Q1,Anaïs,Growth Squad A,Acquisition,RH mid-market,2025-03-01,2025-03-14,3050,cvr_visit_to_signup,0.05,0.023,46%,0.03,start,Preuve chiffrée perçue; à décliner par segment,/experiments/LP_H1_Proof

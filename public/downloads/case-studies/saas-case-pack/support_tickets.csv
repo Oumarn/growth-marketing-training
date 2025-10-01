@@ -1,0 +1,7 @@
+tag,description,tickets_last_30d,persona_most_affected
+integration_outlook,Problèmes d’intégration Outlook,121,AE_Sales_PME_Tech
+no_shows,Taux de no-shows,68,AE_Sales_PME_Tech
+multi_interviewers,Planification à plusieurs interviewers,114,RH_Recruteur_MidMarket
+payments_stripe,Pré-paiement via Stripe,61,Indep_Coach_Consultant
+timezones,Gestion des fuseaux horaires,103,Indep_Coach_Consultant
+workflows_teams,Fonctionnalités d’équipe / rôles,95,AE_Sales_PME_Tech

@@ -120,7 +120,7 @@ function QuizModule2() {
               </div>
               <button
                 onClick={handleShowAllQuestions}
-                className="bg-white text-indigo-600 font-bold text-xl px-8 py-4 rounded-full hover:bg-teal-50 transition-all transform hover:scale-105 shadow-lg"
+                className="bg-white text-indigo-600 font-bold text-sm sm:text-base px-4 py-2 rounded-full hover:bg-teal-50 transition-all shadow-sm hover:shadow-md"
               >
                 🚀 Commencer le quiz
               </button>
@@ -167,7 +167,7 @@ function QuizModule2() {
                     </p>
                     <button
                       onClick={handleShowAnswer}
-                      className="bg-white text-indigo-600 font-bold text-lg px-6 py-3 rounded-full hover:bg-teal-50 transition-all transform hover:scale-105 shadow-lg"
+                      className="bg-white text-indigo-600 font-bold text-sm sm:text-base px-4 py-2 rounded-full hover:bg-teal-50 transition-all shadow-sm hover:shadow-md"
                     >
                       💡 Voir la réponse
                     </button>
@@ -195,7 +195,7 @@ function QuizModule2() {
                       {currentQuestion < questions.length - 1 ? (
                         <button
                           onClick={handleNextQuestion}
-                          className="bg-white text-indigo-600 font-bold px-6 py-2 rounded-full hover:bg-teal-50 transition-all transform hover:scale-105 shadow-lg"
+                          className="bg-white text-indigo-600 font-bold text-sm sm:text-base px-4 py-2 rounded-full hover:bg-teal-50 transition-all shadow-sm hover:shadow-md"
                         >
                           Question suivante →
                         </button>

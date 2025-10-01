@@ -1,0 +1,3 @@
+id,title,segment,hypothesis,kpi_primary,kpi_secondary,guardrails,variant_a_desc,variant_b_desc,baseline_rate,mde_abs_points,sample_per_variant_goal,duration_days_planned,start_date,end_date,result_uplift_points,p_value,decision,notes
+LP_H1_Proof_2025Q1,H1 avec preuve chiffrée,RH mid-market,Ajouter une preuve chiffrée ↑ CVR de +2 pts,cvr_visit_to_signup,"ttfv_median,scroll_depth","errors_rate,NPS",H1 'Temps gagné',H1 '−30% no-shows',0.05,0.02,1000,14,,,,,,≥200 sessions/variante
+Email_Subject_2min,Objet '2 minutes' vs contrôle,Tous (nouveaux inscrits),Objet '2 min' ↓ TTFV J1 de 20%,activation_24h,"open_rate,ctr",unsubscribe_rate,Objet Bénéfice,Objet '2 minutes',0.12,0.03,800,7,,,,,,Activation sous 24h

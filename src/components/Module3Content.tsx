@@ -408,11 +408,11 @@ export default function Module3Content() {
 
         <div className="text-center">
           <Link href="/ateliers/mini-campagne">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 text-lg">
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm font-medium shadow-sm hover:shadow-md transition-all">
               🎯 Commencer l'atelier
             </Button>
           </Link>
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-xs sm:text-sm text-gray-600 mt-2">
             Prêt ? Passez à la page atelier pour les consignes détaillées, templates et barème.
           </p>
         </div>

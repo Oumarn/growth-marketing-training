@@ -1,0 +1,16 @@
+label,value,notes
+baseline_rate,0.05,p1 (ex: 0.05 = 5%)
+mde_abs_points,0.02,Δ = p2 - p1 (ex: +0.02 = +2 points)
+alpha,0.05,typ. 0.05
+power,0.80,typ. 0.80
+exposures_per_day_total,3000,trafic/jour (sessions ou utilisateurs)
+sample_per_variant_estimate,,Sheets formula below
+days_estimate,,"=CEILING( (2 * sample_per_variant_estimate) / exposures_per_day_total , 1 )"
+
+Google Sheets formulas,paste into the cell in column B,
+Z_alpha,=NORM.S.INV(1 - B4/2),two-sided
+Z_power,=NORM.S.INV(B5),
+p1,=B2,baseline
+p2,=B2 + B3,p1 + Δ
+p_bar,=(p1 + p2)/2,
+sample_per_variant_estimate,"=ROUNDUP( ( (Z_alpha*SQRT(2*p_bar*(1-p_bar)) + Z_power*SQRT(p1*(1-p1)+p2*(1-p2)))^2 ) / ( (p2-p1)^2 ), 0 )",per variant (approx. two-proportion test)

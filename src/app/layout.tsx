@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProgressProvider } from "@/contexts/ProgressContext";
+import { HydrationFix } from "@/components/HydrationFix";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,7 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning={true}>
+        <HydrationFix />
         <ProgressProvider>
           <div className="min-h-screen flex flex-col">
             <Header />

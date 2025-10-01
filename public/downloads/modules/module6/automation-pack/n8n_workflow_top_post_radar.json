@@ -1,0 +1,290 @@
+{
+  "name": "Top Post Radar — IA + Clones + Logs (Starter)",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyWeek",
+              "weekday": "monday",
+              "hour": 8
+            }
+          ]
+        }
+      },
+      "id": "Cron_Weekly_08h",
+      "name": "Cron Weekly 08:00",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "={{$env.SOCIAL_ANALYTICS_URL || 'https://example.com/social/analytics?since=7d'}}",
+        "options": {
+          "responseFormat": "json"
+        }
+      },
+      "id": "Http_Analytics",
+      "name": "HTTP — Social Analytics (7d)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "functionCode": "const posts = (items[0]?.json?.posts || []).map(p => {\n  const likes = Number(p.likes||0), comments = Number(p.comments||0), shares = Number(p.shares||0), saves = Number(p.saves||0);\n  const impressions = Math.max(Number(p.impressions||0), 1);\n  const er = (likes + comments + shares + saves) / impressions;\n  return {...p, er};\n});\nposts.sort((a,b)=> b.er - a.er);\nconst k = Math.max(1, Math.ceil(posts.length*0.10));\nconst top = posts.slice(0, k);\nreturn top.map(p=>({json:p}));"
+      },
+      "id": "Fn_ComputeER_TopDecile",
+      "name": "Function — Compute ER & Top 10%",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "functionCode": "return items.map(({json})=>({json:{\n  post_id: json.id,\n  channel: json.channel,\n  text: json.text,\n  metrics: { er: json.er, likes: json.likes, comments: json.comments, shares: json.shares, saves: json.saves },\n  persona: $env.TARGET_PERSONA || \"Recruteur RH mid-market\",\n  objective: $env.TARGET_OBJECTIVE || \"Drive signups & activation\",\n  prompt_analyze: `Rôle: Analyste social. Entrées: texte, métriques, persona, canal. Tâche: Résume en 3 puces pourquoi ce post performe. Classe: hook, format, angle, tone, CTA. Sortie JSON: { \\\"reason\\\": \\\"...\\\", \\\"hook\\\": \\\"...\\\", \\\"format\\\": \\\"...\\\", \\\"angle\\\": \\\"...\\\", \\\"tone\\\":\\\"...\\\", \\\"cta\\\":\\\"...\\\" }. Français, 80 mots max.\\n---\\nTexte: ${json.text}\\nMétriques: ${JSON.stringify({er:json.er,likes:json.likes,comments:json.comments,shares:json.saves})}\\nPersona: ${$env.TARGET_PERSONA||\"RH\"}\\nCanal: ${json.channel}`,\n  prompt_clone: `Rôle: Copywriter. Entrées: blueprint_json, persona, canal. Tâche: Propose 3 variantes suivant le blueprint, chacune avec Hook • Body (≤280) • CTA. Ton pro, pas de claims non prouvés, pas d’emoji si LinkedIn. Sortie JSON: [{\\\"hook\\\":\\\"\\\",\\\"body\\\":\\\"\\\",\\\"cta\\\":\\\"\\\\\"}]`\n}}));"
+      },
+      "id": "Fn_BuildPrompts",
+      "name": "Function — Build Prompts",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "={{$env.LLM_ENDPOINT || 'https://api.openai.com/v1/chat/completions'}}",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendHeaders": true,
+        "jsonBody": "={{ {model: ($env.LLM_MODEL || 'gpt-4o-mini'), messages:[{role:'system', content:'Tu es un analyste social.'},{role:'user', content: $json.prompt_analyze}], temperature: 0.4} }}",
+        "headerParametersJson": "={{ { 'Authorization': `Bearer ${$env.OPENAI_API_KEY || 'sk-...'}`, 'Content-Type': 'application/json' } }}"
+      },
+      "id": "LLM_AnalyzePost",
+      "name": "HTTP — LLM Analyze Post",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "functionCode": "return items.map(({json})=>{\n  const content = json.choices?.[0]?.message?.content || \"\";\n  const match = content.match(/{[\\s\\S]*}/);\n  let blueprint = {};\n  try { blueprint = match ? JSON.parse(match[0]) : {}; } catch(e){ blueprint = { reason: content.slice(0,160), hook:\"\", format:\"\", angle:\"\", tone:\"\", cta:\"\" }; }\n  return { json: { ...json, blueprint } };\n});"
+      },
+      "id": "Fn_ParseBlueprint",
+      "name": "Function — Parse Blueprint",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "={{$env.LLM_ENDPOINT || 'https://api.openai.com/v1/chat/completions'}}",
+        "method": "POST",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "sendHeaders": true,
+        "jsonBody": "={{ {model: ($env.LLM_MODEL || 'gpt-4o-mini'), messages:[{role:'system', content:'Tu es un copywriter social.'},{role:'user', content: $json.prompt_clone + '\\nBlueprint:' + JSON.stringify($json.blueprint)}], temperature: 0.7} }}",
+        "headerParametersJson": "={{ { 'Authorization': `Bearer ${$env.OPENAI_API_KEY || 'sk-...'}`, 'Content-Type': 'application/json' } }}"
+      },
+      "id": "LLM_GenerateClones",
+      "name": "HTTP — LLM Generate Clones",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "functionCode": "return items.map(({json})=>{\n  const content = json.choices?.[0]?.message?.content || \"[]\";\n  let clones = [];\n  try { clones = JSON.parse(content); } catch(e){ clones = [{hook:\"Variante A\", body: content.slice(0,240), cta:\"En savoir plus\"}]; }\n  return { json: { ...json, clones } };\n});"
+      },
+      "id": "Fn_ParseClones",
+      "name": "Function — Parse Clones",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "sheetId": "={{$env.SHEET_ID || 'REPLACE_WITH_SHEET_ID'}}",
+        "range": "Winners!A:Z",
+        "columns": [
+          "date",
+          "post_id",
+          "channel",
+          "er",
+          "reason",
+          "hook",
+          "format",
+          "angle",
+          "tone",
+          "cta"
+        ],
+        "values": "={{ [{ date: new Date().toISOString().slice(0,10), post_id: $json.post_id, channel: $json.channel, er: $json.metrics?.er, reason: $json.blueprint?.reason, hook: $json.blueprint?.hook, format: $json.blueprint?.format, angle: $json.blueprint?.angle, tone: $json.blueprint?.tone, cta: $json.blueprint?.cta }] }}"
+      },
+      "id": "Sheets_AppendWinners",
+      "name": "Google Sheets — Append Winners",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "sheetId": "={{$env.SHEET_ID || 'REPLACE_WITH_SHEET_ID'}}",
+        "range": "Clones!A:Z",
+        "columns": [
+          "date",
+          "post_id",
+          "variant_id",
+          "channel",
+          "hook",
+          "body",
+          "cta",
+          "target_kpi",
+          "status"
+        ],
+        "values": "={{ ($json.clones || []).map((c, i)=>({ date: new Date().toISOString().slice(0,10), post_id: $json.post_id, variant_id: `C${i+1}`, channel: $json.channel, hook: c.hook, body: c.body, cta: c.cta, target_kpi: $env.TARGET_KPI || 'CTR', status: 'idea' })) }}"
+      },
+      "id": "Sheets_AppendClones",
+      "name": "Google Sheets — Append Clones",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "channel": "={{$env.SLACK_CHANNEL || '#growth'}}",
+        "text": "={{`Top Post Radar — ${new Date().toISOString().slice(0,10)}: ${$json.post_id} (${($json.metrics?.er*100).toFixed(1)}% ER) — ${$json.blueprint?.hook || '—'}`}}"
+      },
+      "id": "Slack_Digest",
+      "name": "Slack — Daily Digest",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "sheetId": "={{$env.SHEET_ID || 'REPLACE_WITH_SHEET_ID'}}",
+        "range": "Logs!A:Z",
+        "columns": [
+          "timestamp",
+          "post_id",
+          "variant_count",
+          "objective",
+          "target_kpi"
+        ],
+        "values": "={{ [{ timestamp: new Date().toISOString(), post_id: $json.post_id, variant_count: ($json.clones||[]).length, objective: $env.TARGET_OBJECTIVE || 'Activation', target_kpi: $env.TARGET_KPI || 'CTR' }] }}"
+      },
+      "id": "Sheets_LogRun",
+      "name": "Google Sheets — Log Run",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "credentials": {}
+    }
+  ],
+  "connections": {
+    "Cron Weekly 08:00": {
+      "main": [
+        [
+          {
+            "node": "HTTP — Social Analytics (7d)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP — Social Analytics (7d)": {
+      "main": [
+        [
+          {
+            "node": "Function — Compute ER & Top 10%",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function — Compute ER & Top 10%": {
+      "main": [
+        [
+          {
+            "node": "Function — Build Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function — Build Prompts": {
+      "main": [
+        [
+          {
+            "node": "HTTP — LLM Analyze Post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP — LLM Analyze Post": {
+      "main": [
+        [
+          {
+            "node": "Function — Parse Blueprint",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function — Parse Blueprint": {
+      "main": [
+        [
+          {
+            "node": "HTTP — LLM Generate Clones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP — LLM Generate Clones": {
+      "main": [
+        [
+          {
+            "node": "Function — Parse Clones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function — Parse Clones": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets — Append Winners",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets — Append Clones",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Slack — Daily Digest",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets — Log Run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveExecutionProgress": true
+  },
+  "active": false
+}

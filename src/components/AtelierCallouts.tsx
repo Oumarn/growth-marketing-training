@@ -66,7 +66,7 @@ export default function AtelierCallouts({ moduleSlug }: AtelierCalloutsProps) {
 
               <Link
                 href={`/ateliers/${atelier.slug}`}
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-purple-600 border border-transparent rounded-md hover:bg-purple-700 transition-colors"
+                className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium text-white bg-purple-600 border border-transparent rounded-md hover:bg-purple-700 transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 Commencer l'atelier
               </Link>

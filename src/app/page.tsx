@@ -30,7 +30,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link href="/agenda" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto bg-orange-500 text-white hover:bg-orange-600 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg">
+                <Button size="lg" className="w-full sm:w-auto bg-orange-500 text-white hover:bg-orange-600 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 text-sm sm:text-base lg:text-lg">
                   🚀 Commencer la formation
                 </Button>
               </Link>
@@ -282,7 +282,7 @@ export default function Home() {
                   ✓ 3 Personas types • ✓ Templates • ✓ Plan de validation
                 </div>
                 <Link href="/workshop/buyer-persona">
-                  <Button className="w-full bg-indigo-500 hover:bg-indigo-600 text-white">
+                  <Button className="w-full bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium py-2 shadow-md hover:shadow-lg transition-all duration-200">
                     🚀 Commencer l'atelier
                   </Button>
                 </Link>
@@ -407,9 +407,9 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <Link href="/agenda">
-              <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 font-bold text-lg px-8 py-4">
+              <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 font-bold text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4">
                 🚀 Commencer la formation
-                <span className="block text-sm font-normal opacity-80">Voir le programme et planning</span>
+                <span className="block text-xs sm:text-sm font-normal opacity-80">Voir le programme et planning</span>
               </Button>
             </Link>
             <Link href="/download">

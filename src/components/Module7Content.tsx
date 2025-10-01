@@ -1111,14 +1111,14 @@ export default function Module7Content() {
         
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button 
-            className="bg-white text-purple-600 hover:bg-purple-50 font-semibold px-6 py-3"
+            className="bg-white text-purple-600 hover:bg-purple-50 font-semibold px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm"
             onClick={() => window.open('/download', '_blank')}
           >
             📥 Télécharger Pack Multi-Canal
           </Button>
           <Button 
             variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3"
+            className="border-white text-white hover:bg-white hover:text-purple-600 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm"
             onClick={() => window.open('/templates', '_blank')}
           >
             📋 Voir Tous les Templates

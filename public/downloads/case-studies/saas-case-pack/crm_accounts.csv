@@ -1,0 +1,76 @@
+account_id,persona,persona_label,company_size,industry,country,plan
+1001,AE_Sales_PME_Tech,AE (Sales) en PME Tech,11-50,Education,FR,Free
+1002,AE_Sales_PME_Tech,AE (Sales) en PME Tech,11-50,Education,FR,Free
+1003,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Tech,CH,Teams
+1004,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Services,FR,Pro
+1005,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Education,BE,Pro
+1006,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Education,CA,Free
+1007,AE_Sales_PME_Tech,AE (Sales) en PME Tech,201-500,Services,MA,Free
+1008,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Education,CA,Free
+1009,AE_Sales_PME_Tech,AE (Sales) en PME Tech,201-500,Education,CH,Pro
+1010,AE_Sales_PME_Tech,AE (Sales) en PME Tech,201-500,Tech,MA,Pro
+1011,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Education,CH,Pro
+1012,AE_Sales_PME_Tech,AE (Sales) en PME Tech,1-10,Tech,FR,Free
+1013,AE_Sales_PME_Tech,AE (Sales) en PME Tech,1-10,Tech,FR,Free
+1014,AE_Sales_PME_Tech,AE (Sales) en PME Tech,11-50,Education,MA,Free
+1015,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Tech,BE,Teams
+1016,AE_Sales_PME_Tech,AE (Sales) en PME Tech,1-10,Services,BE,Pro
+1017,AE_Sales_PME_Tech,AE (Sales) en PME Tech,201-500,Education,CH,Teams
+1018,AE_Sales_PME_Tech,AE (Sales) en PME Tech,201-500,Healthcare,CH,Free
+1019,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Education,MA,Free
+1020,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Education,FR,Free
+1021,AE_Sales_PME_Tech,AE (Sales) en PME Tech,1-10,Tech,CH,Teams
+1022,AE_Sales_PME_Tech,AE (Sales) en PME Tech,51-200,Services,CA,Pro
+1023,AE_Sales_PME_Tech,AE (Sales) en PME Tech,201-500,Services,CA,Pro
+1024,AE_Sales_PME_Tech,AE (Sales) en PME Tech,201-500,Education,BE,Free
+1025,AE_Sales_PME_Tech,AE (Sales) en PME Tech,11-50,Healthcare,BE,Free
+1026,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,11-50,Tech,BE,Pro
+1027,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Healthcare,FR,Pro
+1028,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Services,FR,Pro
+1029,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,51-200,Services,BE,Teams
+1030,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Services,BE,Pro
+1031,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,51-200,Tech,FR,Free
+1032,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,51-200,Services,FR,Pro
+1033,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Education,CA,Free
+1034,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Education,CA,Teams
+1035,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Education,CH,Teams
+1036,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,11-50,Tech,FR,Free
+1037,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,1-10,Services,BE,Free
+1038,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Tech,MA,Free
+1039,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,51-200,Services,CH,Free
+1040,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,1-10,Healthcare,FR,Free
+1041,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,1-10,Healthcare,MA,Pro
+1042,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,51-200,Education,CH,Pro
+1043,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,51-200,Tech,FR,Pro
+1044,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,11-50,Tech,BE,Teams
+1045,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Education,MA,Free
+1046,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,51-200,Services,MA,Free
+1047,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,11-50,Services,CA,Pro
+1048,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,11-50,Services,CA,Pro
+1049,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Services,FR,Pro
+1050,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,201-500,Education,CH,Pro
+1051,Indep_Coach_Consultant,Indépendant (Coach/Consultant),1-10,Services,CA,Pro
+1052,Indep_Coach_Consultant,Indépendant (Coach/Consultant),201-500,Tech,CH,Pro
+1053,Indep_Coach_Consultant,Indépendant (Coach/Consultant),51-200,Education,MA,Pro
+1054,Indep_Coach_Consultant,Indépendant (Coach/Consultant),11-50,Services,FR,Teams
+1055,Indep_Coach_Consultant,Indépendant (Coach/Consultant),51-200,Services,MA,Free
+1056,Indep_Coach_Consultant,Indépendant (Coach/Consultant),11-50,Tech,CH,Free
+1057,Indep_Coach_Consultant,Indépendant (Coach/Consultant),51-200,Tech,CH,Teams
+1058,Indep_Coach_Consultant,Indépendant (Coach/Consultant),201-500,Services,FR,Pro
+1059,Indep_Coach_Consultant,Indépendant (Coach/Consultant),11-50,Education,CA,Free
+1060,Indep_Coach_Consultant,Indépendant (Coach/Consultant),51-200,Services,MA,Pro
+1061,Indep_Coach_Consultant,Indépendant (Coach/Consultant),1-10,Healthcare,MA,Free
+1062,Indep_Coach_Consultant,Indépendant (Coach/Consultant),11-50,Services,CA,Free
+1063,Indep_Coach_Consultant,Indépendant (Coach/Consultant),51-200,Healthcare,BE,Free
+1064,Indep_Coach_Consultant,Indépendant (Coach/Consultant),201-500,Services,CH,Pro
+1065,Indep_Coach_Consultant,Indépendant (Coach/Consultant),1-10,Education,CH,Free
+1066,Indep_Coach_Consultant,Indépendant (Coach/Consultant),1-10,Tech,FR,Free
+1067,Indep_Coach_Consultant,Indépendant (Coach/Consultant),201-500,Healthcare,FR,Free
+1068,Indep_Coach_Consultant,Indépendant (Coach/Consultant),51-200,Tech,CA,Free
+1069,Indep_Coach_Consultant,Indépendant (Coach/Consultant),201-500,Education,BE,Pro
+1070,Indep_Coach_Consultant,Indépendant (Coach/Consultant),11-50,Healthcare,MA,Free
+1071,Indep_Coach_Consultant,Indépendant (Coach/Consultant),1-10,Tech,MA,Free
+1072,Indep_Coach_Consultant,Indépendant (Coach/Consultant),11-50,Healthcare,CH,Pro
+1073,Indep_Coach_Consultant,Indépendant (Coach/Consultant),1-10,Tech,CA,Pro
+1074,Indep_Coach_Consultant,Indépendant (Coach/Consultant),201-500,Healthcare,BE,Free
+1075,Indep_Coach_Consultant,Indépendant (Coach/Consultant),11-50,Tech,CH,Pro

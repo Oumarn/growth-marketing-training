@@ -1,0 +1,6 @@
+Card,KPI,Definition,Formula (plain text),Target,Thresholds (Green/Amber/Red),Owner,Refresh,Notes
+NSM,Utilisateurs activés / semaine,Action de valeur réalisée,activés / semaine,≥ 500,≥500 | 400–499 | <400,Head of Product,Weekly,Segmentation source/persona
+Unit Economics,LTV:CAC,Rapport LTV/CAC,LTV / CAC,≥ 3,≥3 | 2–2.9 | <2,CFO,Monthly,Inclure marge
+Retention,D30 (cohorte),% revenus à J30,retained_d30 / cohort_size,≥ 35%,≥35% | 25–34% | <25%,Analytics Lead,Weekly,Par cohorte mensuelle
+Revenue,MRR,Revenus récurrents mensuels,somme abonnements actifs,—,—,Finance,Monthly,
+Alerts,Top 3 issues,Anomalies du moment,—,—,—,Owners,Weekly,Actionnable

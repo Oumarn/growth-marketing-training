@@ -13,6 +13,7 @@ import AtelierCallouts from '@/components/AtelierCallouts';
 import MarkCompleteButton from '@/components/MarkCompleteButton';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ModuleContentRenderer from '@/components/modules/ModuleContentRenderer';
+import PDFGenerator from '@/components/PDFGenerator';
 
 // Data & Types
 import { 
@@ -118,6 +119,17 @@ export default async function ModulePage({ params }: ModulePageProps) {
             slug={slug} 
             title={module.title} 
           />
+        </div>
+
+        {/* PDF Generator */}
+        <div className="mb-8 p-6 bg-white rounded-lg border border-gray-200">
+          <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            📄 Télécharger en PDF
+          </h3>
+          <p className="text-gray-600 mb-4 text-sm">
+            Téléchargez ce module ou la formation complète au format PDF optimisé pour l'impression.
+          </p>
+          <PDFGenerator moduleSlug={slug} />
         </div>
 
         {/* Ateliers */}

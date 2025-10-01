@@ -1,0 +1,4 @@
+Experiment,Hypothesis,Primary KPI,Variant A (baseline),Variant B,Uplift (calc),Significance (p),Run dates,Decision (start/iterate/kill),Notes
+LP_H1_Proof,Ajouter preuve ↑ CVR de +2 pts,CVR visite→signup,5.0%,—,—,—,2025-03-01 → 2025-03-14,—,≥200 sessions/variante
+Email_Subject_2min,Objet '2 minutes' ↓ TTFV de 20%,Activation 24h,12%,—,—,—,2025-03-01 → 2025-03-07,—,Mesurer Activations J1
+Ads_Hook_NoShows,Hook 'no-shows' ↑ CTR +30%,CTR,1.5%,—,—,—,2025-03-03 → 2025-03-10,—,Suivre CPC & CVR post-clic

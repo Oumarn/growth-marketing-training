@@ -1,0 +1,10 @@
+month,persona,persona_label,visitors,signups,link_published,first_booking,activation_rate,ttfv_mean_minutes,retention_d7,retention_d30,paid_conversions,arpu_monthly_eur
+2025-01,AE_Sales_PME_Tech,AE (Sales) en PME Tech,3500,298,226,140,0.47,651,0.53,0.45,35,34.74
+2025-01,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,2925,193,121,77,0.399,735,0.42,0.29,16,38.91
+2025-01,Indep_Coach_Consultant,Indépendant (Coach/Consultant),3253,237,193,119,0.502,684,0.46,0.38,14,28.81
+2025-02,AE_Sales_PME_Tech,AE (Sales) en PME Tech,3226,212,169,126,0.594,736,0.43,0.33,15,22.04
+2025-02,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,3544,191,124,68,0.356,852,0.34,0.24,17,28.71
+2025-02,Indep_Coach_Consultant,Indépendant (Coach/Consultant),3045,253,182,143,0.565,487,0.44,0.31,37,25.59
+2025-03,AE_Sales_PME_Tech,AE (Sales) en PME Tech,2957,140,91,59,0.421,691,0.51,0.4,16,30.39
+2025-03,RH_Recruteur_MidMarket,Recruteur (RH) mid-market,2876,207,149,114,0.551,739,0.41,0.31,21,20.03
+2025-03,Indep_Coach_Consultant,Indépendant (Coach/Consultant),2530,138,100,64,0.464,421,0.47,0.38,16,37.84

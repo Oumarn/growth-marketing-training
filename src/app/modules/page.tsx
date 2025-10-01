@@ -7,6 +7,7 @@ import { CheckCircle, Circle, Clock, ArrowRight, Star, Zap } from 'lucide-react'
 import { getModulesByDay } from '@/lib/modules';
 import { useProgress } from '@/contexts/ProgressContext';
 import ResumeBanner from '@/components/ResumeBanner';
+import PDFGenerator from '@/components/PDFGenerator';
 
 function StatusBadge({ status }: { status: string }) {
   const badges = {
@@ -137,6 +138,22 @@ export default function ModulesPage() {
           </div>
         </div>
 
+        {/* PDF Download Section */}
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 border border-purple-200 mb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              📄 Télécharger la Formation en PDF
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Obtenez une version PDF complète de la formation, optimisée pour l'impression 
+              avec table des matières, pagination et mise en page professionnelle.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <PDFGenerator />
+          </div>
+        </div>
+
         {/* Action Section */}
         <div className="text-center bg-white rounded-xl p-8 shadow-lg">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -148,7 +165,7 @@ export default function ModulesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/module-1/introduction-growth-marketing">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-sm sm:text-base font-semibold px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
                 🚀 Commencer par le Module 1
               </Button>
             </Link>
