@@ -8,7 +8,7 @@ interface DownloadCTAProps {
 
 export default function DownloadCTA({ showOnModules = ['3', '6', '7'] }: DownloadCTAProps) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-purple-600 border-t shadow-2xl z-50 animate-pulse">
+    <div className="bg-gradient-to-r from-blue-600 to-purple-600 border-t shadow-lg rounded-lg mt-8">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex-1 text-center sm:text-left">

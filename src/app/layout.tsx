@@ -11,8 +11,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Growth Marketing - Formation Master",
+  title: "FastLearn - Growth Marketing Formation Master",
   description: "Formation complète de 2 jours (14h) pour maîtriser les fondamentaux du Growth Marketing et l'automatisation avec l'IA",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/fastlearn_favicon_512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({

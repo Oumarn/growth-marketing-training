@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export default function Header() {
@@ -7,10 +8,16 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-4">
-            <Link href="/" className="text-2xl font-bold text-gray-900">
-              Growth Marketing
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="/logos/fastlearn_logo_primary_v3.png"
+                alt="FastLearn"
+                width={160}
+                height={40}
+                className="h-8 w-auto"
+              />
             </Link>
-            <span className="text-sm text-gray-500 hidden sm:block">Formation Master</span>
+            <span className="text-sm text-gray-500 hidden sm:block">Growth Marketing Formation</span>
           </div>
           
           <nav className="hidden md:flex space-x-6">
