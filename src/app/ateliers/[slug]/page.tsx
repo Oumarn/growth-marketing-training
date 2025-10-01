@@ -80,38 +80,116 @@ const ateliers: Record<string, any> = {
     ]
   },
   'experiment-card': {
-    title: 'Experiment Card',
-    duration: '30min',
-    description: 'Créez vos premières cartes d\'expérimentation pour structurer vos tests A/B',
+    title: 'Atelier Express — "Design & Size"',
+    duration: '30-40min',
+    description: 'Créez vos premiers tests A/B structurés : de l\'idée à la décision avec templates et outils fournis',
     objectives: [
-      'Maîtriser le format Experiment Card',
-      'Formuler des hypothèses testables',
-      'Définir les métriques de succès',
-      'Planifier l\'exécution des tests'
+      'Passer d\'idées à des hypothèses testables (Experiment Card)',
+      'Choisir le bon type de test et fixer KPI primaire/secondaires/guardrails',
+      'Planifier (MDE, durée) et définir critères start/iterate/kill',
+      'Maîtriser les templates et outils pour lancer vos tests'
     ],
     materials: [
-      'Template Experiment Card',
-      'Guide de formulation d\'hypothèses',
-      'Calculateur sample size'
+      'Template Experiment Card (format standard 1 page)',
+      'Calculateur MDE (Google Sheets avec formules)',
+      'Experiments Log (tracking des apprentissages)',
+      'Templates MVT & Bandits'
+    ],
+    phases: [
+      {
+        title: 'Idéation',
+        duration: '5min',
+        content: '5 idées → score ICE → top 2',
+        deliverable: '2 idées de tests priorisées',
+        tips: [
+          'Brainstormez 5 idées d\'optimisation sur votre funnel',
+          'Scorez chaque idée sur Impact, Confidence, Ease (1-3)',
+          'Sélectionnez les 2 meilleures pour créer des Experiment Cards'
+        ]
+      },
+      {
+        title: 'Experiment Cards',
+        duration: '10min',
+        content: 'Hypothèse, KPI, design, tracking, seuils',
+        deliverable: '2 Experiment Cards complètes',
+        tips: [
+          'Utilisez la formule SMART : Chez [segment], [changement] augmentera [KPI] de +X pts en [période], car [insight]',
+          '1 seul KPI primaire + secondaires + guardrails alignés NSM',
+          'Définissez variantes A/B, ciblage et plan de tracking'
+        ]
+      },
+      {
+        title: 'Dimensionnement',
+        duration: '10min',
+        content: 'Baseline + MDE → échantillon & durée',
+        deliverable: 'Estimation trafic/durée par test',
+        tips: [
+          'MDE = Minimum Detectable Effect (amélioration minimale à détecter)',
+          'Baseline basse (2-5%) + MDE petit (+1-2 pts) = 1000-2000 par variante',
+          'Durée : 7-14 jours minimum, cycle hebdo complet'
+        ]
+      },
+      {
+        title: 'Présentation',
+        duration: '5min',
+        content: '1 slide/test — décision & next step',
+        deliverable: 'Critères start/iterate/kill + planning Q1 2025',
+        tips: [
+          'START : effet ≥ seuil + pas d\'impact négatif guardrails',
+          'ITERATE : signaux positifs mais insuffisants',
+          'KILL : effet nul/négatif + documenter l\'apprentissage'
+        ]
+      }
     ],
     steps: [
       {
-        title: 'Phase 1: Hypothèse (10min)',
-        content: 'Identifiez un problème dans votre funnel et formulez une hypothèse claire : "Nous croyons que [CHANGE] va résulter en [OUTCOME] parce que [REASON]".'
+        title: 'Phase 1: Idéation & Priorisation (5min)',
+        content: 'Brainstormez 5 idées d\'optimisation, scorez-les ICE (Impact-Confidence-Ease 1-3) et sélectionnez le top 2 pour vos Experiment Cards.'
       },
       {
-        title: 'Phase 2: Design (15min)',
-        content: 'Définissez les variations à tester, les métriques principales et secondaires, et calculez la taille d\'échantillon nécessaire.'
+        title: 'Phase 2: Création des Experiment Cards (10min)',  
+        content: 'Pour chaque idée sélectionnée, créez une Experiment Card complète avec hypothèse SMART, KPI primaire unique, secondaires, guardrails et design des variantes.'
       },
       {
-        title: 'Phase 3: Planning (5min)',
-        content: 'Planifiez la durée du test, les ressources nécessaires et les critères de décision (significance, power, etc.).'
+        title: 'Phase 3: Dimensionnement & Planification (10min)',
+        content: 'Calculez la taille d\'échantillon nécessaire selon votre baseline et MDE souhaité. Estimez la durée selon votre trafic quotidien.'
+      },
+      {
+        title: 'Phase 4: Critères de Décision & Next Steps (5min)',
+        content: 'Définissez vos seuils pour Start/Iterate/Kill et planifiez le lancement (owner, timing, outils) pour Q1 2025.'
       }
     ],
     deliverables: [
-      '1-2 Experiment Cards complètes',
-      'Planning d\'exécution',
-      'Checklist de lancement'
+      '2 Experiment Cards complètes (hypothèse + KPIs + design)',
+      'Estimation trafic/durée par test avec calculs MDE',
+      'Critères start/iterate/kill définis avec seuils',
+      'Planning de lancement Q1 2025 (owner + timing + outils)'
+    ],
+    templates: [
+      {
+        name: 'Experiment Card Template',
+        description: 'Format standard 1 page',
+        icon: '📝',
+        downloadUrl: '/downloads/experiment-card-template.md'
+      },
+      {
+        name: 'Calculateur MDE',
+        description: 'Google Sheets avec formules',
+        icon: '🧮',
+        downloadUrl: '/downloads/mde-calculator-template.csv'
+      },
+      {
+        name: 'Log des Expériences',
+        description: 'Tracking des apprentissages',
+        icon: '📊',
+        downloadUrl: '/downloads/experiments-log-template.csv'
+      },
+      {
+        name: 'Templates MVT & Bandits',
+        description: 'Tests avancés',
+        icon: '🧪',
+        downloadUrl: '/downloads/mvt-template.md'
+      }
     ]
   },
   'no-code-starter': {
@@ -413,8 +491,47 @@ export default async function AtelierPage({ params }: { params: Promise<{ slug: 
               <DashboardExpressWorkshop phases={atelier.phases} />
             )}
 
+            {/* Phases détaillées pour experiment-card */}
+            {resolvedParams.slug === 'experiment-card' && atelier.phases && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>🎯 Déroulé de l'Atelier Express (30-40')</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {atelier.phases.map((phase: any, index: number) => (
+                      <div key={index} className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-4 border border-orange-200">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                            <span className="text-orange-600 font-bold text-sm">{index + 1}</span>
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-orange-900">{phase.title} ({phase.duration})</h3>
+                            <p className="text-xs text-gray-600">{phase.content}</p>
+                          </div>
+                        </div>
+                        <div className="bg-white rounded p-3 border border-orange-200 mb-3">
+                          <p className="text-xs font-medium text-orange-800 mb-1">📦 Livrable:</p>
+                          <p className="text-xs text-gray-700">{phase.deliverable}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-xs font-medium text-orange-800">💡 Tips:</p>
+                          {phase.tips.map((tip: string, tipIndex: number) => (
+                            <p key={tipIndex} className="text-xs text-gray-700 flex items-start gap-1">
+                              <span className="text-orange-500 mt-0.5">•</span>
+                              {tip}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
             {/* Étapes */}
-            {resolvedParams.slug !== 'dashboard-express' && (
+            {resolvedParams.slug !== 'dashboard-express' && resolvedParams.slug !== 'experiment-card' && (
               <Card>
                 <CardHeader>
                   <CardTitle>Déroulé de l'atelier</CardTitle>
@@ -432,22 +549,99 @@ export default async function AtelierPage({ params }: { params: Promise<{ slug: 
               </Card>
             )}
 
+            {/* Étapes simplifiées pour experiment-card */}
+            {resolvedParams.slug === 'experiment-card' && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>Étapes détaillées</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-6">
+                    {atelier.steps.map((step: any, index: number) => (
+                      <div key={index} className="border-l-4 border-purple-200 pl-4">
+                        <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                        <p className="text-gray-600">{step.content}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
             {/* Livrables */}
             <Card>
               <CardHeader>
-                <CardTitle>Livrables attendus</CardTitle>
+                <CardTitle>📦 Livrables attendus</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   {atelier.deliverables.map((deliverable: string, index: number) => (
-                    <li key={index} className="flex items-center">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mr-3" />
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
                       <span>{deliverable}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
             </Card>
+
+            {/* Templates & Outils pour experiment-card */}
+            {resolvedParams.slug === 'experiment-card' && atelier.templates && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>💡 Templates & Outils Fournis</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {atelier.templates.map((template: any, index: number) => (
+                      <div key={index} className="text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 border border-blue-200">
+                        <div className="text-2xl mb-2">{template.icon}</div>
+                        <p className="font-medium text-sm text-gray-900 mb-1">{template.name}</p>
+                        <p className="text-xs text-gray-600 mb-3">{template.description}</p>
+                        <Link href={template.downloadUrl} target="_blank">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            className="w-full"
+                          >
+                            <Download className="w-4 h-4 mr-1" />
+                            Télécharger
+                          </Button>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Pack Download pour experiment-card */}
+            {resolvedParams.slug === 'experiment-card' && (
+              <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg p-6 text-white text-center">
+                <div className="text-4xl mb-3">🎁</div>
+                <h3 className="text-xl font-bold mb-3">Pack Module 5 — Expérimentation</h3>
+                <p className="text-purple-100 mb-4 text-sm">
+                  Tous les templates et outils pour lancer vos premiers tests A/B : 
+                  Experiment Cards, calculateur MDE, journal des apprentissages et exemples prêts à l'emploi.
+                </p>
+                
+                <div className="flex flex-col gap-2">
+                  <Link href="/download" target="_blank">
+                    <Button className="bg-white text-purple-600 hover:bg-purple-50 font-semibold w-full">
+                      📥 Télécharger le Pack Complet
+                    </Button>
+                  </Link>
+                  <Link href="/templates" target="_blank">
+                    <Button 
+                      variant="outline" 
+                      className="border-white text-white hover:bg-white hover:text-purple-600 w-full"
+                    >
+                      📝 Voir Tous les Templates
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            )}
 
             {/* Cadres & Templates pour mini-campagne */}
             {resolvedParams.slug === 'mini-campagne' && atelier.frameworks && (

@@ -53,7 +53,7 @@ export default function StepperNav({ currentSlug }: StepperNavProps) {
             {modules.map((module, index) => (
               <Link
                 key={module.slug}
-                href={`/modules/${module.slug}`}
+                href={`/${module.slug}`}
                 className={`flex items-center space-x-2 whitespace-nowrap transition-colors hover:text-blue-600 ${
                   currentSlug === module.slug 
                     ? 'text-blue-600 font-semibold' 

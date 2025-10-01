@@ -1,0 +1,46 @@
+Parameter,Value,Description,Formula/Notes
+Baseline CVR (p1),0.03,Taux de conversion actuel (ex: 3%),"Entre 0 et 1 (ex: 0.03 pour 3%)"
+Target CVR (p2),0.05,Taux de conversion visé (ex: 5%),"p1 + MDE absolue"
+MDE Absolute,0.02,Minimum Detectable Effect (points),"p2 - p1"
+MDE Relative,66.67%,MDE en pourcentage relatif,"=(p2-p1)/p1"
+Alpha (α),0.05,Risque de Type I (5% standard),Probabilité faux positif
+Power (1-β),0.8,Puissance statistique (80% standard),1 - risque Type II
+Z_alpha/2,1.96,Score Z pour α/2,"=NORM.S.INV(1-alpha/2)"
+Z_beta,0.84,Score Z pour β,"=NORM.S.INV(power)"
+Pooled Variance,0.0485,Variance combinée,"=p1*(1-p1) + p2*(1-p2)"
+Sample Size per Variant,1568,Utilisateurs nécessaires par variante,"=2*pooled_variance*(z_alpha+z_beta)^2/(p2-p1)^2"
+Total Sample Size,3136,Utilisateurs total pour A/B test,"=2*sample_size_per_variant"
+,,
+Traffic Estimation,,,
+Daily Traffic,200,Visiteurs/utilisateurs par jour,À adapter selon votre trafic
+Days to Complete,8,Jours nécessaires pour compléter,"=sample_size_per_variant/daily_traffic"
+Recommended Duration,14,Durée recommandée (jours),"MAX(days_to_complete, 7) + buffer"
+,,
+Scenarios Analysis,,,
+Scenario,Baseline,MDE,Sample per Variant,Days (200/day)
+Low CVR Small Effect,2%,+1 pt,3141,16
+Low CVR Medium Effect,2%,+2 pts,785,4
+Medium CVR Small Effect,20%,+3 pts,1127,6
+Medium CVR Medium Effect,20%,+5 pts,406,3
+High CVR Small Effect,60%,+3 pts,1435,8
+High CVR Medium Effect,60%,+5 pts,516,3
+,,
+Formula Reference,,,
+Component,Formula,Excel/Sheets,Google Sheets
+Z Score α/2,"=NORM.S.INV(1-α/2)","=NORM.S.INV(0.975)","=NORM.S.INV(0.975)"
+Z Score β,"=NORM.S.INV(1-β)","=NORM.S.INV(0.8)","=NORM.S.INV(0.8)"
+Sample Size,"=2*σ²*(Zα+Zβ)²/δ²","=2*variance*(z_alpha+z_beta)^2/mde^2","=2*variance*(z_alpha+z_beta)^2/mde^2"
+,,
+Quick Reference Table,,,
+If Baseline = 1%,+1 pt = 100% lift,+2 pts = 200% lift,Very high traffic needed
+If Baseline = 5%,+1 pt = 20% lift,+2 pts = 40% lift,High traffic needed  
+If Baseline = 10%,+2 pts = 20% lift,+3 pts = 30% lift,Medium traffic needed
+If Baseline = 25%,+3 pts = 12% lift,+5 pts = 20% lift,Lower traffic needed
+If Baseline = 50%,+3 pts = 6% lift,+5 pts = 10% lift,Moderate traffic needed
+,,
+Notes,,,
+1. Plus la baseline est basse plus il faut de trafic,,,
+2. Plus le MDE souhaité est petit plus il faut de trafic,,,
+3. Durée minimum = 7 jours (1 semaine complète),,,
+4. Éviter les périodes anormales (vacances Black Friday),,,
+5. Fixer la durée à l'avance évite le peeking bias,,,

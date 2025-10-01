@@ -6,6 +6,9 @@ import Module1Content from '@/components/Module1Content';
 import Module2Content from '@/components/Module2Content';
 import Module3Content from '@/components/Module3Content';
 import Module4Content from '@/components/Module4Content';
+import Module5Content from '@/components/Module5Content';
+import Module6Content from '@/components/Module6Content';
+import Module7Content from '@/components/Module7Content';
 
 interface ModuleContentRendererProps {
   module: Module;
@@ -15,14 +18,20 @@ const ModuleContentRenderer: React.FC<ModuleContentRendererProps> = ({ module })
   // Rendu des composants personnalisés
   if (module.hasCustomComponent) {
     switch (module.slug) {
-      case '1-intro':
+      case 'module-1/introduction-growth-marketing':
         return <Module1Content />;
-      case '2-aaarr':
+      case 'module-2/framework-aaarrr':
         return <Module2Content />;
-      case '3-cas-pratiques':
+      case 'module-3/cas-pratiques-mini-campagne':
         return <Module3Content />;
-      case '4-kpis-dashboard':
+      case 'module-4/kpis-dashboard':
         return <Module4Content />;
+      case 'module-5/experimentation-ab-testing':
+        return <Module5Content />;
+      case 'module-6/outils-no-code-automation':
+        return <Module6Content />;
+      case 'module-7/ia-par-canal-marketing':
+        return <Module7Content />;
       default:
         return <DefaultModuleContent module={module} />;
     }

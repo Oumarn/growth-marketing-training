@@ -631,7 +631,17 @@ function DataQuality() {
 // Composant principal
 export default function Module4Content() {
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="space-y-16">
+      {/* SLIDE 1: TITRE ET OBJECTIFS */}
+      <section className="min-h-screen bg-gradient-to-br from-orange-600 via-red-600 to-pink-800 text-white flex items-center justify-center p-8 rounded-3xl">
+        <div className="text-center max-w-4xl">
+          <div className="text-8xl mb-8">📊</div>
+          <h1 className="text-6xl font-bold mb-8 leading-tight">Module 4</h1>
+          <h2 className="text-4xl font-light mb-12 text-orange-100">KPIs & Dashboard</h2>
+          <div className="text-xl text-orange-200 mb-8">Durée : 1h30 • Taxonomie & NSM • 1 atelier</div>
+        </div>
+      </section>
+
       {/* Introduction */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
         <h2 className="text-xl font-bold text-gray-900 mb-4">Pourquoi un dashboard ?</h2>

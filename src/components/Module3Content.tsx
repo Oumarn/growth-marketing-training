@@ -330,7 +330,17 @@ function CasPratiques() {
 // Composant principal
 export default function Module3Content() {
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="space-y-16">
+      {/* SLIDE 1: TITRE ET OBJECTIFS */}
+      <section className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-600 to-rose-800 text-white flex items-center justify-center p-8 rounded-3xl">
+        <div className="text-center max-w-4xl">
+          <div className="text-8xl mb-8">⚡</div>
+          <h1 className="text-6xl font-bold mb-8 leading-tight">Module 3</h1>
+          <h2 className="text-4xl font-light mb-12 text-purple-100">Cas pratiques & mini-campagne</h2>
+          <div className="text-xl text-purple-200 mb-8">Durée : 2h • Mécaniques réplicables • 1 atelier</div>
+        </div>
+      </section>
+
       {/* Cas pratiques */}
       <CasPratiques />
 

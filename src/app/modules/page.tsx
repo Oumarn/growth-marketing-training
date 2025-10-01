@@ -79,7 +79,7 @@ export default function ModulesPage() {
           </div>
         )}
         
-        <Link href={`/modules/${module.slug}`}>
+        <Link href={`/${module.slug}`}>
           <Button className="w-full group">
             {isModuleComplete(module.slug) ? 'Revoir le module' : 'Commencer le module'}
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -147,7 +147,7 @@ export default function ModulesPage() {
             Chaque module inclut des exercices pratiques et des ressources téléchargeables.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/modules/1-intro">
+            <Link href="/module-1/introduction-growth-marketing">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 🚀 Commencer par le Module 1
               </Button>

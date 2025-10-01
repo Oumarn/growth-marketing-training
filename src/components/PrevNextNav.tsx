@@ -21,7 +21,7 @@ export default function PrevNextNav({ currentSlug }: PrevNextNavProps) {
         <div className="flex-1">
           {prevModule && (
             <Link
-              href={`/modules/${prevModule.slug}`}
+              href={`/${prevModule.slug}`}
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-900 transition-colors"
             >
               <ChevronLeft className="w-4 h-4 mr-2" />
@@ -36,7 +36,7 @@ export default function PrevNextNav({ currentSlug }: PrevNextNavProps) {
         <div className="flex-1 flex justify-end">
           {nextModule && (
             <Link
-              href={`/modules/${nextModule.slug}`}
+              href={`/${nextModule.slug}`}
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 transition-colors"
             >
               <div className="text-right">

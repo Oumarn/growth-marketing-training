@@ -57,7 +57,7 @@ export default function ModuleCard({ title, description, duration, status, slug,
           </div>
         )}
         
-        <Link href={`/modules/${slug}`}>
+        <Link href={`/${slug}`}>
           <Button className="w-full">
             Voir le module
           </Button>

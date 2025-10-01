@@ -90,7 +90,7 @@ export default function AgendaPage() {
           )}
           
           {module ? (
-            <Link href={`/modules/${module.slug}`}>
+            <Link href={`/${module.slug}`}>
               <Button className="w-full group">
                 {isModuleComplete(module.slug) ? 'Revoir le module' : 'Accéder au module'}
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

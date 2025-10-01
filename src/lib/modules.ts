@@ -3,7 +3,7 @@ import { Module, MODULE_STATUSES } from '@/types/modules';
 // Configuration directe des modules
 const MODULES_CONFIG: Module[] = [
   {
-    slug: "1-intro",
+    slug: "module-1/introduction-growth-marketing",
     order: 1,
     title: "Module 1 — Introduction au Growth Marketing",
     duration: "90min",
@@ -16,12 +16,12 @@ const MODULES_CONFIG: Module[] = [
       "Savoir proposer une North Star Metric simple"
     ],
     prev: null,
-    next: "2-aaarr",
+    next: "module-2/framework-aaarrr",
     hasCustomComponent: true,
     showDownloadCTA: false
   },
   {
-    slug: "2-aaarr",
+    slug: "module-2/framework-aaarrr",
     order: 2,
     title: "Module 2 — Framework AAARRR",
     duration: "120min",
@@ -33,8 +33,8 @@ const MODULES_CONFIG: Module[] = [
       "Diagnostiquer les goulots d'étranglement de votre funnel",
       "Utiliser la méthode ICE pour prioriser les améliorations"
     ],
-    prev: "1-intro",
-    next: "3-cas-pratiques",
+    prev: "module-1/introduction-growth-marketing",
+    next: "module-3/cas-pratiques-mini-campagne",
     hasCustomComponent: true,
     showDownloadCTA: false,
     ateliers: [
@@ -53,7 +53,7 @@ const MODULES_CONFIG: Module[] = [
     ]
   },
   {
-    slug: "3-cas-pratiques",
+    slug: "module-3/cas-pratiques-mini-campagne",
     order: 3,
     title: "Module 3 — Cas pratiques & mini-campagne",
     duration: "120min",
@@ -65,8 +65,8 @@ const MODULES_CONFIG: Module[] = [
       "Concevoir une mini-campagne (landing, ads, email) avec KPIs",
       "Préparer 3 expériences A/B rapides à lancer"
     ],
-    prev: "2-aaarr",
-    next: "4-kpis-dashboard",
+    prev: "module-2/framework-aaarrr",
+    next: "module-4/kpis-dashboard",
     hasCustomComponent: true,
     showDownloadCTA: true,
     ateliers: [
@@ -79,7 +79,7 @@ const MODULES_CONFIG: Module[] = [
     ]
   },
   {
-    slug: "4-kpis-dashboard",
+    slug: "module-4/kpis-dashboard",
     order: 4,
     title: "Module 4 — KPIs & Dashboard",
     duration: "90min",
@@ -91,8 +91,8 @@ const MODULES_CONFIG: Module[] = [
       "Maîtriser les formules AAARRR & unit economics",
       "Concevoir un dashboard utile (exec/squad/experiment) + rituels"
     ],
-    prev: "3-cas-pratiques",
-    next: "5-experimentation",
+    prev: "module-3/cas-pratiques-mini-campagne",
+    next: "module-5/experimentation-ab-testing",
     hasCustomComponent: true,
     showDownloadCTA: true,
     ateliers: [
@@ -105,22 +105,23 @@ const MODULES_CONFIG: Module[] = [
     ]
   },
   {
-    slug: "5-experimentation",
+    slug: "module-5/experimentation-ab-testing",
     order: 5,
-    title: "Module 5 — A/B Testing & Expérimentation",
+    title: "Module 5 — Expérimentation & A/B Testing",
     duration: "120min",
-    status: "unchanged",
-    description: "Méthodologie complète d'expérimentation",
+    status: "updated",
+    description: "De l'idée à la décision : hypothèses testables, types de tests, analyse et décision",
     objectives: [
-      "Concevoir des expériences A/B valides",
-      "Calculer la significativité statistique",
-      "Prioriser les tests avec ICE",
-      "Interpréter et actioner les résultats"
+      "Passer d'idées à des hypothèses testables (Experiment Card)",
+      "Choisir le bon type de test (A/B, holdout, feature flag…)",
+      "Fixer KPI primaire/secondaires/guardrails alignés NSM", 
+      "Planifier (MDE, durée) et analyser correctement (uplift, IC/p-value)",
+      "Décider start / iterate / kill et capitaliser (log des apprentissages)"
     ],
-    prev: "4-kpis-dashboard",
-    next: "6-no-code",
-    hasCustomComponent: false,
-    showDownloadCTA: false,
+    prev: "module-4/kpis-dashboard",
+    next: "module-6/outils-no-code-automation",
+    hasCustomComponent: true,
+    showDownloadCTA: true,
     ateliers: [
       {
         slug: "experiment-card",
@@ -131,7 +132,7 @@ const MODULES_CONFIG: Module[] = [
     ]
   },
   {
-    slug: "6-no-code",
+    slug: "module-6/outils-no-code-automation",
     order: 6,
     title: "Module 6 — Outils No-Code & Automation",
     duration: "150min",
@@ -143,9 +144,9 @@ const MODULES_CONFIG: Module[] = [
       "Créer des workflows de croissance",
       "Intégrer les outils entre eux"
     ],
-    prev: "5-experimentation",
-    next: "7-ai-par-canal",
-    hasCustomComponent: false,
+    prev: "module-5/experimentation-ab-testing",
+    next: "module-7/ia-par-canal-marketing",
+    hasCustomComponent: true,
     showDownloadCTA: true,
     ateliers: [
       {
@@ -157,21 +158,21 @@ const MODULES_CONFIG: Module[] = [
     ]
   },
   {
-    slug: "7-ai-par-canal",
+    slug: "module-7/ia-par-canal-marketing",
     order: 7,
-    title: "Module 7 — IA par Canal Marketing",
+    title: "Module 7 — Canaux : SEO • SEA • Social • Emailing",
     duration: "120min",
     status: "nouveau",
-    description: "Applications IA : SEO, SEA, Social, Email",
+    description: "AAARRR appliqué par canal avec IA et automation",
     objectives: [
-      "Appliquer l'IA au SEO et content marketing",
-      "Optimiser les campagnes SEA avec l'IA",
-      "Automatiser le social media avec l'IA",
-      "Personnaliser l'email marketing via l'IA"
+      "Diagnostiquer chaque canal avec les bons KPIs (AAARRR)",
+      "Mettre en place des quick wins + plan 30-60-90 par canal",
+      "Utiliser IA (génération/analyse) et n8n (workflows) pour l'itération",
+      "Relier systématiquement aux inputs NSM & au Dashboard"
     ],
-    prev: "6-no-code",
+    prev: "module-6/outils-no-code-automation",
     next: null,
-    hasCustomComponent: false,
+    hasCustomComponent: true,
     showDownloadCTA: true
   }
 ];

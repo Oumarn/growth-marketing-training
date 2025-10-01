@@ -4,6 +4,16 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Users, Clock, FileText, Code } from 'lucide-react';
 
+function getAtelierSlug(title: string): string {
+  const slugMap: Record<string, string> = {
+    "Buyer Persona Canvas": "buyer-persona",
+    "Funnel Canvas AAARRR": "funnel-canvas", 
+    "Experiment Card": "experiment-card",
+    "n8n Workflow Starter": "no-code-starter"
+  };
+  return slugMap[title] || title.toLowerCase().replace(/\s+/g, '-');
+}
+
 const ateliers = [
   {
     title: "Buyer Persona Canvas",
@@ -109,9 +119,11 @@ export default function AteliersPage() {
                   </div>
                   
                   <div className="space-y-3">
-                    <Button className="w-full">
-                      Commencer l'atelier
-                    </Button>
+                    <Link href={`/ateliers/${getAtelierSlug(atelier.title)}`}>
+                      <Button className="w-full">
+                        Commencer l'atelier
+                      </Button>
+                    </Link>
                     <Button variant="outline" className="w-full">
                       <FileText className="w-4 h-4 mr-2" />
                       Télécharger le template
