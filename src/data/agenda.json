@@ -21,7 +21,7 @@
       "end": "15:30",
       "title": "Cas pratiques emblématiques",
       "type": "workshop",
-      "module": "3-cas-pratique",
+      "module": "3-cas-pratiques",
       "description": "HubSpot, Dropbox, Airbnb, PayPal + atelier mini-campagne"
     },
     {
@@ -29,7 +29,7 @@
       "end": "17:00",
       "title": "KPIs & Analyse",
       "type": "theory",
-      "module": "4-kpis-automation",
+      "module": "4-kpis-dashboard",
       "description": "CAC, LTV, MRR, ARPU, Churn, NPS, tableau de bord"
     }
   ],

@@ -18,16 +18,16 @@ import ModuleContentRenderer from '@/components/modules/ModuleContentRenderer';
 import { 
   getModuleBySlug, 
   getModuleStatus, 
-  getModulesWithDownloadCTA,
-  getAllModules
-} from '@/lib/modules';
+  getAllModuleSlugs,
+  getModulesWithDownloadCTA 
+} from '@/data/modules';
 import { ModulePageProps } from '@/types/modules';
 
 // Generate static params for build optimization
 export async function generateStaticParams() {
-  const modules = getAllModules();
-  return modules.map((module) => ({
-    slug: module.slug,
+  const slugs = getAllModuleSlugs();
+  return slugs.map((slug) => ({
+    slug: slug,
   }));
 }
 

@@ -1,0 +1,18 @@
+{
+  "slug": "2-aaarr",
+  "order": 2,
+  "title": "Module 2 — Framework AAARRR",
+  "duration": "120min",
+  "status": "updated",
+  "description": "Méthode complète d'optimisation du funnel",
+  "objectives": [
+    "Maîtriser les 6 métriques AAARRR et leurs KPIs",
+    "Savoir calculer et interpréter chaque métrique",
+    "Diagnostiquer les goulots d'étranglement de votre funnel",
+    "Utiliser la méthode ICE pour prioriser les améliorations"
+  ],
+  "prev": "1-intro",
+  "next": "3-cas-pratiques",
+  "hasCustomComponent": true,
+  "showDownloadCTA": false
+}

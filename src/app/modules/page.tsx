@@ -31,8 +31,9 @@ function StatusBadge({ status }: { status: string }) {
 
 export default function ModulesPage() {
   const { isModuleComplete } = useProgress();
-  const day1Modules = getModulesByDay(1);
-  const day2Modules = getModulesByDay(2);
+  const modulesByDay = getModulesByDay();
+  const day1Modules = modulesByDay[1];
+  const day2Modules = modulesByDay[2];
 
   const renderModuleCard = (module: any) => (
     <Card key={module.slug} className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-500">

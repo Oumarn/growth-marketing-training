@@ -1,0 +1,18 @@
+{
+  "slug": "5-experimentation",
+  "order": 5,
+  "title": "Module 5 — A/B Testing & Expérimentation",
+  "duration": "120min",
+  "status": "unchanged",
+  "description": "Méthodologie complète d'expérimentation",
+  "objectives": [
+    "Concevoir des expériences A/B valides",
+    "Calculer la significativité statistique",
+    "Prioriser les tests avec ICE",
+    "Interpréter et actioner les résultats"
+  ],
+  "prev": "4-kpis-automation",
+  "next": "6-no-code",
+  "hasCustomComponent": false,
+  "showDownloadCTA": false
+}

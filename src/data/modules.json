@@ -33,12 +33,20 @@
   },
   {
     "order": 3,
-    "slug": "3-cas-pratique",
-    "title": "Module 3 — Cas Pratiques & Mini-Campagne",
+    "slug": "3-cas-pratiques",
+    "title": "Module 3 — Cas pratiques & mini-campagne",
     "day": 1,
-    "status": "unchanged",
+    "status": "updated",
     "duration": "120min",
-    "description": "Analyses détaillées : Dropbox, HubSpot, Airbnb, Slack"
+    "description": "Mécaniques réplicables (Dropbox, HubSpot, Airbnb, PayPal) + atelier mini-campagne",
+    "ateliers": [
+      {
+        "slug": "mini-campagne",
+        "title": "Mini-Campagne Workshop",
+        "duration": "55min",
+        "description": "Concevoir une campagne testable (landing + ads + email)"
+      }
+    ]
   },
   {
     "order": 4,
@@ -88,7 +96,7 @@
     "slug": "7-ai-par-canal",
     "title": "Module 7 — IA par Canal Marketing",
     "day": 2,
-    "status": "new",
+    "status": "nouveau",
     "duration": "120min",
     "description": "Applications IA : SEO, SEA, Social, Email"
   }

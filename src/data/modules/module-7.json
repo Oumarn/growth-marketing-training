@@ -1,0 +1,18 @@
+{
+  "slug": "7-ai-par-canal",
+  "order": 7,
+  "title": "Module 7 — IA par Canal Marketing",
+  "duration": "120min",
+  "status": "nouveau",
+  "description": "Applications IA : SEO, SEA, Social, Email",
+  "objectives": [
+    "Appliquer l'IA au SEO et content marketing",
+    "Optimiser les campagnes SEA avec l'IA",
+    "Automatiser le social media avec l'IA",
+    "Personnaliser l'email marketing via l'IA"
+  ],
+  "prev": "6-no-code",
+  "next": null,
+  "hasCustomComponent": false,
+  "showDownloadCTA": true
+}

@@ -1,0 +1,16 @@
+Experiment Name,Hypothesis,Start Date,End Date,Status,Primary Metric,Baseline,Variant A,Variant B,Lift,Confidence,Statistical Sig,Decision,Impact,Owner
+Homepage CTA Color Test,"Red CTA will increase signup rate vs blue by 15%",2024-01-15,2024-01-29,Completed,Signup Rate,2.8%,3.1%,2.9%,+11%,95%,Yes,Ship Variant A,+120 signups/month,Growth
+Onboarding Email Sequence,"3-email sequence will improve D7 activation vs 1 email",2024-01-22,2024-02-12,Completed,D7 Activation Rate,45%,52%,48%,+16%,98%,Yes,Ship Variant A,+85 activated users/month,Product
+Pricing Page Layout,"Feature comparison table will increase trial conversion",2024-02-01,2024-02-15,Completed,Trial Conversion,1.8%,2.2%,2.0%,+22%,97%,Yes,Ship Variant A,+45 trials/month,Product Marketing
+Mobile Checkout Flow,"Single-page checkout will reduce cart abandonment",2024-02-08,2024-02-22,Completed,Checkout Completion,65%,72%,68%,+11%,94%,Yes,Ship Variant A,+380 orders/month,UX
+Email Subject Line A/B,"Personalized subject lines will improve open rates",2024-02-15,2024-02-29,Completed,Email Open Rate,18%,22%,20%,+22%,99%,Yes,Ship Variant A,+1200 opens/month,Email Marketing
+Dashboard Default View,"Revenue-first view will increase feature adoption",2024-03-01,2024-03-15,Running,Feature Usage Rate,34%,38%,35%,+12%,89%,No,Continue Test,-,Product
+Push Notification Timing,"Evening notifications will improve click-through",2024-03-08,2024-03-22,Running,Notification CTR,4.2%,4.8%,4.4%,+14%,87%,No,Continue Test,-,Mobile
+Landing Page Hero Section,"Value proposition clarity will improve bounce rate",2024-03-15,2024-03-29,Running,Bounce Rate,55%,48%,51%,-13%,91%,No,Continue Test,-,Growth
+In-App Upgrade Modal,"Usage-based prompts will increase conversion",2024-03-22,2024-04-05,Running,Upgrade Conversion,0.8%,1.1%,0.9%,+38%,85%,No,Continue Test,-,Product
+Social Proof Testimonials,"Customer logos will increase enterprise inquiries",2024-03-29,2024-04-12,Running,Enterprise Leads,12/month,15/month,13/month,+25%,82%,No,Continue Test,-,Sales
+Search Results Algorithm,"ML-powered ranking will improve user engagement",2024-04-01,2024-04-15,Planned,Session Duration,6.5 min,-,-,-,-,-,Not Started,-,Engineering
+Referral Program Incentive,"Double rewards will increase referral participation",2024-04-08,2024-04-22,Planned,Referral Rate,2.1%,-,-,-,-,-,Not Started,-,Growth
+Customer Support Chat Bot,"AI pre-screening will reduce response time",2024-04-15,2024-04-29,Planned,First Response Time,45 min,-,-,-,-,-,Not Started,-,Support
+Subscription Renewal Email,"Early reminder will reduce involuntary churn",2024-04-22,2024-05-06,Planned,Payment Success Rate,94%,-,-,-,-,-,Not Started,-,Customer Success
+Product Tour Interaction,"Interactive tutorial will improve feature discovery",2024-04-29,2024-05-13,Planned,Feature Discovery Rate,23%,-,-,-,-,-,Not Started,-,UX

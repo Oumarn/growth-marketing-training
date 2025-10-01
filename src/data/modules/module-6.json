@@ -1,0 +1,18 @@
+{
+  "slug": "6-no-code",
+  "order": 6,
+  "title": "Module 6 — Outils No-Code & Automation",
+  "duration": "150min",
+  "status": "updated",
+  "description": "Stack technologique sans développement",
+  "objectives": [
+    "Maîtriser les outils no-code essentiels",
+    "Automatiser les tâches répétitives",
+    "Créer des workflows de croissance",
+    "Intégrer les outils entre eux"
+  ],
+  "prev": "5-experimentation",
+  "next": "7-ai-par-canal",
+  "hasCustomComponent": false,
+  "showDownloadCTA": true
+}

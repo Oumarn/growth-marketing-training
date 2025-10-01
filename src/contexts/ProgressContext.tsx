@@ -78,8 +78,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   };
 
   const getNextIncompleteModule = () => {
-    const moduleOrder = ['1-intro', '2-aaarr', '3-cas-pratique', '4-kpis-automation', '5-experimentation', '6-no-code', '7-ai-par-canal'];
-    return moduleOrder.find(slug => !progress.completedModules.includes(slug)) || null;
+    const moduleOrder = ['1-intro', '2-aaarr', '3-cas-pratiques', '4-kpis-automation', '5-experimentation', '6-no-code', '7-ai-par-canal'];
+    return moduleOrder.find((slug: string) => !progress.completedModules.includes(slug)) || null;
   };
 
   const resetProgress = () => {

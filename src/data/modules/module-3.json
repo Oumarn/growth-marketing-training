@@ -1,0 +1,18 @@
+{
+  "slug": "3-cas-pratiques",
+  "order": 3,
+  "title": "Module 3 — Cas pratiques & mini-campagne",
+  "duration": "120min",
+  "status": "updated",
+  "description": "Mécaniques réplicables (Dropbox, HubSpot, Airbnb, PayPal) + atelier mini-campagne",
+  "objectives": [
+    "Extraire des mécaniques réplicables de cas emblématiques",
+    "Formuler une proposition de valeur claire et testable",
+    "Concevoir une mini-campagne (landing, ads, email) avec KPIs",
+    "Préparer 3 expériences A/B rapides à lancer"
+  ],
+  "prev": "2-aaarr",
+  "next": "4-kpis-automation",
+  "hasCustomComponent": true,
+  "showDownloadCTA": true
+}

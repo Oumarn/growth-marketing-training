@@ -1,0 +1,21 @@
+Metric Name,Metric Type,Value,Trend,Target,Status,Owner,Data Source
+ARR (Annual Recurring Revenue),Revenue,$2400000,+12%,$2500000,On Track,VP Sales,CRM
+MRR (Monthly Recurring Revenue),Revenue,$200000,+8%,$210000,On Track,VP Sales,CRM
+Customer Acquisition Cost (CAC),Efficiency,$150,-5%,$140,Needs Attention,CMO,Marketing Automation
+Customer Lifetime Value (LTV),Value,$2100,+3%,$2200,On Track,VP Product,Analytics
+LTV/CAC Ratio,Efficiency,14,+15%,15,On Track,CEO,Calculated
+Monthly Active Users (MAU),Engagement,45000,+6%,50000,On Track,VP Product,Analytics
+Daily Active Users (DAU),Engagement,12000,+4%,15000,Behind,VP Product,Analytics
+User Activation Rate,Conversion,68%,+2%,75%,Behind,VP Product,Analytics
+Churn Rate (Monthly),Retention,3.2%,-8%,2.5%,Behind,Customer Success,CRM
+Net Revenue Retention (NRR),Growth,110%,+5%,115%,On Track,Customer Success,CRM
+Gross Revenue Retention (GRR),Retention,96.8%,+1%,97.5%,On Track,Customer Success,CRM
+Monthly Recurring Revenue Growth Rate,Growth,8%,+12%,10%,Ahead,VP Sales,CRM
+New Customer Acquisition (Monthly),Acquisition,45,+25%,50,On Track,VP Sales,CRM
+Average Revenue Per User (ARPU),Revenue,$44.44,+2%,$42,Ahead,VP Sales,CRM
+Conversion Rate (Trial to Paid),Conversion,18%,-5%,22%,Behind,Product Marketing,Analytics
+Product Qualified Leads (SQL to PQL),Quality,320,+15%,350,On Track,VP Product,Marketing Automation
+Sales Qualified Leads (MQL to SQL),Quality,85,+6%,90,On Track,VP Sales,Marketing Automation
+Demo-to-Close Rate,Conversion,25%,+8%,30%,On Track,VP Sales,CRM
+Time to Value (Days),Efficiency,12,-15%,10,On Track,VP Product,Analytics
+Net Promoter Score (NPS),Satisfaction,42,+5%,50,Behind,Customer Success,Survey Platform

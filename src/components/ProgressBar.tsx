@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 
 const modules = [
-  '1-intro', '2-aaarr', '3-cas-pratique', '4-kpis-automation', 
+  '1-intro', '2-aaarr', '3-cas-pratiques', '4-kpis-automation', 
   '5-experimentation', '6-no-code', '7-ai-par-canal'
 ];
 

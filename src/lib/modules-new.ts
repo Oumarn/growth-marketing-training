@@ -36,21 +36,7 @@ const MODULES_CONFIG: Module[] = [
     prev: "1-intro",
     next: "3-cas-pratiques",
     hasCustomComponent: true,
-    showDownloadCTA: false,
-    ateliers: [
-      {
-        slug: "buyer-persona",
-        title: "Buyer Persona Workshop",
-        duration: "45min",
-        description: "Créer des personas détaillés pour votre audience"
-      },
-      {
-        slug: "funnel-canvas",
-        title: "Funnel Canvas",
-        duration: "45min",
-        description: "Mapper votre funnel de conversion complet"
-      }
-    ]
+    showDownloadCTA: false
   },
   {
     slug: "3-cas-pratiques",
@@ -66,43 +52,27 @@ const MODULES_CONFIG: Module[] = [
       "Préparer 3 expériences A/B rapides à lancer"
     ],
     prev: "2-aaarr",
-    next: "4-kpis-dashboard",
+    next: "4-kpis-automation",
     hasCustomComponent: true,
-    showDownloadCTA: true,
-    ateliers: [
-      {
-        slug: "mini-campagne",
-        title: "Mini-Campagne Workshop", 
-        duration: "55min",
-        description: "Concevoir une campagne testable (landing + ads + email)"
-      }
-    ]
+    showDownloadCTA: true
   },
   {
-    slug: "4-kpis-dashboard",
+    slug: "4-kpis-automation",
     order: 4,
     title: "Module 4 — KPIs & Dashboard",
     duration: "90min",
-    status: "updated",
-    description: "Taxonomie claire, NSM input tree, formules clés + 3 types de dashboards",
+    status: "unchanged",
+    description: "Métriques avancées et tableaux de bord",
     objectives: [
-      "Construire une taxonomie de métriques (NSM, inputs, leading/lagging)",
-      "Modéliser un NSM input tree actionnable",
-      "Maîtriser les formules AAARRR & unit economics",
-      "Concevoir un dashboard utile (exec/squad/experiment) + rituels"
+      "Définir et tracker les KPIs essentiels",
+      "Créer des dashboards automatisés",
+      "Interpréter les données pour l'action",
+      "Optimiser les métriques de performance"
     ],
     prev: "3-cas-pratiques",
     next: "5-experimentation",
-    hasCustomComponent: true,
-    showDownloadCTA: true,
-    ateliers: [
-      {
-        slug: "dashboard-express",
-        title: "Dashboard Express Workshop",
-        duration: "15min",
-        description: "NSM tree + wireframe dashboard + calculs essentiels"
-      }
-    ]
+    hasCustomComponent: false,
+    showDownloadCTA: false
   },
   {
     slug: "5-experimentation",
@@ -117,18 +87,10 @@ const MODULES_CONFIG: Module[] = [
       "Prioriser les tests avec ICE",
       "Interpréter et actioner les résultats"
     ],
-    prev: "4-kpis-dashboard",
+    prev: "4-kpis-automation",
     next: "6-no-code",
     hasCustomComponent: false,
-    showDownloadCTA: false,
-    ateliers: [
-      {
-        slug: "experiment-card",
-        title: "Experiment Card",
-        duration: "30min",
-        description: "Créer vos premières cartes d'expérimentation"
-      }
-    ]
+    showDownloadCTA: false
   },
   {
     slug: "6-no-code",
@@ -146,15 +108,7 @@ const MODULES_CONFIG: Module[] = [
     prev: "5-experimentation",
     next: "7-ai-par-canal",
     hasCustomComponent: false,
-    showDownloadCTA: true,
-    ateliers: [
-      {
-        slug: "no-code-starter",
-        title: "No-Code Automation Setup",
-        duration: "60-90min",
-        description: "Construire vos premiers workflows automatisés"
-      }
-    ]
+    showDownloadCTA: true
   },
   {
     slug: "7-ai-par-canal",
@@ -198,29 +152,4 @@ export const getModulesWithDownloadCTA = (): string[] => {
   return MODULES_CONFIG
     .filter(module => module.showDownloadCTA)
     .map(module => module.slug);
-};
-
-export const getAllModules = (): Module[] => {
-  return MODULES_CONFIG;
-};
-
-export const getModules = (): Module[] => {
-  return MODULES_CONFIG;
-};
-
-export const getModulesByDay = () => {
-  return {
-    1: MODULES_CONFIG.filter(m => m.order <= 3),
-    2: MODULES_CONFIG.filter(m => m.order > 3)
-  };
-};
-
-export const getNextModule = (currentSlug: string): Module | null => {
-  const currentModule = getModuleBySlug(currentSlug);
-  return currentModule?.next ? getModuleBySlug(currentModule.next) : null;
-};
-
-export const getPreviousModule = (currentSlug: string): Module | null => {
-  const currentModule = getModuleBySlug(currentSlug);
-  return currentModule?.prev ? getModuleBySlug(currentModule.prev) : null;
 };

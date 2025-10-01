@@ -1,0 +1,18 @@
+{
+  "slug": "1-intro",
+  "order": 1,
+  "title": "Module 1 — Introduction au Growth Marketing",
+  "duration": "90min",
+  "status": "unchanged",
+  "description": "Fondements, métriques et structures d'équipe",
+  "objectives": [
+    "Distinguer Growth Marketing vs marketing traditionnel",
+    "Comprendre la logique AAARRR (vue d'ensemble)",
+    "Adopter les principes clés: NSM, boucles, expérimentation",
+    "Savoir proposer une North Star Metric simple"
+  ],
+  "prev": null,
+  "next": "2-aaarr",
+  "hasCustomComponent": true,
+  "showDownloadCTA": false
+}
