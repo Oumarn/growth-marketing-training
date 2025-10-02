@@ -10,6 +10,17 @@ import { useProgress } from '@/contexts/ProgressContext';
 import agendaData from '@/data/agenda.json';
 import { AgendaItem } from '@/types';
 
+// Mapping between agenda module references and actual module slugs
+const agendaToModuleSlugMapping: Record<string, string> = {
+  '1-intro': 'module-1/introduction-growth-marketing',
+  '2-aaarr': 'module-2/framework-aaarrr',  
+  '3-cas-pratiques': 'module-3/cas-pratiques-mini-campagne',
+  '4-kpis-dashboard': 'module-4/kpis-dashboard',
+  '5-experimentation': 'module-5/experimentation-ab-testing',
+  '6-no-code': 'module-6/outils-no-code-automation',
+  '7-ai-par-canal': 'module-7/ia-par-canal-marketing'
+};
+
 const typeConfig = {
   theory: { label: 'Théorie', color: 'bg-blue-100 text-blue-700' },
   workshop: { label: 'Atelier', color: 'bg-green-100 text-green-700' },
@@ -40,40 +51,58 @@ export default function AgendaPage() {
   const { isModuleComplete } = useProgress();
 
   const renderAgendaCard = (item: AgendaItem, dayNumber: number) => {
-    const module = item.module ? getModuleBySlug(item.module) : null;
+    const moduleSlug = item.module ? agendaToModuleSlugMapping[item.module] : null;
+    const module = moduleSlug ? getModuleBySlug(moduleSlug) : null;
     const typeInfo = typeConfig[item.type];
     
+    // Create unique key
+    const cardKey = module ? module.slug : `${item.start}-${item.title}`;
+    
     return (
-      <Card key={`${item.start}-${item.title}`} className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-500">
+      <Card key={cardKey} className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-500">
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <div className="flex items-center text-sm text-gray-500">
-                  <Clock className="w-4 h-4 mr-1" />
-                  {item.start} - {item.end}
-                </div>
-                <Badge className={typeInfo.color}>
-                  {typeInfo.label}
-                </Badge>
-                {module && <StatusBadge status={module.status} />}
+                {module ? (
+                  <>
+                    {isModuleComplete(module.slug) ? (
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    ) : (
+                      <Circle className="w-5 h-5 text-gray-300 flex-shrink-0" />
+                    )}
+                    <span className="text-sm font-medium text-gray-500">
+                      Module {module.order}
+                    </span>
+                    <StatusBadge status={module.status} />
+                  </>
+                ) : (
+                  <>
+                    <Circle className="w-5 h-5 text-gray-300 flex-shrink-0" />
+                    <span className={`text-xs px-2 py-1 rounded-full font-medium ${typeInfo.color}`}>
+                      {typeInfo.label}
+                    </span>
+                  </>
+                )}
               </div>
-              <div className="flex items-center gap-2 mb-1">
-                {module && isModuleComplete(module.slug) ? (
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                ) : module ? (
-                  <Circle className="w-5 h-5 text-gray-300 flex-shrink-0" />
-                ) : null}
-                <CardTitle className="text-lg leading-tight">
-                  {item.title}
-                </CardTitle>
-              </div>
+              <CardTitle className="text-lg leading-tight">
+                {item.title}
+              </CardTitle>
+            </div>
+          </div>
+          <div className="flex items-center justify-between text-sm text-gray-500">
+            <div className="flex items-center">
+              <Clock className="w-4 h-4 mr-1" />
+              {module ? module.duration : 'Atelier pratique'}
+            </div>
+            <div className="flex items-center font-medium text-blue-600">
+              ⏰ {item.start} - {item.end}
             </div>
           </div>
         </CardHeader>
         <CardContent className="pt-0">
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {item.description}
+            {item.description || (module ? module.description : '')}
           </p>
           
           {module && module.ateliers && module.ateliers.length > 0 && (
@@ -92,13 +121,13 @@ export default function AgendaPage() {
           {module ? (
             <Link href={`/${module.slug}`}>
               <Button className="w-full group">
-                {isModuleComplete(module.slug) ? 'Revoir le module' : 'Accéder au module'}
+                {isModuleComplete(module.slug) ? 'Revoir le module' : 'Commencer le module'}
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           ) : (
             <div className="text-center py-2 text-gray-500 text-sm">
-              Session de clôture
+              {item.type === 'wrapup' ? 'Session de clôture' : 'Atelier pratique'}
             </div>
           )}
         </CardContent>
