@@ -1,4 +1,5 @@
 import { getAllModules, getModuleBySlug } from '@/lib/modules';
+import { loadModuleSlides } from '@/lib/slide-loader';
 import Module1Content from '@/components/Module1Content';
 import Module2Content from '@/components/Module2Content';
 import Module3Content from '@/components/Module3Content';
@@ -33,13 +34,96 @@ interface PrintPageProps {
   searchParams: Promise<{ 
     module?: string;
     all?: string;
+    mode?: string;
   }>;
 }
 
 export default async function PrintPage({ searchParams }: PrintPageProps) {
-  const { module: moduleSlug, all } = await searchParams;
+  const { module: moduleSlug, all, mode } = await searchParams;
   
-  // Si un module spécifique est demandé
+  // Si un module spécifique est demandé en mode image (continuous layout)
+  if (moduleSlug && mode === 'image') {
+    try {
+      const moduleSlides = await loadModuleSlides(moduleSlug);
+      
+      return (
+        <div className="image-root">
+          {/* Header */}
+          <section className="image-header">
+            <div className="text-center">
+              <img 
+                src="/logos/fastlearn_logo_primary_v3.png" 
+                alt="FastLearn Academy" 
+                className="mx-auto h-12 w-auto mb-6"
+              />
+              <h1 className="text-3xl font-bold mb-2 text-gray-900">
+                {moduleSlides.title}
+              </h1>
+              <p className="text-lg text-gray-600 mb-4">Formation Growth Marketing</p>
+              <div className="text-sm text-gray-500 mb-8">
+                Version Image Continue - {new Date().toLocaleDateString('fr-FR')}
+              </div>
+            </div>
+          </section>
+
+          {/* Continuous content - no page breaks */}
+          {moduleSlides.slides.map((slide, index) => (
+            <section
+              key={slide.id}
+              className="slide slide-continuous"
+              dangerouslySetInnerHTML={{ __html: slide.content }}
+            />
+          ))}
+        </div>
+      );
+    } catch (error) {
+      console.error('Error loading module slides:', error);
+      return notFound();
+    }
+  }
+  
+  // Si un module spécifique est demandé en mode slides
+  if (moduleSlug && mode === 'slides') {
+    try {
+      const moduleSlides = await loadModuleSlides(moduleSlug);
+      
+      return (
+        <div className="print-root">
+          {/* Cover page */}
+          <section className="print-cover page-break-after">
+            <div className="text-center">
+              <img 
+                src="/logos/fastlearn_logo_primary_v3.png" 
+                alt="FastLearn Academy" 
+                className="mx-auto h-16 w-auto mb-8"
+              />
+              <h1 className="text-4xl font-bold mb-4 text-gray-900">
+                {moduleSlides.title}
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">Formation Growth Marketing</p>
+              <div className="text-sm text-gray-500">
+                Version PDF - {new Date().toLocaleDateString('fr-FR')}
+              </div>
+            </div>
+          </section>
+
+          {/* Slides */}
+          {moduleSlides.slides.map((slide, index) => (
+            <section
+              key={slide.id}
+              className="slide slide-print page-break-after"
+              dangerouslySetInnerHTML={{ __html: slide.content }}
+            />
+          ))}
+        </div>
+      );
+    } catch (error) {
+      console.error('Error loading module slides:', error);
+      return notFound();
+    }
+  }
+  
+  // Si un module spécifique est demandé (mode normal)
   if (moduleSlug && !all) {
     const module = getModuleBySlug(moduleSlug);
     if (!module) return notFound();

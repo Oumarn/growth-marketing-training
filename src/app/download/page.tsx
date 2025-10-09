@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import { Download, Info, Star, Users } from 'lucide-react';
 import { Resource } from '@/types';
 import downloadsData from '@/data/downloads-new.json';
-import PDFDownloadButton from '@/components/PDFDownloadButton';
 
 export default function DownloadPage() {
   const featuredDownload = downloadsData.downloads.find(item => item.featured);
@@ -48,7 +47,14 @@ export default function DownloadPage() {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <PDFDownloadButton className="bg-white text-red-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg" />
+                  <a 
+                    href="/downloads/Formation_Growth_Marketing_Guide_Complet.pdf"
+                    download="Formation Growth Marketing - Guide Complet.pdf"
+                    className="bg-white text-red-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-bold px-8 py-4 text-lg rounded-md inline-flex items-center gap-2"
+                  >
+                    <Download className="w-5 h-5" />
+                    📄 PDF Complet
+                  </a>
                   <span className="text-red-100 text-sm">ou</span>
                   <a 
                     href="/print" 
@@ -60,7 +66,7 @@ export default function DownloadPage() {
                   </a>
                 </div>
                 <p className="text-red-100 text-xs mt-3">
-                  Génération automatique - Mise à jour en temps réel
+                  Guide officiel - Version finale complète
                 </p>
               </CardContent>
             </Card>
@@ -193,22 +199,6 @@ export default function DownloadPage() {
               puis progressez vers les workflows d'automatisation lors des Modules 6 et 7. 
               Gardez les prompts IA comme référence permanente pour optimiser vos contenus.
             </p>
-          </div>
-        </div>
-        
-        {/* Support section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">🙋‍♀️ Besoin d'aide ?</h2>
-          <p className="text-gray-600 mb-6">
-            Des questions sur l'utilisation des templates ou des workflows ? 
-          </p>
-          <div className="space-x-4">
-            <Button variant="outline">
-              💬 Support pédagogique
-            </Button>
-            <Button variant="outline">
-              📧 Contact formateur
-            </Button>
           </div>
         </div>
         

@@ -10,7 +10,27 @@ export async function GET(request: NextRequest) {
     const host = request.headers.get('host') || 'localhost:3000';
     const baseUrl = `${protocol}://${host}`;
     
-    console.log('Generating PDF from:', `${baseUrl}/print`);
+    // Get URL parameters
+    const url = new URL(request.url);
+    const moduleParam = url.searchParams.get('module');
+    const modeParam = url.searchParams.get('mode');
+    
+    // Build target URL
+    let targetUrl = `${baseUrl}/print`;
+    const params = new URLSearchParams();
+    
+    if (moduleParam) {
+      params.append('module', moduleParam);
+    }
+    if (modeParam) {
+      params.append('mode', modeParam);
+    }
+    
+    if (params.toString()) {
+      targetUrl += '?' + params.toString();
+    }
+    
+    console.log('Generating PDF from:', targetUrl);
 
     // Launch Puppeteer
     const browser = await puppeteer.launch({
@@ -36,13 +56,13 @@ export async function GET(request: NextRequest) {
     });
 
     // Navigate to the print page
-    await page.goto(`${baseUrl}/print`, {
+    await page.goto(targetUrl, {
       waitUntil: 'networkidle0',
       timeout: 30000,
     });
 
     // Wait for content to load
-    await page.waitForSelector('.print-container', { timeout: 10000 });
+    await page.waitForSelector('.print-root, .print-container', { timeout: 10000 });
 
     // Generate PDF
     const pdf = await page.pdf({

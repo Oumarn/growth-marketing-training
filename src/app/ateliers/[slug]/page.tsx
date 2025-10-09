@@ -631,7 +631,7 @@ export default async function AtelierPage({ params }: { params: Promise<{ slug: 
                       📥 Télécharger le Pack Complet
                     </Button>
                   </Link>
-                  <Link href="/templates" target="_blank">
+                  <Link href="/download" target="_blank">
                     <Button 
                       variant="outline" 
                       className="border-white text-white hover:bg-white hover:text-purple-600 w-full"
@@ -769,7 +769,7 @@ export default async function AtelierPage({ params }: { params: Promise<{ slug: 
                   ))}
                 </ul>
                 <div className="mt-4">
-                  <Link href="/templates">
+                  <Link href="/download">
                     <Button variant="outline" size="sm" className="w-full">
                       <Download className="w-4 h-4 mr-2" />
                       Télécharger les templates

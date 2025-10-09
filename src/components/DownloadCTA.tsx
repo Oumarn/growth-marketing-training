@@ -20,14 +20,9 @@ export default function DownloadCTA({ showOnModules = ['3', '6', '7'] }: Downloa
             </p>
           </div>
           <div className="flex gap-2">
-            <Link href="/templates">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300">
-                📝 Templates
-              </Button>
-            </Link>
             <Link href="/download">
-                            <Button className="bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
-                📥 Télécharger les ressources
+              <Button className="bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
+                📥 Télécharger toutes les ressources
               </Button>
             </Link>
           </div>

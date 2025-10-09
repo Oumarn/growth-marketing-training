@@ -3,6 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Font Configuration */
+:root {
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.font-sans {
+  font-family: var(--font-inter);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -39,6 +48,584 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Slides Mode Styles */
+.slides-root { 
+  padding: 16px; 
+}
+
+.deck-toolbar { 
+  display: flex; 
+  gap: 12px; 
+  align-items: center; 
+  margin-bottom: 12px; 
+  padding: 12px 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.slide-viewport { 
+  display: flex; 
+  justify-content: center; 
+  padding: 0 16px;
+}
+
+.slide {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 600px;
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.slide-screen {
+  aspect-ratio: 16/9;
+}
+
+/* Remove all height/aspect constraints in image mode */
+.image-root .slide,
+.image-root .slide-continuous,
+.image-root .slide-screen {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+.print-deck { 
+  display: none; 
+}
+
+.slide-print { 
+  display: none; 
+}
+
+/* Slide Content Styles */
+.slide-cover {
+  text-align: center;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.slide-cover h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.slide-cover .duration {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+
+.slide-cover .description {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.slide-cover .objectives {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slide-cover .objectives li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.slide-content {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove height constraint in image mode */
+.image-root .slide-content {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.slide-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* Objectives Grid */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #6366f1;
+}
+
+.objective-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.objective-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.objective-item p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Mechanism Breakdown */
+.mechanism-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.main-concept, .how-it-works, .key-insight {
+  padding: 1.5rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border-left: 4px solid #0ea5e9;
+}
+
+.highlight {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0c4a6e;
+  text-align: center;
+}
+
+.steps-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.steps-horizontal .step {
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.steps-horizontal .arrow {
+  font-size: 1.2rem;
+  color: #0ea5e9;
+}
+
+/* Metrics and Timing */
+.metrics-timing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.kpis-section, .timing-section {
+  padding: 1.5rem;
+  background: #fef3c7;
+  border-radius: 12px;
+  border-left: 4px solid #f59e0b;
+}
+
+.kpi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kpi-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.kpi-label {
+  font-weight: 600;
+  color: #92400e;
+}
+
+.timing-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timing-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.timing-icon {
+  font-size: 1rem;
+  color: #f59e0b;
+}
+
+/* Comparison and VS styles */
+.comparison {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.vs-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.vs-item.losing {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.vs-item.winning {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+/* Progressive Strategy */
+.profiling-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.profiling-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: #6366f1;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1f2937;
+}
+
+.step-content p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Quality Strategy */
+.formula-visual {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.formula-part {
+  padding: 0.5rem 1rem;
+  background: #e5e7eb;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.formula-part.good {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.formula-part.bad {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.formula-result {
+  padding: 0.5rem 1rem;
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.formula-result.bad {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.vs-divider {
+  margin: 1rem 0;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* Proof Elements Grid */
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.proof-item {
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.proof-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.proof-item h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.proof-item p {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.impact {
+  font-weight: 600;
+  color: #16a34a;
+  font-size: 0.8rem;
+}
+
+/* Synthesis Grid */
+.synthesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.synthesis-item {
+  padding: 1.5rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border-left: 4px solid #0ea5e9;
+}
+
+.synthesis-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #0c4a6e;
+}
+
+.synthesis-item p {
+  font-size: 0.9rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.examples {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Workshop Styles */
+.workshop-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.workshop-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f0f9ff;
+  border-radius: 8px;
+}
+
+.step-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2rem;
+  background: #0ea5e9;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #0c4a6e;
+}
+
+.step-content p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Quiz Styles */
+.quiz-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.quiz-item {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #6366f1;
+}
+
+.quiz-item h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.quiz-answer {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-answer.correct {
+  color: #16a34a;
+}
+
+.quiz-answer.incorrect {
+  color: #dc2626;
+}
+
+.quiz-explanation {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Mastery Grid */
+.mastery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mastery-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border-left: 4px solid #16a34a;
+}
+
+.mastery-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.mastery-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #15803d;
+}
+
+.mastery-item p {
+  font-size: 0.9rem;
+  color: #166534;
+}
+
+.next-step {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fef3c7;
+  border-radius: 12px;
+  border-left: 4px solid #f59e0b;
+  text-align: center;
+}
+
+.next-step h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #92400e;
+}
+
+.next-step p {
+  color: #78350f;
 }
 
 :root {
@@ -309,6 +896,230 @@
 @page {
   size: A4;
   margin: 20mm 15mm;
+}
+
+/* Print mode for slides */
+@media print {
+  .no-print, .deck-toolbar { 
+    display: none !important; 
+  }
+  
+  .slide {
+    width: auto !important;
+    height: calc(297mm - 40mm) !important; /* A4 height minus margins */
+    aspect-ratio: auto !important;
+    padding: 24px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: block !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .slide-screen {
+    display: none !important;
+  }
+  
+  .slide-viewport {
+    display: none !important;
+  }
+  
+  .print-deck, .slide-print { 
+    display: block !important; 
+  }
+  
+  .page-break-after { 
+    break-after: page !important; 
+  }
+  
+  .slide img, .slide svg, .slide table { 
+    max-width: 100% !important; 
+    height: auto !important; 
+    break-inside: avoid !important; 
+  }
+  
+  .slide figure, .slide blockquote, .slide pre { 
+    break-inside: avoid !important; 
+  }
+  
+  .slide h2, .slide h3 { 
+    break-after: avoid !important; 
+  }
+  
+  /* Print cover styles */
+  .print-cover {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    height: calc(297mm - 40mm) !important;
+  }
+}
+
+/* Continuous Image Layout Styles */
+.image-root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  
+  /* Force continuous flow */
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+  break-after: auto !important;
+  page-break-after: auto !important;
+  break-before: auto !important;
+  page-break-before: auto !important;
+}
+
+.image-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  
+  /* Prevent splits */
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+.slide-continuous {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+  /* Completely remove all page break properties for continuous flow */
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+  break-after: auto !important;
+  page-break-after: auto !important;
+  break-before: auto !important;
+  page-break-before: auto !important;
+  
+  /* Remove any height constraints */
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+.slide-continuous:last-child {
+  margin-bottom: 0;
+}
+
+/* Aggressively ensure ALL elements flow continuously */
+.image-root *,
+.image-root *::before,
+.image-root *::after {
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+  break-after: auto !important;
+  page-break-after: auto !important;
+  break-before: auto !important;
+  page-break-before: auto !important;
+  
+  /* Remove height constraints that could cause splits */
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+/* Override ANY page-break classes or properties */
+.image-root .page-break-after,
+.image-root .page-break-before,
+.image-root .avoid-break,
+.image-root .slide,
+.image-root .slide-print,
+.image-root section,
+.image-root article,
+.image-root div {
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+  break-after: auto !important;
+  page-break-after: auto !important;
+  break-before: auto !important;
+  page-break-before: auto !important;
+  
+  /* Reset heights */
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+/* Prevent content elements from splitting */
+.image-root img,
+.image-root figure,
+.image-root table,
+.image-root .objectives-grid,
+.image-root .metrics-timing,
+.image-root .proof-grid,
+.image-root .synthesis-grid,
+.image-root .mastery-grid {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+/* Responsive images in continuous layout */
+.image-root img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Better spacing for continuous reading */
+.image-root h1, .image-root h2, .image-root h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.image-root h2 {
+  color: #1f2937;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.image-root p {
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.image-root ul, .image-root ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.image-root li {
+  margin-bottom: 0.5rem;
+}
+
+/* Grid layouts for continuous image */
+.image-root .objectives-grid,
+.image-root .metrics-timing,
+.image-root .proof-grid,
+.image-root .synthesis-grid,
+.image-root .mastery-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.image-root .objectives-grid,
+.image-root .synthesis-grid,
+.image-root .mastery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.image-root .proof-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .print-container {

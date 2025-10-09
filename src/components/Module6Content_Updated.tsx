@@ -935,7 +935,7 @@ export default function Module6Content() {
           <Button 
             variant="outline" 
             className="border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3"
-            onClick={() => window.open('/templates', '_blank')}
+            onClick={() => window.open('/download', '_blank')}
           >
             📋 Voir Tous les Templates
           </Button>
